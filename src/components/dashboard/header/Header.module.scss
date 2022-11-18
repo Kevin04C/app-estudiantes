@@ -1,0 +1,128 @@
+.Container {
+  background: #232946;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  grid-area: header;
+  color: #fffe;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.Logo {
+  padding: 0.6rem;
+}
+.Search {
+  background-color: #7c84a9;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  outline: 1px solid #fffe;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+// Profile
+.ProfileContainer {
+  position: relative;
+}
+
+.ProfileImg {
+  outline: 1px solid #fffe;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50vh;
+  cursor: pointer;
+}
+
+// Profile Pop Up
+
+.ProfilePopUp {
+  position: absolute;
+  right: 0;
+  top: 3rem;
+  background: #191d35;
+  width: 12rem;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.4rem;
+  display: none;
+  &.PopUpOn {
+    display: flex;
+  }
+}
+
+.ProfileHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    border-top: 1px solid #232946;
+    width: 100%;
+    transform: scale(1.16);
+    bottom: -0.65rem;
+  }
+}
+
+.ProfileImgPopUp {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50vh;
+  outline: 1px solid white;
+}
+.ProfileDataUser {
+  user-select: none;
+}
+.ProfileName {
+}
+
+.ProfileUser {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.ProfileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.ProfileItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  &:hover {
+    background-color: #232946;
+  }
+}
+.ProfileIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: white;
+  border-radius: 50vh;
+  display: block;
+}
+.ProfileLink {
+  flex: 1;
+}
+
+.ProfileFooter {
+  color: #d15356;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    border-top: 1px solid #232946;
+    width: 100%;
+    transform: scale(1.16);
+    top: -0.65rem;
+  }
+}

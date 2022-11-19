@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
+// icons
+// https://react-icons.github.io/react-icons/icons?name=im
+import { ImExit, ImProfile, ImCogs, ImContrast } from 'react-icons/im'
 
 const ProfilePopUp = ({ refProfile }) => {
   return (
@@ -12,26 +15,26 @@ const ProfilePopUp = ({ refProfile }) => {
           <h2 className={styles.ProfileUser}>@rodcarpio</h2>
         </div>
       </div>
-      <ul className={styles.ProfileBody}>
-        <li className={styles.ProfileItem}>
-          <span className={styles.ProfileIcon}></span>
-          <Link className={styles.ProfileLink}>Tus perfil</Link>
-        </li>
-        <li className={styles.ProfileItem}>
-          <span className={styles.ProfileIcon}></span>
-          <Link className={styles.ProfileLink}>Otras cosas</Link>
-        </li>
-        <li className={styles.ProfileItem}>
-          <span className={styles.ProfileIcon}></span>
-          <Link className={styles.ProfileLink}>Algo más</Link>
-        </li>
-      </ul>
-      <ul className={styles.ProfileFooter}>
-        <li className={styles.ProfileItem}>
-          <span className={styles.ProfileIcon}></span>
-          <Link className={styles.ProfileLink}>Cerrar sesión</Link>
-        </li>
-      </ul>
+      <div className={styles.ProfileBody}>
+        <Link className={styles.ProfileItem}>
+          <ImProfile />
+          Tu Perfil
+        </Link>
+        <Link className={styles.ProfileItem}>
+          <ImCogs />
+          Otras cosas
+        </Link>
+        <Link className={styles.ProfileItem}>
+          <ImContrast />
+          Algo más
+        </Link>
+      </div>
+      <div className={styles.ProfileFooter}>
+        <Link className={styles.ProfileItem}>
+          <ImExit />
+          Cerrar sesión
+        </Link>
+      </div>
     </div>
   )
 }

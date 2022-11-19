@@ -6,8 +6,8 @@
     'aside header header'
     'aside main main'
     'aside main main';
-  grid-template-rows: 3rem auto auto;
-  grid-template-columns: 3rem calc(100% - 5rem);
+  grid-template-rows: 4rem auto auto;
+  grid-template-columns: 4rem calc(100% - 5rem);
   height: 100vh;
   background: #232946;
 }

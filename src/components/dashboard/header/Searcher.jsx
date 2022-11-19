@@ -3,14 +3,12 @@ import styles from './Header.module.scss'
 
 const Searcher = () => {
   return (
-    <>
-      <input
-        className={styles.Search}
-        type="search"
-        name="search"
-        placeholder="Buscar cursos"
-      />
-    </>
+    <input
+      className={styles.Search}
+      type="search"
+      name="search"
+      placeholder="Buscar cursos"
+    />
   )
 }
 

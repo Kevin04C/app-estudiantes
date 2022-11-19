@@ -1,9 +1,13 @@
 import { Outlet } from 'react-router-dom'
+import { BsWater } from 'react-icons/bs'
 
 export const HomePage = () => {
   return (
     <div>
-      <div>sibebar</div>
+      <div>
+        <BsWater />
+        sibebar
+      </div>
       <div>
         <Outlet />
       </div>

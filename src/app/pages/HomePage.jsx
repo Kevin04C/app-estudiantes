@@ -1,3 +1,9 @@
+import SearchForm from '../components/SearchForm'
+
 export const HomePage = () => {
-  return <div>Test repository :D</div>
+  return (
+    <div>
+      <SearchForm />
+    </div>
+  )
 }

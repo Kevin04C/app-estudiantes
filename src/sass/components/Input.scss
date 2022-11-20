@@ -1,0 +1,13 @@
+@use '../utilities/variables';
+@use '../base/typography';
+
+.input {
+  width: 100%;
+  color: variables.$heading;
+  background: inherit;
+  outline: none;
+  border: none;
+  &::placeholder {
+    color: inherit;
+  }
+}

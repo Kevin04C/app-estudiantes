@@ -1,0 +1,35 @@
+// Header
+.header {
+  position: sticky;
+  top: 0;
+  height: 3.5rem;
+  background: #191d35;
+  border-bottom: 1px solid #fffffe18;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem 0 0.1rem;
+  padding: 0 1.5rem;
+  grid-area: header;
+  gap: 2rem;
+  justify-content: space-between;
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 11px 35px 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 1px 11px 30px 0px;
+}
+// Logo
+
+.header__logo {
+  letter-spacing: 1.2px;
+  font-size: 1.3rem;
+  span {
+    color: #ffb6b6;
+  }
+}
+// Search
+.search {
+  background-color: #fffffe18;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: 1px solid #fffffe50;
+  color: white;
+}

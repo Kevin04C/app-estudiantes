@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const TodoPages = () => {
-  return (
-    <div>TodoPages</div>
-  )
-}
+  return <div>TodoPages</div>;
+};

@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const CalculadoraPage = () => {
-  return (
-    <div>CalculadoraPage</div>
-  )
-}
+  return <div>CalculadoraPage en desarrollo</div>;
+};

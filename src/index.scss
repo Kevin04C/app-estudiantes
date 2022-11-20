@@ -1,2 +1,9 @@
 @use './sass/base/normalize.css';
 @use './sass/base/typography';
+@use './sass/utilities/variables';
+@use './sass/views/_home-page.scss';
+//Components
+@use './sass/components/profile';
+@use './sass/layout/_header.scss';
+@use './sass/layout/_aside.scss';
+@use './sass/views/main.scss';

@@ -1,7 +1,7 @@
 @use './sass/base/_normalize.css';
 @use './sass/base/typography';
 @import './sass/utilities/variables';
-@import './sass/utilities/minxis';
+@import './sass/utilities/mixins';
 @import './sass/views/_home-page.scss';
 //Components
 @import './sass/components/profile';
@@ -9,3 +9,4 @@
 @import './sass/layout/_header.scss';
 @import './sass/layout/_aside.scss';
 @import './sass/views/main.scss';
+@import './sass//layout/authLayout';

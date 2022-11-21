@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   articles: [],
   loading: false,
-  error: null
-}
+  error: null,
+};
 
 const searchSlice = createSlice({
   name: 'search',
@@ -13,19 +13,19 @@ const searchSlice = createSlice({
     search(state, action) {
       return {
         ...state,
-        articles: [...state.articles]
-      }
-    }
-  }
-})
+        articles: [...state.articles],
+      };
+    },
+  },
+});
 
 const api = (search) =>
-  `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`
-const urlArticle = (id) => `https://en.wikipedia.org/?curid=${id}` //eslint-disable-line
+  `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`;
+const urlArticle = (id) => `https://en.wikipedia.org/?curid=${id}`; //eslint-disable-line
 
 export const searchWikipedia = () => async (dispatch) => {
-  dispatch(searchStart())
-}
+  dispatch(searchStart());
+};
 
-export const { search } = searchSlice.actions
-export default searchSlice
+export const { search } = searchSlice.actions;
+export default searchSlice;

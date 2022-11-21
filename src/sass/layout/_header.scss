@@ -1,0 +1,40 @@
+// Header
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: $background;
+  @include disflex(row, space-between, center, 2rem);
+  padding: 0 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 11px 35px 2px;
+  border-bottom: 1px solid $background;
+  &__left {
+    @include disflex(row, center, center, 1rem);
+  }
+  &__right {
+    @include disflex(row, center, center, 1rem);
+  }
+  @include responsive-max(lg) {
+    padding: 1rem;
+  }
+}
+// Logo
+
+.header__logo {
+  letter-spacing: 1.2px;
+  font-size: 1.3rem;
+  span {
+    color: #ffb6b6;
+  }
+  @include responsive-max(md) {
+    font-size: 1rem;
+  }
+}
+// Search
+.search {
+  background-color: $stroke;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: inherit;
+}

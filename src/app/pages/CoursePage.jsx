@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const CoursePage = () => {
-  return (
-    <div>CousesPage</div>
-  )
-}
+  return <div>Pagina CURSOS EN DESASOROLLO...</div>;
+};

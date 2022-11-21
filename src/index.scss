@@ -1,6 +1,11 @@
-@import './sass/base/_normalize.css';
-@import './sass/base/typography';
+@use './sass/base/_normalize.css';
+@use './sass/base/typography';
 @import './sass/utilities/variables';
 @import './sass/utilities/minxis';
-
-@import './sass/layout/authLayout';
+@import './sass/views/_home-page.scss';
+//Components
+@import './sass/components/profile';
+@import './sass/components/notification';
+@import './sass/layout/_header.scss';
+@import './sass/layout/_aside.scss';
+@import './sass/views/main.scss';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // icons
-import { BsBookFill, BsGridFill, BsCalculatorFill } from 'react-icons/bs';
+import { BsBook, BsListUl, BsSearch } from 'react-icons/bs';
 const Aside = () => {
   return (
     <aside className='aside'>
@@ -12,7 +12,7 @@ const Aside = () => {
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
         >
-          <BsBookFill />
+          <BsBook />
           Cursos
         </NavLink>
         <NavLink
@@ -21,8 +21,8 @@ const Aside = () => {
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
         >
-          <BsGridFill />
-          Todo List
+          <BsListUl />
+          Tareas
         </NavLink>
         <NavLink
           to='/calculator'
@@ -30,8 +30,8 @@ const Aside = () => {
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
         >
-          <BsCalculatorFill />
-          Calculadora
+          <BsSearch />
+          Buscar
         </NavLink>
       </div>
     </aside>

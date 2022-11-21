@@ -8,3 +8,12 @@ $main: #b8c1ec;
 $highlight: #eebbc3;
 $secondary: #fffffe;
 $tertiary: #eebbc3;
+
+$font-size-icons: 1.4rem;
+
+$padding-main: 1rem;
+$padding-main-left: 7rem;
+
+@media (max-width: 400px) {
+  $background: red;
+}

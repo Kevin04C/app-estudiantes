@@ -10,13 +10,15 @@ const Profile = () => {
   };
   return (
     <div className='profile'>
-      <img
-        ref={refProfileImg}
-        className='profile__img'
-        src='src/rodrigo.jpeg'
-        alt='rodrigo'
-        onClick={handleClick}
-      />
+      <div className='profile__icon'>
+        <img
+          ref={refProfileImg}
+          className='profile__img'
+          src='../public/assets/rodrigo.jpeg'
+          alt='rodrigo'
+          onClick={handleClick}
+        />
+      </div>
       <ProfilePopUp refProfile={refProfile} />
     </div>
   );

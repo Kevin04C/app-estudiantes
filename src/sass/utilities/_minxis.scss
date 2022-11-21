@@ -3,7 +3,7 @@ $breakpoints: (
   'sm': 576px,
   'md': 768px,
   'lg': 992px,
-  'xl': 1200px
+  'xl': 1200px,
 );
 
 @mixin responsive($key) {
@@ -16,4 +16,23 @@ $breakpoints: (
       @content;
     }
   }
+}
+@mixin responsive-max($key) {
+  @if (map-has-key($breakpoints, $key)) {
+    @media screen and (max-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $key) {
+      @content;
+    }
+  }
+}
+
+@mixin disflex($direction, $justify, $align, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
 }

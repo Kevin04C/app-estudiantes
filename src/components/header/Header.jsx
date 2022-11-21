@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom';
-// import Searcher from './Searcher';
+import Searcher from './Searcher';
 import Profile from './Profile';
+import Notification from './Notification';
 const Header = () => {
   return (
     <header className='header'>
-      <Link to='/' className='header__logo'>
-        <span>App</span> Student
-      </Link>
-      {/* <Searcher /> */}
-      <Profile />
+      <div className='header__left'>
+        <Link to='/' className='header__logo'>
+          <span>App</span> Student
+        </Link>
+        <Searcher />
+      </div>
+      <div className='header__right'>
+        <Notification />
+        <Profile />
+      </div>
     </header>
   );
 };

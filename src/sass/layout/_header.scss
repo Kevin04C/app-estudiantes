@@ -2,19 +2,22 @@
 .header {
   position: sticky;
   top: 0;
-  height: 3.5rem;
-  background: #191d35;
-  border-bottom: 1px solid #fffffe18;
   width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 2rem 0 0.1rem;
+  height: 3.5rem;
+  background-color: $background;
+  @include disflex(row, space-between, center, 2rem);
   padding: 0 1.5rem;
-  grid-area: header;
-  gap: 2rem;
-  justify-content: space-between;
-  // box-shadow: rgba(0, 0, 0, 0.35) 0px 11px 35px 2px;
-  box-shadow: rgba(0, 0, 0, 0.25) 1px 11px 30px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 11px 35px 2px;
+  border-bottom: 1px solid $background;
+  &__left {
+    @include disflex(row, center, center, 1rem);
+  }
+  &__right {
+    @include disflex(row, center, center, 1rem);
+  }
+  @include responsive-max(lg) {
+    padding: 1rem;
+  }
 }
 // Logo
 
@@ -24,12 +27,14 @@
   span {
     color: #ffb6b6;
   }
+  @include responsive-max(md) {
+    font-size: 1rem;
+  }
 }
 // Search
 .search {
-  background-color: #fffffe18;
+  background-color: $stroke;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  outline: 1px solid #fffffe50;
-  color: white;
+  color: inherit;
 }

@@ -1,10 +1,8 @@
 @use '../utilities/variables';
-@use '../base/typography';
 
 .search-form {
   display: flex;
   padding-left: 1rem;
-  margin: 20px;
   height: 40px;
   width: 40%;
   border-radius: 10px;

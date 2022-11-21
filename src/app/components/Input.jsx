@@ -1,13 +1,12 @@
-import '../../sass/components/Input.scss'
-
-const Input = ({ onChange }) => {
+const Input = ({ onChange, value }) => {
   return (
     <input
       type="text"
-      name="searchInput"
-      placeholder="Buscador"
-      onChange={onChange}
       className="input"
+      name="searchInput"
+      placeholder="Buscar..."
+      onChange={onChange}
+      value={value}
     />
   )
 }

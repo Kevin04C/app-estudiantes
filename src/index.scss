@@ -1,2 +1,11 @@
 @use './sass/base/normalize.css';
 @use './sass/base/typography';
+
+//views
+
+@use './sass/views/ArticlesPage';
+
+//components
+
+@use './sass/components/Input.scss';
+@use './sass/components/SearchForm.scss';

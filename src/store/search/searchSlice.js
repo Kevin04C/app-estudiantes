@@ -10,22 +10,19 @@ const searchSlice = createSlice({
   name: 'search',
   initialState: initialState,
   reducers: {
-    search(state, action) {
-      return {
-        ...state,
-        articles: [...state.articles],
-      };
+    searchStart(state) {
+      state.loading = true;
+    },
+    searchSuccess(state, action) {
+      state.articles = action.payload;
+      state.loading = false;
+    },
+    searchFail(state, action) {
+      state.loading = false;
+      state.error = action.payload;
     },
   },
 });
 
-const api = (search) =>
-  `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`;
-const urlArticle = (id) => `https://en.wikipedia.org/?curid=${id}`; //eslint-disable-line
-
-export const searchWikipedia = () => async (dispatch) => {
-  dispatch(searchStart());
-};
-
-export const { search } = searchSlice.actions;
+export const { searchStart, searchFail, searchSuccess } = searchSlice.actions;
 export default searchSlice;

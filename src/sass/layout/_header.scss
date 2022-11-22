@@ -31,15 +31,3 @@
     font-size: 1rem;
   }
 }
-// Search
-.search {
-  background-color: $stroke;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  color: inherit;
-  border: none;
-  outline: none;
-  &:focus {
-    outline: 2px solid $paragraph;
-  }
-}

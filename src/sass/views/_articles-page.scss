@@ -1,0 +1,33 @@
+@use '../utilities/variables';
+
+.articles-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background: variables.$stroke;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .articles__list-results {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 6rem;
+    .articles__item {
+      padding: 1rem 3rem 1rem 1rem;
+      background: variables.$background;
+      border-radius: 10px;
+      a:hover {
+        h2 {
+          text-decoration: underline;
+        }
+      }
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+      p {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

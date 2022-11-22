@@ -1,9 +1,9 @@
-import SearchForm from '../components/SearchForm'
+import Searcher from '../components/header/Searcher';
 
 export const HomePage = () => {
   return (
     <div>
-      <SearchForm />
+      <Searcher />
     </div>
-  )
-}
+  );
+};

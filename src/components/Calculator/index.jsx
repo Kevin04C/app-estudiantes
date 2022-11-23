@@ -3,14 +3,14 @@ import { CalculatorLogic } from './CalculatorLogic'
 import { Display } from './Display'
 
 const Calculator = () => {
-  const { values } = CalculatorLogic()
+  const { values, handleClick, calculator } = CalculatorLogic()
 
   return (
     <section>
-      {values.map((value) => (
-        <Button key={'calculator' + value} text={value} />
+      <Display text={calculator.display} />
+      {values.flat().map((value) => (
+        <Button key={value} text={value} handleClick={handleClick} />
       ))}
-      <Display />
     </section>
   )
 }

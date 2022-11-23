@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 
-export const Button = ({ text }) => {
-  return <button>{text}</button>
+export const Button = ({ text, handleClick }) => {
+  return <button onClick={handleClick}>{text}</button>
 }
-
+// text isn't defined in button Prototype because could be string or number
 Button.propTypes = {
-  text: PropTypes.string
+  handleClick: PropTypes.func
 }

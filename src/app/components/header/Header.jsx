@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import Searcher from './Searcher';
 import Profile from './Profile';
 import Notification from './Notification';
+import Searcher from './Searcher';
 const Header = () => {
   return (
     <header className='header'>
       <div className='header__left'>
-        <Link to='/' className='header__logo'>
+        <Link to='/home' className='header__logo'>
           <span>App</span> Student
         </Link>
         <Searcher />

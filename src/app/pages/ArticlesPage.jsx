@@ -10,14 +10,14 @@ const ArticlesPage = () => {
   const { search } = useParams();
 
   useEffect(() => {
-    dispatch(getSearch(search));
+    dispatch(getSearch(search ? search : localStorage.getItem('keyword')));
   }, [dispatch, search]);
 
   return (
     <div className='articles-page'>
       {results.articles.length > 0 && (
         <>
-          <h2>{`Resultados de '${search}'...`}</h2>
+          <h2>No encontraste lo que buscabas? Intenta ser más específico</h2>
           <section className='articles__list-results'>
             {results.articles.map((art) => (
               <article key={art.pageid} className='articles__item'>

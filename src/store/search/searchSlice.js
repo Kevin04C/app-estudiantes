@@ -4,14 +4,17 @@ const initialState = {
   articles: [],
   loading: false,
   error: null,
+  keyword: localStorage.getItem('keyword'),
 };
 
 const searchSlice = createSlice({
   name: 'search',
   initialState: initialState,
   reducers: {
-    searchStart(state) {
+    searchStart(state, action) {
       state.loading = true;
+      state.keyword = action.payload;
+      localStorage.setItem('keyword', action.payload);
     },
     searchSuccess(state, action) {
       state.articles = action.payload;

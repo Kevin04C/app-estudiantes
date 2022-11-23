@@ -1,17 +1,17 @@
 @use '../utilities/variables';
+@use '../utilities/mixins';
 
 .articles-page {
   padding: 2rem;
   min-height: 100vh;
   background: variables.$stroke;
   h2 {
-    font-size: 1.5rem;
     margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: variables.$white;
   }
   .articles__list-results {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include mixins.disflex(column, center, flex-start, 2rem);
     padding-bottom: 6rem;
     .articles__item {
       padding: 1rem 3rem 1rem 1rem;

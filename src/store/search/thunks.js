@@ -6,9 +6,9 @@ const apiWikipedia = (search) =>
 //Generate link to article page
 export const urlArticle = (id) => `https://es.wikipedia.org/?curid=${id}`;
 
-export const getSearch = (search) => {
+export const getSearch = (search = localStorage.getItem('keyword')) => {
   return async (dispatch) => {
-    dispatch(searchStart());
+    dispatch(searchStart(search));
     try {
       const res = await fetch(apiWikipedia(search));
       const data = await res.json();

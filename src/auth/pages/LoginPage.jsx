@@ -9,7 +9,6 @@ export const LoginPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(stateForm);
   };
 
   return (

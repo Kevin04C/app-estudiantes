@@ -24,7 +24,7 @@ const ProfilePopUp = ({ refProfile }) => {
         </div>
       </div>
       <div className='profile-pop__body'>
-        <Link className='profile-pop__link'>
+        <Link to='/home' className='profile-pop__link'>
           <BsFillFilePersonFill />
           Tu Perfil
         </Link>

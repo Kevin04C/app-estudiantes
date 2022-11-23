@@ -1,11 +1,27 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // icons
-import { BsBook, BsListUl, BsSearch } from 'react-icons/bs';
+import { BsBook, BsListUl, BsSearch, BsHouse } from 'react-icons/bs';
+import { useScrolDown } from '../../../hooks/useScrollDown';
 const Aside = () => {
+  const scrollDirection = useScrolDown();
   return (
-    <aside className='aside'>
+    <aside
+      className={`aside ${
+        scrollDirection === 'down' ? 'aside--down' : 'aside--up'
+      }`}
+    >
       <div className='aside__links'>
+        <NavLink
+          to='/home'
+          className={({ isActive }) =>
+            isActive ? 'aside__link aside__link--active' : 'aside__link'
+          }
+        >
+          <BsHouse />
+          Inicio
+        </NavLink>
+
         <NavLink
           to='/courses'
           className={({ isActive }) =>
@@ -16,7 +32,7 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
-          to='/todos'
+          to='/tasks'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
@@ -25,7 +41,7 @@ const Aside = () => {
           Tareas
         </NavLink>
         <NavLink
-          to='/calculator'
+          to='/search'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }

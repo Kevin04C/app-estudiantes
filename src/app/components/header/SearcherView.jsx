@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Input from './Input';
 
@@ -18,6 +18,13 @@ const SearcherView = ({ handleChange, handleSubmit, search, errorMsg }) => {
       {errorMsg && <small style={{ color: 'red' }}>{errorMsg}</small>}
     </>
   );
+};
+
+SearcherView.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  search: PropTypes.string,
+  errorMsg: PropTypes.string,
 };
 
 export default SearcherView;

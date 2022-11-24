@@ -10,6 +10,17 @@
     font-size: 1.5rem;
     color: variables.$white;
   }
+  .articles__header {
+    @include mixins.disflex(row, space-between, baseline, 0);
+    .articles__header--lang {
+      color: variables.$white;
+      background-color: variables.$background;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+    }
+  }
   .articles__list-results {
     @include mixins.disflex(column, center, flex-start, 2rem);
     padding-bottom: 6rem;

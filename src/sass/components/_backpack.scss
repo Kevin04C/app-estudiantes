@@ -1,0 +1,133 @@
+.backpack {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  svg {
+    font-size: 2rem;
+    fill: #d0d6f9;
+  }
+  &__content {
+    position: relative;
+  }
+  &__icon {
+    cursor: pointer;
+    background-color: #d0d6f9;
+    padding: 0.5rem;
+    border-radius: 50%;
+    svg {
+      fill: $stroke;
+    }
+    &.backpack__icon--on {
+      outline: 1px solid red;
+    }
+  }
+  &__items {
+    transform: scale(0.1) translateY(-10rem);
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    user-select: none;
+    pointer-events: none;
+
+    &.backpack__items--on {
+      opacity: 1;
+      pointer-events: all;
+      user-select: all;
+      transform: none;
+      transform: scale(1) translateY(0rem) rotate(360deg);
+    }
+  }
+  &__item {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    z-index: -1;
+    border-radius: 50vh;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $stroke;
+    outline: 1px solid rgba(255, 255, 254, 0.0941176471);
+    &-tooltip {
+      position: absolute;
+      user-select: none;
+      color: $stroke;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.6rem;
+      border-radius: 0.3rem;
+      padding: 0.15rem;
+      font-weight: bold;
+      transform: translateX(-5.5rem);
+      background-color: #d0d9f9;
+      transition: all 0.3s ease-in;
+    }
+    &:hover &-tooltip {
+      transform: translateX(-2.9rem);
+      opacity: 1;
+    }
+
+    svg {
+      font-size: 1.1rem;
+    }
+    &:hover {
+      background-color: #d0d6f9;
+      svg {
+        fill: $stroke;
+      }
+    }
+    &.backpack__item--clock {
+      transform: translate(-1rem, -5.5rem);
+
+      z-index: 1;
+      .backpack__item-tooltip {
+        transform: translateX(-5rem);
+      }
+      &:hover .backpack__item-tooltip {
+        transform: translateX(-2.99rem);
+      }
+    }
+    &.backpack__item--calendar {
+      transform: translate(-3.2rem, -3.6rem);
+    }
+    &.backpack__item--calculator {
+      transform: translate(-3.2rem, -1.2rem);
+    }
+  }
+  @include responsive-max(lg) {
+    bottom: 4.5rem;
+    transition: bottom 0.3s;
+    &.backpack--down {
+      bottom: 1rem;
+    }
+  }
+  @include responsive-max(md) {
+    bottom: 4rem;
+    &__icon {
+      padding: 0.4rem;
+    }
+    svg {
+      font-size: 1.8rem;
+    }
+    &__item {
+      padding: 0.2rem;
+      svg {
+        font-size: 1.2rem;
+      }
+      &:hover &-tooltip {
+        font-size: 0.6rem;
+      }
+
+      &.backpack__item--clock {
+        transform: translate(-1rem, -5.4rem);
+      }
+      &.backpack__item--calendar {
+        transform: translate(-3rem, -3.8rem);
+      }
+      &.backpack__item--calculator {
+        transform: translate(-3rem, -1.5rem);
+      }
+    }
+  }
+}

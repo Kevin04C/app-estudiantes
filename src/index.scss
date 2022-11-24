@@ -19,3 +19,10 @@
 @import './sass/layout/_aside.scss';
 @import './sass/views/main.scss';
 @import './sass//layout/authLayout';
+@import './sass/components/backpack';
+@import './sass/components/modal';
+
+//components calculator
+@import './sass/components/calculator/button';
+@import './sass/components/calculator/calculator';
+@import './sass/components/calculator/display';

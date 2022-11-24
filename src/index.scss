@@ -3,6 +3,7 @@
 @import './sass/utilities/variables';
 @import './sass/utilities/mixins';
 @import './sass/views/_home-page.scss';
+
 //Components
 @import './sass/components/profile';
 @import './sass/components/notification';
@@ -10,3 +11,10 @@
 @import './sass/layout/_aside.scss';
 @import './sass/views/main.scss';
 @import './sass//layout/authLayout';
+@import './sass/components/spinner';
+
+//views
+@import './sass/views/checkingAuthView';
+
+//helpers
+@import './sass//utilities/helpers';

@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.4em;
+  border-bottom: 3px solid $stroke;
+  color: $background;
+  cursor: pointer;
+  transition: all 0.6s;
+
+  &__reset {
+    grid-column: 1 / span 2;
+  }
+
+  &__reset,
+  &__del {
+    background: $stroke;
+    color: $paragraph;
+    border-bottom: 3px solid $paragraph;
+  }
+
+  &__result {
+    grid-column: 3 / span 2;
+    background: $button;
+    border-bottom: 3px solid #ff6584;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

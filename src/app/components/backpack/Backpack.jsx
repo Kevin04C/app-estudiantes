@@ -2,11 +2,14 @@ import React, { useRef } from 'react';
 import { GiLightBackpack } from 'react-icons/gi';
 import { BiCalculator, BiCalendar } from 'react-icons/bi';
 import { IoMdClock } from 'react-icons/io';
-
+import { Modal } from '../Modal';
+import Calculator from '../Calculator';
+import { useModal } from '../../../hooks/useModal';
 import { useScrollDown } from '../../../hooks/useScrollDown';
 
 const Backpack = () => {
   const scrollDirection = useScrollDown();
+  const [calculatorActiveModal, toggleActiveModal] = useModal(false);
 
   console.log(scrollDirection);
   // const refBackpackIcon = useRef('');
@@ -40,12 +43,20 @@ const Backpack = () => {
             <BiCalendar />
             <span className='backpack__item-tooltip'>Calendario</span>
           </li>
-          <li className='backpack__item backpack__item--calculator'>
+          <li
+            className='backpack__item backpack__item--calculator'
+            onClick={toggleActiveModal}
+          >
             <BiCalculator />
             <span className='backpack__item-tooltip'>Calculadora</span>
           </li>
         </ul>
       </div>
+      {calculatorActiveModal && (
+        <Modal toggleActiveModal={toggleActiveModal}>
+          <Calculator></Calculator>
+        </Modal>
+      )}
     </div>
   );
 };

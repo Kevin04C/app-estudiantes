@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 
 export const Display = ({ text }) => {
   return (
-    <article>
-      <p>{text}</p>
+    <article className="display">
+      <p className="display__paragraph">{text}</p>
     </article>
   )
 }

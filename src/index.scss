@@ -1,2 +1,10 @@
 @use './sass/base/normalize.css';
 @use './sass/base/typography';
+
+//utilities variables
+@import './sass/utilities/variables';
+
+//components calculator
+@import './sass/components/calculator/button';
+@import './sass/components/calculator/calculator';
+@import './sass/components/calculator/display';

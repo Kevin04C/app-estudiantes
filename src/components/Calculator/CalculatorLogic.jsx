@@ -37,6 +37,8 @@ export const CalculatorLogic = () => {
   }
 
   const addOperation = (value) => {
+    if (calculator.operation) calculate()
+
     setCalculator((calc) => ({
       ...calc,
       display: calc.display + value,

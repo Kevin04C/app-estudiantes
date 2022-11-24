@@ -1,0 +1,157 @@
+@use '../utilities/variables';
+
+.auth {
+  &__wrapper {
+    min-height: 100vh;
+    @include responsive(md) {
+      display: flex;
+    }
+  }
+  &__form {
+    flex-grow: 1;
+    background-color: $paragraph;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__wrapper {
+      width: 90%;
+      margin: 0 auto;
+      @include responsive(md) {
+        width: 70%;
+      }
+      @include responsive(lg) {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.welcome {
+  flex-basis: 40%;
+  background-color: $background;
+  text-align: center;
+  display: none;
+
+  @include responsive(md) {
+    display: block;
+  }
+
+  &__picture {
+    width: 75%;
+    // width: auto;
+  }
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    color: $heading;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+  &__paragraph {
+    color: $paragraph;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+  }
+}
+
+.form {
+  width: 100%;
+  &__title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  &__group {
+    margin: 1rem 0;
+  }
+  &__content {
+    margin-bottom: 0.1rem;
+    position: relative;
+    display: flex;
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 0.5rem;
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: $white;
+    background-color: $background;
+
+    &::placeholder {
+      color: $paragraph;
+    }
+  }
+  &__error {
+    font-size: 0.8rem;
+    color: #d40d0e;
+    font-weight: 700;
+  }
+  &__error--form-send {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: $paragraph;
+    margin-right: 0.5rem;
+  }
+
+  &__btn-submit {
+    width: 100%;
+    padding: 0.8rem 0rem;
+    background-color: $button;
+    color: $button-text;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+    &:hover {
+      background-color: $paragraph;
+      border: 2px solid $background;
+    }
+  }
+}
+
+.not-account {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__title {
+    color: $background;
+  }
+
+  &__link {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

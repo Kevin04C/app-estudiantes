@@ -1,3 +1,7 @@
 export const HomePage = () => {
-  return <div>Test repository :D</div>
-}
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
+};

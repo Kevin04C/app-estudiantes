@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 // icons
 import { BsBook, BsListUl, BsSearch, BsHouse } from 'react-icons/bs';
-import { useScrolDown } from '../../../hooks/useScrollDown';
+import { useScrollDown } from '../../../hooks/useScrollDown';
 const Aside = () => {
-  const scrollDirection = useScrolDown();
+  const scrollDirection = useScrollDown();
   return (
     <aside
       className={`aside ${

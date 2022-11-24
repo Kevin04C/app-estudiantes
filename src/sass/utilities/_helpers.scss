@@ -1,0 +1,18 @@
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+
+.grayscale {
+  filter: grayscale(1);
+  color: $background;
+  &:hover {
+    filter: grayscale(0.8);
+  }
+}
+
+.not-pointer {
+  cursor: default;
+}

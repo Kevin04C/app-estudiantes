@@ -12,6 +12,7 @@
 @import './sass/utilities/variables';
 @import './sass/utilities/mixins';
 @import './sass/views/_home-page.scss';
+
 //Components
 @import './sass/components/profile';
 @import './sass/components/notification';
@@ -26,3 +27,10 @@
 @import './sass/components/calculator/button';
 @import './sass/components/calculator/calculator';
 @import './sass/components/calculator/display';
+@import './sass/components/spinner';
+
+//views
+@import './sass/views/checkingAuthView';
+
+//helpers
+@import './sass//utilities/helpers';

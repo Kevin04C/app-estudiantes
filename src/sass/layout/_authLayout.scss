@@ -41,7 +41,7 @@
   }
 
   &__picture {
-    width: 85%;
+    width: 75%;
     // width: auto;
   }
   &__wrapper {
@@ -50,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1.5rem;
   }
   &__img {
     width: 100%;
@@ -57,14 +58,15 @@
 
   &__title {
     color: $heading;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-size: 1.8rem;
     font-weight: 900;
   }
   &__paragraph {
     color: $paragraph;
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin: 1rem 0;
   }
 }
 
@@ -77,29 +79,44 @@
     font-weight: bold;
   }
   &__group {
-    margin-bottom: 1.2rem;
+    margin: 1rem 0;
+  }
+  &__content {
+    margin-bottom: 0.1rem;
     position: relative;
     display: flex;
     background-color: $background;
     display: flex;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 0.9rem 0.5rem;
   }
   &__input {
     width: 100%;
-    padding: 0.9rem 0.5rem;
     border: none;
     outline: none;
-    color: $paragraph;
+    color: $white;
     background-color: $background;
 
     &::placeholder {
       color: $paragraph;
     }
   }
+  &__error {
+    font-size: 0.8rem;
+    color: #d40d0e;
+    font-weight: 700;
+  }
+  &__error--form-send {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+
   &__icon {
     font-size: 1.5rem;
     color: $paragraph;
+    margin-right: 0.5rem;
   }
 
   &__btn-submit {

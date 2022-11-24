@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-export const useScrolDown = () => {
+export const useScrollDown = () => {
   const [scrollDirection, setScrollDirection] = useState(null);
   useEffect(() => {
     let lastScrollY = window.pageYOffset;

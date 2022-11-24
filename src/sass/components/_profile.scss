@@ -1,0 +1,102 @@
+// Profile
+.profile {
+  position: relative;
+  &__icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    @include disflex(row, center, center, 0);
+    border-radius: 50vh;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+      outline: 1px solid $stroke;
+    }
+    &:active {
+      outline: 1px solid #fffffe50;
+    }
+  }
+  &__img {
+    transition: all 0.3s ease-in;
+    &.profile__img--on {
+      transform: scale(1.05) rotate(360deg);
+      outline: 3px solid $stroke;
+    }
+  }
+}
+
+.profile-pop {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  background-color: $background;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  transform: translate(5rem, -3.5rem) scale(0.1);
+  transition: all 0.3s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  outline: 1px solid #fffffe18;
+  &.profile-pop--on {
+    pointer-events: all;
+    user-select: auto;
+    opacity: 1;
+    transform: translate(0, 3rem) scale(1);
+    z-index: 5;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    padding: 0.8rem;
+    border-bottom: 1px solid $stroke;
+  }
+  &__img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50vh;
+    outline: 1px solid $stroke;
+  }
+  &__user-info {
+    user-select: none;
+  }
+  &__name {
+    font-size: 0.95rem;
+  }
+  &__user {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  // Profile pop body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.8rem;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: $stroke;
+    }
+  }
+  // Profile pop footer
+  &__footer {
+    color: #d15356;
+    position: relative;
+    padding: 0.4rem 0.8rem;
+    border-top: 1px solid $stroke;
+  }
+  @include responsive-max(md) {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 11px 50px 4px;
+  }
+}

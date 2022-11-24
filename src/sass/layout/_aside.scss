@@ -1,0 +1,65 @@
+.aside {
+  position: fixed;
+  width: 6rem;
+  height: 100vh;
+  background-color: $background;
+  @include disflex(column, flex-start, center, 3rem);
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.25) 1px 11px 30px 0px;
+  &__links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include responsive-max(lg) {
+      flex-direction: row;
+    }
+  }
+  &__link {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: $stroke;
+      color: #ffb6b6;
+    }
+    &.aside__link--active {
+      background-color: $stroke;
+      color: #ffb6b6;
+    }
+    svg {
+      font-size: $font-size-icons;
+    }
+    @include responsive-max(lg) {
+      padding: 0.4rem 0;
+    }
+    @include responsive-max(md) {
+      font-size: 0.7rem;
+      padding: 0.5rem 0;
+      svg {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include responsive-max(lg) {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    z-index: 1;
+    @include disflex(column, flex-start, center, 0);
+    transition: transform 0.3s ease-in;
+    &.aside--down {
+      transform: translateY(5rem);
+    }
+    &.aside--up {
+      transform: none;
+    }
+  }
+}

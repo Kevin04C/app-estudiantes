@@ -1,0 +1,84 @@
+.notification {
+  position: relative;
+  &__true {
+    width: 7px;
+    height: 7px;
+    border-radius: 50vh;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.3rem;
+    background: $tertiary;
+  }
+  &__icon {
+    @include disflex(row, center, center, 0);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50vh;
+    cursor: pointer;
+    &:hover {
+      background-color: $stroke;
+    }
+    &:active {
+      background-color: $stroke;
+      outline: 1px solid #ffffff50;
+    }
+    svg {
+      font-size: $font-size-icons;
+    }
+    &.notification__icon--on {
+      background-color: $stroke;
+    }
+  }
+  @include responsive-max(md) {
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+}
+.notification-pop {
+  position: absolute;
+  right: -2.7rem;
+  top: 0.5rem;
+  background-color: $background;
+  width: max-content;
+  // padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  transform: translate(5rem, -3.5rem) scale(0.1);
+  transition: all 0.3s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  outline: 1px solid #fffffe18;
+  &.notification-pop--on {
+    pointer-events: all;
+    user-select: auto;
+    opacity: 1;
+    transform: translate(0, 3rem) scale(1);
+    z-index: 5;
+  }
+  &__header {
+    padding-bottom: 1rem;
+    position: relative;
+    border-bottom: 1px solid $stroke;
+    padding: 0.8rem;
+  }
+  &__list {
+    padding: 0.8rem;
+  }
+  &__item {
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $stroke;
+    }
+  }
+  @include responsive-max(md) {
+    font-size: 0.9rem;
+  }
+}

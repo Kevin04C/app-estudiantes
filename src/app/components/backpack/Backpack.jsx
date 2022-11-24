@@ -11,14 +11,11 @@ const Backpack = () => {
   const scrollDirection = useScrollDown();
   const [calculatorActiveModal, toggleActiveModal] = useModal(false);
 
-  console.log(scrollDirection);
   // const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
-  const handleClick = (e) => {
-    console.log(e.target);
+  const handleClick = () => {
     // refBackpackIcon.current.classList.toggle('backpack__icon--on');
     refBackpackItems.current.classList.toggle('backpack__items--on');
-    console.log('xd');
   };
   return (
     <div

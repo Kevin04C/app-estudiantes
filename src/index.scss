@@ -1,6 +1,14 @@
 @use './sass/base/_normalize.css';
 @use './sass/base/typography';
 
+//views
+
+@use './sass/views/articles-page';
+
+//components
+
+@use './sass/components/input.scss';
+@use './sass/components/searcher.scss';
 @import './sass/utilities/variables';
 @import './sass/utilities/mixins';
 @import './sass/views/_home-page.scss';

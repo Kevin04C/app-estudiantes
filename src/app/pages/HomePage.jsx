@@ -1,6 +1,4 @@
-import React from 'react';
-
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <div>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
@@ -169,5 +167,3 @@ const HomePage = () => {
     </div>
   );
 };
-
-export default HomePage;

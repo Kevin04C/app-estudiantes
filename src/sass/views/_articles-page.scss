@@ -1,0 +1,44 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.articles-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background: variables.$stroke;
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: variables.$white;
+  }
+  .articles__header {
+    @include mixins.disflex(row, space-between, baseline, 0);
+    .articles__header--lang {
+      color: variables.$white;
+      background-color: variables.$background;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+    }
+  }
+  .articles__list-results {
+    @include mixins.disflex(column, center, flex-start, 2rem);
+    padding-bottom: 6rem;
+    .articles__item {
+      padding: 1rem 3rem 1rem 1rem;
+      background: variables.$background;
+      border-radius: 10px;
+      a:hover {
+        h2 {
+          text-decoration: underline;
+        }
+      }
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+      p {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

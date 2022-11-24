@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     status:
       'not-authenticated' /* 'authenticated' 'not-authenticated', 'checking' */,
-    use: {}
+    use: {},
   },
   reducers: {
     onChecking: (state) => {
-      state.status = 'checking'
-    }
-  }
-})
+      state.status = 'checking';
+    },
+  },
+});
 
-export const { onChecking } = authSlice.actions
+export const { onChecking } = authSlice.actions;

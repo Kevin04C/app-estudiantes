@@ -75,10 +75,10 @@ export const CalculatorLogic = () => {
 
       setCalculator({
         ...calculator,
-        prev: result,
+        prev: result === 'NaN' ? '0' : result,
         next: '',
         operation: '',
-        display: result,
+        display: result === 'NaN' ? 'Error' : result,
       });
     }
   };

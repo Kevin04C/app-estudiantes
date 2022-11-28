@@ -1,42 +1,53 @@
-@use '../utilities/variables';
-@use '../utilities/mixins';
-
-.articles-page {
-  padding: 2rem;
+.articles {
   min-height: 100vh;
-  background: variables.$stroke;
+  background: $stroke;
+
   h2 {
     margin-bottom: 2rem;
     font-size: 1.5rem;
-    color: variables.$white;
+    color: $white;
   }
-  .articles__header {
-    @include mixins.disflex(row, space-between, baseline, 0);
-    .articles__header--lang {
-      color: variables.$white;
-      background-color: variables.$background;
+
+  &__header {
+    @include disflex(row, space-between, baseline, 0);
+    @include responsive-max(sm) {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    &-lang {
+      color: $white;
+      background-color: $background;
       padding: 0.5rem 1rem;
       border: none;
       border-radius: 6px;
       outline: none;
     }
   }
-  .articles__list-results {
-    @include mixins.disflex(column, center, flex-start, 2rem);
+
+  &__list-results {
+    @include disflex(column, center, flex-start, 2rem);
     padding-bottom: 6rem;
+
     .articles__item {
       padding: 1rem 3rem 1rem 1rem;
-      background: variables.$background;
+      width: 100%;
+      background: $background;
       border-radius: 10px;
       a:hover {
         h2 {
           text-decoration: underline;
+          color: $highlight;
         }
       }
       h2 {
         margin-bottom: 0.5rem;
       }
       p {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         margin-top: 0.5rem;
       }
     }

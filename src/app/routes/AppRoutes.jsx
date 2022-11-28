@@ -11,7 +11,7 @@ export const AppRoutes = () => {
     <Routes>
       <Route path='/' element={<AppLayout />}>
         <Route index element={<HomePage />} />
-        <Route path='search=:search' element={<ArticlesPage />} />
+        <Route path='search?q=:search' element={<ArticlesPage />} />
         <Route path='todos' element={<TodoPages />} />
         <Route path='courses' element={<CoursePage />} />
         <Route path='todos' element={<TodoPages />} />

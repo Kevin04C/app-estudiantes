@@ -1,8 +1,8 @@
-const Input = ({ onChange, value }) => {
+const Input = ({ onChange, value, className }) => {
   return (
     <input
       type='text'
-      className='input'
+      className={className}
       name='searchInput'
       placeholder='Buscar...'
       onChange={onChange}

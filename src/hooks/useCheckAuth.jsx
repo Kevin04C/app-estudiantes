@@ -9,7 +9,6 @@ export const useCheckAuth = () => {
 
   const checkAuth = async () => {
     const token = localStorage.getItem('token');
-    console.log(token);
 
     if (!token) return onLogout();
 

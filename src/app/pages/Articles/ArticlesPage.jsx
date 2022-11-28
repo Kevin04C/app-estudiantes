@@ -22,7 +22,7 @@ const ArticlesPage = () => {
   }, [dispatch, search, lang]);
 
   return (
-    <div className='articles-page'>
+    <div className='articles'>
       {results.articles.length > 0 && (
         <ArticlesView language={handleLanguage} articles={results.articles} />
       )}

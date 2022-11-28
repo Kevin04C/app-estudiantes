@@ -1,0 +1,10 @@
+.course-new {
+  @include disflex(column, center, center, 1rem);
+  background-color: $background;
+
+  &__name {
+  }
+  &__submit {
+    background: orange;
+  }
+}

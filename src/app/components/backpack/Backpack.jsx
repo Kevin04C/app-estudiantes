@@ -11,10 +11,10 @@ const Backpack = () => {
   const scrollDirection = useScrollDown();
   const [calculatorActiveModal, toggleActiveModal] = useModal(false);
 
-  // const refBackpackIcon = useRef('');
+  const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
   const handleClick = () => {
-    // refBackpackIcon.current.classList.toggle('backpack__icon--on');
+    refBackpackIcon.current.classList.toggle('backpack__icon--on');
     refBackpackItems.current.classList.toggle('backpack__items--on');
   };
   return (
@@ -26,7 +26,7 @@ const Backpack = () => {
       <div className='backpack__content'>
         <div
           onClick={handleClick}
-          // ref={refBackpackIcon}
+          ref={refBackpackIcon}
           className='backpack__icon'
         >
           <GiLightBackpack />

@@ -7,7 +7,7 @@ const ArticlesView = ({ articles, language }) => {
       <div className='articles__header'>
         <h2>No encontraste lo que buscabas? Intenta ser más específico</h2>
         <select
-          className='articles__header--lang'
+          className='articles__header-lang'
           defaultValue='Idioma'
           onChange={language}
         >
@@ -28,12 +28,9 @@ const ArticlesView = ({ articles, language }) => {
             </a>
             <p>
               <span
-                className='articles__item--snippet'
+                className='articles__item-snippet'
                 dangerouslySetInnerHTML={{
-                  __html:
-                    window.innerWidth < 500
-                      ? art.snippet.substring(0, 90) + '...'
-                      : art.snippet + '...',
+                  __html: art.snippet,
                 }}
               ></span>
             </p>

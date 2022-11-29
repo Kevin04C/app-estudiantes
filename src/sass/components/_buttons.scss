@@ -1,0 +1,7 @@
+.ap-btn-primary {
+  @include ap-button(primary);
+}
+
+.ap-btn-danger {
+  @include ap-button(danger);
+}

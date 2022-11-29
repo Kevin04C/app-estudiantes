@@ -36,3 +36,46 @@ $breakpoints: (
   align-items: $align;
   gap: $gap;
 }
+
+//Button Customs
+
+@mixin ap-button($value) {
+  background-color: $stroke;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  &:active {
+    transition: background 3s;
+  }
+  &::after {
+    content: '';
+    background-color: #ffffff80;
+    width: 0.6rem;
+    height: 5rem;
+    transform: rotate(10deg);
+    top: -1.2rem;
+    left: -15%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    filter: blur(7px);
+    transition: left 1s ease-out;
+  }
+  &:hover {
+    &::after {
+      left: 110%;
+    }
+  }
+  @if $value == 'primary' {
+    background-color: $button;
+    color: $background;
+  } @else if $value == 'danger' {
+    background-color: #d15356;
+  } @else {
+    background-color: $background;
+    color: $white;
+  }
+}

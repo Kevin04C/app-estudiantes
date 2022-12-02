@@ -13,7 +13,7 @@ Nuestro proyecto intenta proveer algunas herramientas que puedan facilitarte el 
 ## Cómo empezar
 
 1. Hacer un clone del repo
-2. Ejecutamos *npm i* para descargar las dependencias
+2. Ejecutamos *npm install* para descargar las dependencias
 3. Creamos un fichero .env con una variable de entorno con el puerto que utilizaremos (que no se subirá a github porque esta en el .gitignore)
 4. Para arrancar la app ejecutamos *npm run dev*: Esto ejecuta las reglas de eslint configuradas (paquete standard) y arranca la app (previamente debe estar corriendo el servidor)
 

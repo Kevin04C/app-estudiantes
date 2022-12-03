@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { IoCloseSharp } from 'react-icons/io5';
 
 export const Modal = ({ children, toggleActiveModal }) => {
@@ -10,9 +9,4 @@ export const Modal = ({ children, toggleActiveModal }) => {
       </div>
     </section>
   );
-};
-
-Modal.propTypes = {
-  children: PropTypes.element,
-  toggleActiveModal: PropTypes.func,
 };

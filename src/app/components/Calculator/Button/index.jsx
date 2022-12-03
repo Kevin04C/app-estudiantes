@@ -18,8 +18,7 @@ export const Button = ({ text, handleClick }) => {
     </button>
   );
 };
-
+// text isn't defined in button Prototype because could be string or number
 Button.propTypes = {
-  test: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   handleClick: PropTypes.func,
 };

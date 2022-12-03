@@ -4,18 +4,12 @@ import { BiCalculator, BiCalendar } from 'react-icons/bi';
 import { IoMdClock } from 'react-icons/io';
 import { Modal } from '../Modal';
 import Calculator from '../Calculator';
-import Pomodoro from '../Pomodoro';
-import { Notification } from '../Pomodoro/Notification';
 import { useModal } from '../../../hooks/useModal';
 import { useScrollDown } from '../../../hooks/useScrollDown';
-import { PomodoroLogic } from '../Pomodoro/PomodoroLogic';
 
 const Backpack = () => {
   const scrollDirection = useScrollDown();
-  const [calculatorActive, toggleCalculatorActive] = useModal(false);
-  const [pomodoroActive, togglePomodoroActive] = useModal(false);
-  const { changeMode, format, toggle, changeTime, secondsLeft, countdown } =
-    PomodoroLogic();
+  const [calculatorActiveModal, toggleActiveModal] = useModal(false);
 
   const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
@@ -23,7 +17,6 @@ const Backpack = () => {
     refBackpackIcon.current.classList.toggle('backpack__icon--on');
     refBackpackItems.current.classList.toggle('backpack__items--on');
   };
-  
   return (
     <div
       className={`backpack ${
@@ -31,20 +24,15 @@ const Backpack = () => {
       }`}
     >
       <div className='backpack__content'>
-
         <div
           onClick={handleClick}
           ref={refBackpackIcon}
           className='backpack__icon'
         >
-
           <GiLightBackpack />
         </div>
         <ul ref={refBackpackItems} className='backpack__items '>
-          <li
-            className='backpack__item backpack__item--clock'
-            onClick={togglePomodoroActive}
-          >
+          <li className='backpack__item backpack__item--clock'>
             <IoMdClock />
             <span className='backpack__item-tooltip'>Cronómetro</span>
           </li>
@@ -54,35 +42,17 @@ const Backpack = () => {
           </li>
           <li
             className='backpack__item backpack__item--calculator'
-            onClick={toggleCalculatorActive}
+            onClick={toggleActiveModal}
           >
             <BiCalculator />
             <span className='backpack__item-tooltip'>Calculadora</span>
           </li>
         </ul>
       </div>
-      {calculatorActive && (
-        <Modal toggleActiveModal={toggleCalculatorActive}>
+      {calculatorActiveModal && (
+        <Modal toggleActiveModal={toggleActiveModal}>
           <Calculator></Calculator>
         </Modal>
-      )}
-      {pomodoroActive && (
-        <Modal toggleActiveModal={togglePomodoroActive}>
-          <Pomodoro
-            changeMode={changeMode}
-            changeTime={changeTime}
-            format={format}
-            toggle={toggle}
-            secondsLeft={secondsLeft}
-            countdown={countdown}
-          ></Pomodoro>
-        </Modal>
-      )}
-      {!pomodoroActive && !calculatorActive && (
-        <Notification
-          secondsLeft={secondsLeft}
-          countdown={countdown}
-        ></Notification>
       )}
     </div>
   );

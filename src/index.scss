@@ -1,10 +1,11 @@
-@use './sass/base/_normalize.css';
-@use './sass/base/typography';
-
+@import './sass/base/_normalize.css';
+@import './sass/base/typography';
 @import './sass/utilities/variables';
 @import './sass/utilities/mixins';
-@import './sass/views/_home-page.scss';
+
 //Components
+@import './sass/components/searcher.scss';
+@import './sass/views/_home-page.scss';
 @import './sass/components/profile';
 @import './sass/components/notification';
 @import './sass/layout/_header.scss';
@@ -25,3 +26,14 @@
 @import './sass/components/pomodoro/display';
 @import './sass/components/pomodoro/config';
 @import './sass/components/pomodoro/toggle';
+
+
+@import './sass/components/spinner';
+
+//views
+@import './sass/views/articles-page';
+@import './sass/views/checkingAuthView';
+
+//helpers
+@import './sass//utilities/helpers';
+

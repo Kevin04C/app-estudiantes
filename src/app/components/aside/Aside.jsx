@@ -32,7 +32,7 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
-          to='/tasks'
+          to='/todos'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
@@ -41,7 +41,7 @@ const Aside = () => {
           Tareas
         </NavLink>
         <NavLink
-          to='/search'
+          to='/search?'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }

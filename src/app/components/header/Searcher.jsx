@@ -1,13 +1,35 @@
-import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import SearcherView from './SearcherView';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Searcher = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState('');
+
+  const handleChange = (e) => {
+    setSearch(e.target.value.trim());
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!search) {
+      toast.error('Ingresa una búsqueda');
+    } else {
+      setSearch('');
+      navigate(`/search?q=${search}`);
+    }
+  };
+
   return (
-    <input
-      className='search'
-      type='search'
-      name='search'
-      placeholder='Buscar cursos'
-    />
+    <>
+      <SearcherView
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        search={search}
+        error={() => <Toaster />}
+      />
+    </>
   );
 };
 

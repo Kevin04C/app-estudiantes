@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useRef } from 'react';
 import { GiLightBackpack } from 'react-icons/gi';
 import { BiCalculator, BiCalendar } from 'react-icons/bi';
@@ -18,10 +17,13 @@ const Backpack = () => {
   const { changeMode, format, toggle, changeTime, secondsLeft, countdown } =
     PomodoroLogic();
 
+  const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
-  const handleClick = (e) => {
+  const handleClick = () => {
+    refBackpackIcon.current.classList.toggle('backpack__icon--on');
     refBackpackItems.current.classList.toggle('backpack__items--on');
   };
+  
   return (
     <div
       className={`backpack ${
@@ -29,7 +31,13 @@ const Backpack = () => {
       }`}
     >
       <div className='backpack__content'>
-        <div onClick={handleClick} className='backpack__icon'>
+
+        <div
+          onClick={handleClick}
+          ref={refBackpackIcon}
+          className='backpack__icon'
+        >
+
           <GiLightBackpack />
         </div>
         <ul ref={refBackpackItems} className='backpack__items '>

@@ -1,4 +1,5 @@
 import toast, { Toaster } from 'react-hot-toast';
+import PropTypes from 'prop-types';
 
 export const Notification = ({ secondsLeft, countdown }) => {
   toast.success(`${countdown.timerMode} ha finalizado`);
@@ -12,4 +13,9 @@ export const Notification = ({ secondsLeft, countdown }) => {
       )}
     </>
   );
+};
+
+Notification.propTypes = {
+  secondsLeft: PropTypes.number,
+  countdown: PropTypes.object,
 };

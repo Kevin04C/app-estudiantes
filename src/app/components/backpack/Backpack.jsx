@@ -70,7 +70,7 @@ const Backpack = () => {
           ></Pomodoro>
         </Modal>
       )}
-      {!pomodoroActive && (
+      {!pomodoroActive && !calculatorActive && (
         <Notification
           secondsLeft={secondsLeft}
           countdown={countdown}

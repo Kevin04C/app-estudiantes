@@ -1,10 +1,21 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
-import { BiRightArrowAlt } from 'react-icons/bi';
+import { FiArrowRightCircle } from 'react-icons/fi';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 
 export const Button = ({ changeMode, mode, secondsLeft }) => {
   return (
-    <button onClick={changeMode}>
-      {mode} {secondsLeft === 0 && <BiRightArrowAlt></BiRightArrowAlt>}
+    <button
+      className={
+        secondsLeft === 0
+          ? 'pomodoro__button pomodoro__button-active'
+          : 'pomodoro__button'
+      }
+      onClick={changeMode}
+    >
+      <AiOutlineClockCircle />
+      {mode}
+      {secondsLeft === 0 && <FiArrowRightCircle />}
     </button>
   );
 };

@@ -38,7 +38,7 @@ export const PomodoroLogic = () => {
           : (prev.timerMode = 'POMODORO'),
     }));
     handleSecondLeft();
-    document.title = `AppStudent | ${countdown.timerMode}`;
+    document.title = `AppStudent`;
   };
 
   const toggle = (value) => {

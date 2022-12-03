@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 
 export const Toggle = ({ text, value, toggle, action }) => {
   return (
-    <div>
+    <div className='pomodoro__config-toggle'>
       <p>{text}</p>
-      <div onClick={() => toggle(action)}>
+      <div
+        onClick={() => toggle(action)}
+        className={
+          value
+            ? 'pomodoro__config-toggle-icon pomodoro__config-toggle-icon-active'
+            : 'pomodoro__config-toggle-icon'
+        }
+      >
         {value ? <FaToggleOn /> : <FaToggleOff />}
       </div>
     </div>

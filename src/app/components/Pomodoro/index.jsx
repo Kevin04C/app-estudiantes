@@ -13,16 +13,20 @@ const Pomodoro = ({
   changeTime,
 }) => {
   return (
-    <article>
+    <article className='pomodoro'>
       {!countdown.config && (
-        <div>
+        <div className='pomodoro__pomodoro'>
           <Display
             secondsLeft={secondsLeft}
             toggle={toggle}
             format={format}
             active={countdown.active}
+            mode={countdown.timerMode}
           ></Display>
-          <div onClick={() => toggle('config')}>
+          <div
+            className='pomodoro__item-config'
+            onClick={() => toggle('config')}
+          >
             <GoGear></GoGear>
           </div>
           <Button

@@ -1,24 +1,26 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef } from 'react';
 import { GiLightBackpack } from 'react-icons/gi';
 import { BiCalculator, BiCalendar } from 'react-icons/bi';
 import { IoMdClock } from 'react-icons/io';
 import { Modal } from '../Modal';
 import Calculator from '../Calculator';
+import Pomodoro from '../Pomodoro';
+import { Notification } from '../Pomodoro/Notification';
 import { useModal } from '../../../hooks/useModal';
 import { useScrollDown } from '../../../hooks/useScrollDown';
+import { PomodoroLogic } from '../Pomodoro/PomodoroLogic';
 
 const Backpack = () => {
   const scrollDirection = useScrollDown();
-  const [calculatorActiveModal, toggleActiveModal] = useModal(false);
+  const [calculatorActive, toggleCalculatorActive] = useModal(false);
+  const [pomodoroActive, togglePomodoroActive] = useModal(false);
+  const { changeMode, format, toggle, changeTime, secondsLeft, countdown } =
+    PomodoroLogic();
 
-  console.log(scrollDirection);
-  // const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
   const handleClick = (e) => {
-    console.log(e.target);
-    // refBackpackIcon.current.classList.toggle('backpack__icon--on');
     refBackpackItems.current.classList.toggle('backpack__items--on');
-    console.log('xd');
   };
   return (
     <div
@@ -27,15 +29,14 @@ const Backpack = () => {
       }`}
     >
       <div className='backpack__content'>
-        <div
-          onClick={handleClick}
-          // ref={refBackpackIcon}
-          className='backpack__icon'
-        >
+        <div onClick={handleClick} className='backpack__icon'>
           <GiLightBackpack />
         </div>
         <ul ref={refBackpackItems} className='backpack__items '>
-          <li className='backpack__item backpack__item--clock'>
+          <li
+            className='backpack__item backpack__item--clock'
+            onClick={togglePomodoroActive}
+          >
             <IoMdClock />
             <span className='backpack__item-tooltip'>Cronómetro</span>
           </li>
@@ -45,17 +46,35 @@ const Backpack = () => {
           </li>
           <li
             className='backpack__item backpack__item--calculator'
-            onClick={toggleActiveModal}
+            onClick={toggleCalculatorActive}
           >
             <BiCalculator />
             <span className='backpack__item-tooltip'>Calculadora</span>
           </li>
         </ul>
       </div>
-      {calculatorActiveModal && (
-        <Modal toggleActiveModal={toggleActiveModal}>
+      {calculatorActive && (
+        <Modal toggleActiveModal={toggleCalculatorActive}>
           <Calculator></Calculator>
         </Modal>
+      )}
+      {pomodoroActive && (
+        <Modal toggleActiveModal={togglePomodoroActive}>
+          <Pomodoro
+            changeMode={changeMode}
+            changeTime={changeTime}
+            format={format}
+            toggle={toggle}
+            secondsLeft={secondsLeft}
+            countdown={countdown}
+          ></Pomodoro>
+        </Modal>
+      )}
+      {!pomodoroActive && (
+        <Notification
+          secondsLeft={secondsLeft}
+          countdown={countdown}
+        ></Notification>
       )}
     </div>
   );

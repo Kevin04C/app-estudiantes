@@ -12,7 +12,7 @@ export const Modal = ({ children, toggleActiveModal }) => {
   );
 };
 
-Modal.PropTypes = {
+Modal.propTypes = {
   children: PropTypes.element,
   toggleActiveModal: PropTypes.func,
 };

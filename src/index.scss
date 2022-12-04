@@ -21,6 +21,13 @@
 @import './sass/components/calculator/display';
 @import './sass/components/spinner';
 
+//components pomodoro
+@import './sass/components/pomodoro/pomodoro';
+@import './sass/components/pomodoro/button';
+@import './sass/components/pomodoro/display';
+@import './sass/components/pomodoro/config';
+@import './sass/components/pomodoro/toggle';
+
 //views
 @import './sass/views/articles-page';
 @import './sass/views/checkingAuthView';

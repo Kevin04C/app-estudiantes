@@ -71,7 +71,7 @@ export const PomodoroLogic = () => {
     toast.success(`${countdown.timerMode.toLowerCase()} ha finalizado`, {
       id: 'notification',
       position: 'top-right',
-      duration: 300,
+      duration: 3500,
     });
     toast(
       countdown.timerMode === 'POMODORO' ? 'Felicitaciones' : 'Enhorabuena',
@@ -93,7 +93,7 @@ export const PomodoroLogic = () => {
       }, 1000);
 
       if (secondsLeft === 0) {
-        document.title = `AppStudent | Finalizado ${countdown.timerMode}`;
+        document.title = `AppStudent | Finalizado ${countdown.timerMode.toLowerCase()}`;
         if (countdown.notification) notify();
         clearInterval(interval);
       }

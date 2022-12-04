@@ -1,0 +1,38 @@
+.pomodoro {
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: transparent;
+    color: $heading;
+    column-gap: 2%;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    font-weight: bold;
+
+    svg {
+      font-size: 1.3em;
+      fill: $main;
+    }
+
+    svg:nth-child(2) {
+      stroke: $main;
+      fill: transparent;
+    }
+  }
+  &__button-active {
+    color: $button;
+    font-weight: bold;
+  }
+
+  &__button:active,
+  &__button:focus {
+    outline: none;
+    border: none;
+  }
+
+  &__button:hover {
+    color: $paragraph;
+  }
+}

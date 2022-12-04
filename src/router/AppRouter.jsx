@@ -1,15 +1,15 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppRoutes } from '../app/routes/AppRoutes';
 import { AuthRoutes } from '../auth/routes/AuthRoutes';
-import { CheckingAuthView } from '../auth/view/CheckingAuthView';
-import { useCheckAuth } from '../hooks/useCheckAuth';
+// import { CheckingAuthView } from '../auth/view/CheckingAuthView';
+// import { useCheckAuth } from '../hooks/useCheckAuth';
 
 export const AppRouter = () => {
-  const status = useCheckAuth();
+  // const status = useCheckAuth();
 
-  if (status === 'checking') {
-    return <CheckingAuthView />;
-  }
+  // if (status === 'checking') {
+  //   return <CheckingAuthView />;
+  // }
 
   return (
     <BrowserRouter>
@@ -20,7 +20,7 @@ export const AppRouter = () => {
           <Route path='/auth/*' element={<AuthRoutes />} />
         )}
 
-        <Route path='*' element={<Navigate to='/auth/login' />} />
+        <Route path='*' element={<AppRoutes />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,65 @@
+.pomodoro__display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-circle {
+    width: 34vh;
+    height: 34vh;
+    border-radius: 50%;
+    max-width: 340px;
+    max-height: 340px;
+    color: white;
+    text-align: center;
+    border: 1.3vh solid $paragraph;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+  }
+  &-active {
+    border-color: $button;
+  }
+
+  &-time {
+    width: auto;
+    color: $button;
+    font-size: 2.8em;
+    font-weight: bold;
+  }
+
+  &-button {
+    background-color: $stroke;
+    color: $paragraph;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 992px) {
+  .pomodoro__display {
+    &-circle {
+      width: 46vh;
+      height: 46vh;
+    }
+
+    &-time {
+      font-size: 2em;
+    }
+
+    &-button {
+      font-size: 1em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .pomodoro__display {
+    &-circle {
+      width: 40vh;
+      height: 40vh;
+    }
+  }
+}

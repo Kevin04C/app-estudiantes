@@ -16,9 +16,9 @@ const Searcher = () => {
     if (!search) {
       toast.error('Ingresa una búsqueda');
     } else {
-      setSearch('');
       navigate(`/search?q=${search}`);
     }
+    setSearch('');
   };
 
   return (

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { urlArticle } from '../../../store/search/thunks';
+import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'; //eslint-disable-line
 
 const ArticlesView = ({ articles, language }) => {
   return (
@@ -19,13 +20,16 @@ const ArticlesView = ({ articles, language }) => {
       <section className='articles__list-results'>
         {articles.map((art) => (
           <article key={art.pageid} className='articles__item'>
-            <a
-              href={urlArticle(art.pageid)}
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <h2>{art.title}</h2>
-            </a>
+            <div className='articles__item-header'>
+              <a
+                href={urlArticle(art.pageid)}
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <h2>{art.title}</h2>
+              </a>
+              <BsBookmark />
+            </div>
             <p>
               <span
                 className='articles__item-snippet'

@@ -11,10 +11,9 @@ export const AppRoutes = () => {
     <Routes>
       <Route path='/' element={<AppLayout />}>
         <Route index element={<HomePage />} />
-        <Route path='search?q=:search' element={<ArticlesPage />} />
+        <Route path='search?q=' element={<ArticlesPage />} />
         <Route path='todos' element={<TodoPages />} />
         <Route path='courses' element={<CoursePage />} />
-        <Route path='todos' element={<TodoPages />} />
         <Route path='search' element={<ArticlesPage />} />
         <Route path='calculator' element={<CalculadoraPage />} />
       </Route>

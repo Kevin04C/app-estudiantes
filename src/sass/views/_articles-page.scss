@@ -34,6 +34,16 @@
       width: 100%;
       background: $background;
       border-radius: 10px;
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          cursor: pointer;
+        }
+      }
       a:hover {
         h2 {
           text-decoration: underline;

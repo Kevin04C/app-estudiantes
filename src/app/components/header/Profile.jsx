@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import ProfilePopUp from './ProfilePopUp';
 
 const Profile = () => {
+  const { imagen } = useSelector(state => state.auth.user);
   const handlePopStopPropagation = (e) => e.stopPropagation();
   const refProfile = useRef();
   const refProfileImg = useRef();
@@ -28,13 +30,12 @@ const Profile = () => {
         <img
           ref={refProfileImg}
           className='profile__img'
-          src='../public/assets/rodrigo.jpeg'
+          src={imagen}
           alt='rodrigo'
           onClick={handleClick}
         />
       </div>
       <ProfilePopUp refProfile={refProfile} />
-      {/* // 'PePePePePePePePEPE' */}
     </div>
   );
 };

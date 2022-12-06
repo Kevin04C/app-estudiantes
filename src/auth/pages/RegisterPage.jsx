@@ -6,7 +6,9 @@ import { ImProfile } from 'react-icons/im';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { startRegister } from '../../store/auth/thunks';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
+import { Spinner } from '../../app/components/Spinner';
+import toast from 'react-hot-toast';
 
 const formData = {
   name: '',
@@ -57,7 +59,7 @@ const formValidation = (stateForm) => {
 
 export const RegisterPage = () => {
   const dispatch = useDispatch();
-  const { status, errorMessage } = useSelector((state) => state.auth);
+  const { status, errorMessage, successMessage } = useSelector((state) => state.auth);
 
   const submit = (data) => {
     dispatch(startRegister(data));
@@ -77,6 +79,14 @@ export const RegisterPage = () => {
     handleInputChange,
     handleSubmit,
   } = useForm(formData, formValidation, submit);
+
+  useEffect(() => {
+    if (successMessage.length > 0) {
+      toast.success(successMessage, {position: 'top-left',duration: 10000});
+    }
+  }, [successMessage]);
+  
+
 
   const disbled = useMemo(() => status === 'checking', [status]);
 
@@ -208,7 +218,7 @@ export const RegisterPage = () => {
                 }`}
                 disabled={disbled}
               >
-                Ingresar
+                {status === 'checking' ? <Spinner /> : 'Ingresar'}
               </button>
             </form>
             <div className='not-account'>

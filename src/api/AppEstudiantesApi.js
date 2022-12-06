@@ -7,7 +7,7 @@ const AppEstudiantesApi = axios.create({
 AppEstudiantesApi.interceptors.request.use((config) => {
   config.headers = {
     ...config.headers,
-    Authorization: 'Brearer ' + localStorage.getItem('token'),
+    Authorization: 'bearer ' + localStorage.getItem('token'),
   };
 
   return config;

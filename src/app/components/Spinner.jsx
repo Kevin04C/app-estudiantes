@@ -1,6 +1,6 @@
-export const Spinner = () => {
+export const Spinner = ({style}) => {
   return (
-    <div className='sk-circle'>
+    <div className='sk-circle' style={style}>
       <div className='sk-circle1 sk-child'></div>
       <div className='sk-circle2 sk-child'></div>
       <div className='sk-circle3 sk-child'></div>

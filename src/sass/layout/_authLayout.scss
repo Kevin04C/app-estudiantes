@@ -155,3 +155,17 @@
     }
   }
 }
+
+.recover-password {
+  margin: 0rem 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+  &__link {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

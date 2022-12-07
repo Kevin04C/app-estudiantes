@@ -1,24 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearcherView from './SearcherView';
+import toast from 'react-hot-toast';
 
 const Searcher = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
-  const [errorMsg, setErrorMsg] = useState(null);
 
   const handleChange = (e) => {
     setSearch(e.target.value.trim());
-    setErrorMsg(null);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!search) {
-      setErrorMsg('*Ingresa una búsqueda');
+      toast.error('Ingresa una búsqueda');
     } else {
       setSearch('');
-      navigate(`/search=${search}`);
+      navigate(`/search?q=${search}`);
     }
   };
 
@@ -28,7 +27,6 @@ const Searcher = () => {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         search={search}
-        errorMsg={errorMsg}
       />
     </>
   );

@@ -11,7 +11,7 @@ import { onLogout } from '../../../store/auth/authSlice';
 
 const ProfilePopUp = ({ refProfile }) => {
   const dispatch = useDispatch();
-  const { name, username } = useSelector((state) => state.auth.user);
+  const { name, username, imagen } = useSelector((state) => state.auth.user);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -23,7 +23,7 @@ const ProfilePopUp = ({ refProfile }) => {
       <div className='profile-pop__header'>
         <img
           className='profile-pop__img'
-          src='../public/assets/rodrigo.jpeg'
+          src={imagen}
           alt=''
         />
         <div className='profile-pop__user-info'>

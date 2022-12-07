@@ -1,5 +1,14 @@
+@keyframes blinkTextCursor {
+  from {
+    border-right: 2px solid $stroke;
+  }
+  to {
+    border-right: 2px solid $paragraph;
+  }
+}
+
 .display {
-  min-height: 110px;
+  // min-height: 110px;
   background-color: $paragraph;
   color: white;
   display: flex;
@@ -14,5 +23,9 @@
     font-weight: bold;
     color: $background;
     font-size: 1.5em;
+    padding-top: 3px;
+    min-height: 30px;
+    padding-bottom: 3px;
+    animation: blinkTextCursor 700ms infinite normal;
   }
 }

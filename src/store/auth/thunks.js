@@ -1,5 +1,5 @@
 import AppEstudiantesApi from '../../api/AppEstudiantesApi';
-import { clearErrorMessage, onChecking, onLogin, onLogout } from './authSlice';
+import { clearErrorMessage, clearSuccessMessage, onChecking, onCloseChecking, onLogin, onLogout, setSuccessMessage } from './authSlice';
 
 export const startRegister = (form) => {
   return async (dispatch) => {
@@ -7,16 +7,14 @@ export const startRegister = (form) => {
 
     try {
       const { data } = await AppEstudiantesApi.post('/registro', form);
-      const { id, name, username, token } = data.data;
-
-      localStorage.setItem('x-token', token);
-      dispatch(onLogin({ id, name, username }));
+      const { message } = data.data;
+      dispatch(onCloseChecking());
+      dispatch(setSuccessMessage(message));
+      setTimeout(() => dispatch(clearSuccessMessage()), 10);
     } catch (error) {
       const { response } = error;
 
       dispatch(onLogout(response?.data?.errorMsg));
-      localStorage.removeItem('token');
-
       setTimeout(() => {
         dispatch(clearErrorMessage());
       }, 5000);
@@ -29,15 +27,12 @@ export const startLogin = (form) => {
     dispatch(onChecking());
     try {
       const { data } = await AppEstudiantesApi.post('/login', form);
-      const { id, name, username, token } = data.data;
+      const { id, name, username, token, imagen } = data.data;
       localStorage.setItem('token', token);
-      dispatch(onLogin({ id, name, username }));
+      dispatch(onLogin({ id, name, username, imagen }));
     } catch (error) {
       dispatch(onLogout('Correo o contraseña incorrectos'));
-
-      setTimeout(() => {
-        dispatch(clearErrorMessage());
-      }, 5000);
+      setTimeout(() => dispatch(clearErrorMessage()), 5000);
     }
   };
 };

@@ -2,20 +2,19 @@ import PropTypes from 'prop-types';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Input from './Input';
 
-const SearcherView = ({ handleChange, handleSubmit, search, errorMsg }) => {
+const SearcherView = ({ handleChange, handleSubmit, search }) => {
   return (
     <>
-      <form onSubmit={handleSubmit} className='search-form'>
+      <form onSubmit={handleSubmit} className='searcher'>
         <Input
-          className='search-input'
+          className='searcher__input'
           value={search}
           onChange={handleChange}
         />
-        <button type='submit' className='search-button'>
+        <button type='submit' className='searcher__button'>
           <AiOutlineSearch></AiOutlineSearch>
         </button>
       </form>
-      {errorMsg && <small style={{ color: 'red' }}>{errorMsg}</small>}
     </>
   );
 };
@@ -24,7 +23,6 @@ SearcherView.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   search: PropTypes.string,
-  errorMsg: PropTypes.string,
 };
 
 export default SearcherView;

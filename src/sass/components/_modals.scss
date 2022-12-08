@@ -1,0 +1,86 @@
+.modals {
+  &__container {
+    background-color: #12162990;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    color: #d0d6f9;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    // backdrop-filter: blur(1px);
+  }
+  &__content {
+    outline: 1px solid rgba(255, 255, 254, 0.0941176471);
+    position: relative;
+    left: 3rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    animation: fadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    box-shadow: rgb(0 0 0 / 56%) 0px 22px 70px 4px;
+    background-color: $background;
+    @include responsive-max(lg) {
+      left: auto;
+    }
+    box-shadow: rgb(136 153 166 / 20%) 0px 0px 15px,
+      rgb(136 153 166 / 15%) 0px 0px 3px 1px;
+  }
+  &__header {
+    background-color: $stroke;
+    padding: 1rem 1.2rem;
+    @include disflex(row, space-between, center, 0);
+    outline: 1px solid rgba(255, 255, 254, 0.0941176471);
+  }
+
+  &__close {
+    background: none;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    @include disflex(row, center, center, 0);
+    border-radius: 50%;
+    svg {
+      fill: #d15356;
+    }
+    &:hover {
+      svg {
+        transition: transform 0.3s;
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__body {
+    padding: 1.2rem;
+  }
+}
+
+// Animation modal
+
+.fadeOut {
+  animation: fadeOut 0.7s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateZ(-1400px) translateY(-800px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(600px) translateY(400px);
+    opacity: 0;
+  }
+}

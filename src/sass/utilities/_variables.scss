@@ -12,6 +12,7 @@ $tertiary: #eebbc3;
 $white: #ffffff;
 
 $font-size-icons: 1.4rem;
+$width-aside: 6rem;
 
-$padding-main: 1rem;
-$padding-main-left: 7rem;
+$padding-main: 2rem;
+$padding-main-left: calc($width-aside + $padding-main);

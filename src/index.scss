@@ -14,6 +14,8 @@
 @import './sass//layout/authLayout';
 @import './sass/components/backpack';
 @import './sass/components/modal';
+@import './sass/components/course';
+@import './sass/components/modals';
 
 //components calculator
 @import './sass/components/calculator/button';
@@ -31,6 +33,11 @@
 //views
 @import './sass/views/articles-page';
 @import './sass/views/checkingAuthView';
+@import './sass/views/course-page';
 
 //helpers
 @import './sass//utilities/helpers';
+
+// Buttons
+// Button Success
+@import './sass/components/buttons';

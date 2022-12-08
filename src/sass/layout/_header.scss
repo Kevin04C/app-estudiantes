@@ -1,5 +1,6 @@
 // Header
 .header {
+  z-index: 9;
   position: sticky;
   top: 0;
   width: 100%;
@@ -16,6 +17,7 @@
     @include disflex(row, center, center, 1rem);
   }
   @include responsive-max(lg) {
+    box-shadow: none;
     padding: 1rem;
   }
 }

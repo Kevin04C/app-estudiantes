@@ -1,0 +1,11 @@
+.as-btn-primary {
+  @include ap-button(primary);
+}
+
+.as-btn-danger {
+  @include ap-button(danger);
+}
+
+.as-btn-warning {
+  @include ap-button(warning);
+}

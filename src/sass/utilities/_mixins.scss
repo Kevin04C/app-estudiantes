@@ -36,3 +36,55 @@ $breakpoints: (
   align-items: $align;
   gap: $gap;
 }
+
+//Button Customs
+
+@mixin ap-button($value) {
+  @include disflex(row, center, center, 0.3rem);
+  background-color: $stroke;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  &::after {
+    content: '';
+    background-color: #ffffff80;
+    width: 0.6rem;
+    height: 5rem;
+    transform: rotate(10deg);
+    top: -1.2rem;
+    left: -40%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    filter: blur(4px);
+    transition: left 1s ease-out;
+    opacity: 0.5;
+  }
+  &:hover {
+    transform: scale(1.04);
+
+    &::after {
+      left: 110%;
+    }
+  }
+  @if $value == 'primary' {
+    background-color: $paragraph;
+    color: $background;
+  } @else if $value == 'danger' {
+    background-color: #d15356;
+  } @else if $value == 'warning' {
+    background-color: #ff8906;
+
+    color: $white;
+  } @else {
+    background-color: $background;
+    color: $white;
+  }
+}

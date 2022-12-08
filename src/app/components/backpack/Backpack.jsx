@@ -27,14 +27,14 @@ const Backpack = () => {
   return (
     <div
       className={`backpack ${
-        scrollDirection === 'down' ? 'backpack--down' : ''
+        scrollDirection === 'down' ? 'backpack--down' : null
       }`}
     >
-      <div className='backpack__content'>
+      <div className='backpack__content '>
         <div
           onClick={handleClick}
           ref={refBackpackIcon}
-          className='backpack__icon'
+          className='backpack__icon as-btn-primary'
         >
           <GiLightBackpack />
         </div>

@@ -5,6 +5,7 @@ import { IoMdClock } from 'react-icons/io';
 import { Modal } from '../Modal';
 import Calculator from '../Calculator';
 import Pomodoro from '../Pomodoro';
+import Calendar from '../Calendar/index';
 import { Notification } from '../Pomodoro/Notification';
 import { useModal } from '../../../hooks/useModal';
 import { useScrollDown } from '../../../hooks/useScrollDown';
@@ -14,6 +15,7 @@ const Backpack = () => {
   const scrollDirection = useScrollDown();
   const [calculatorActive, toggleCalculatorActive] = useModal(false);
   const [pomodoroActive, togglePomodoroActive] = useModal(false);
+  const [calendarActive, toggleCalendarActive] = useModal(false);
   const { changeMode, format, toggle, changeTime, secondsLeft, countdown } =
     PomodoroLogic();
 
@@ -46,7 +48,10 @@ const Backpack = () => {
             <IoMdClock />
             <span className='backpack__item-tooltip'>Cronómetro</span>
           </li>
-          <li className='backpack__item backpack__item--calendar'>
+          <li
+            className='backpack__item backpack__item--calendar'
+            onClick={toggleCalendarActive}
+          >
             <BiCalendar />
             <span className='backpack__item-tooltip'>Calendario</span>
           </li>
@@ -74,6 +79,11 @@ const Backpack = () => {
             secondsLeft={secondsLeft}
             countdown={countdown}
           ></Pomodoro>
+        </Modal>
+      )}
+      {calendarActive && (
+        <Modal toggleActiveModal={toggleCalendarActive}>
+          <Calendar></Calendar>
         </Modal>
       )}
       <Notification

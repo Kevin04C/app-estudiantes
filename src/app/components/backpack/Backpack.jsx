@@ -10,6 +10,7 @@ import { Notification } from '../Pomodoro/Notification';
 import { useModal } from '../../../hooks/useModal';
 import { useScrollDown } from '../../../hooks/useScrollDown';
 import { PomodoroLogic } from '../Pomodoro/PomodoroLogic';
+import { CalendarLogic } from '../Calendar/CalendarLogic';
 
 const Backpack = () => {
   const scrollDirection = useScrollDown();
@@ -18,6 +19,16 @@ const Backpack = () => {
   const [calendarActive, toggleCalendarActive] = useModal(false);
   const { changeMode, format, toggle, changeTime, secondsLeft, countdown } =
     PomodoroLogic();
+  const {
+    reminders,
+    changeView,
+    view,
+    activeForm,
+    form,
+    toggleForm,
+    handleReminder,
+    handleForm,
+  } = CalendarLogic();
 
   const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
@@ -46,7 +57,7 @@ const Backpack = () => {
             onClick={togglePomodoroActive}
           >
             <IoMdClock />
-            <span className='backpack__item-tooltip'>Cronómetro</span>
+            <span className='backpack__item-tooltip'>Pomodoro</span>
           </li>
           <li
             className='backpack__item backpack__item--calendar'
@@ -83,7 +94,16 @@ const Backpack = () => {
       )}
       {calendarActive && (
         <Modal toggleActiveModal={toggleCalendarActive}>
-          <Calendar></Calendar>
+          <Calendar
+            view={view}
+            changeView={changeView}
+            reminders={reminders}
+            form={form}
+            toggleForm={toggleForm}
+            activeForm={activeForm}
+            handleReminder={handleReminder}
+            handleForm={handleForm}
+          ></Calendar>
         </Modal>
       )}
       <Notification

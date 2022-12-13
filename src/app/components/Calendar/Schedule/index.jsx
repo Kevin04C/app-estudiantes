@@ -19,15 +19,26 @@ export const Schedule = ({
     day: 'numeric',
   };
   return (
-    <div>
+    <div className='calendar-schedule'>
       {reminders &&
+        reminders.length > 0 &&
         reminders.map((reminder, index) => (
-          <div key={reminder.title + index}>
-            <h3>{reminder.title === '' ? '(Sin título)' : reminder.title}</h3>
-            <h4>{reminder.date.toLocaleDateString('es', options)}</h4>
-            <p>{reminder.description}</p>
+          <div
+            className='calendar-schedule-wrapper'
+            key={reminder.title + index}
+          >
+            <h3 className='calendar-schedule-wrapper-title'>
+              {reminder.title === '' ? '(Sin título)' : reminder.title}
+            </h3>
+            <h4 className='calendar-schedule-wrapper-subTitle'>
+              {reminder.date.toLocaleDateString('es', options)}
+            </h4>
+            <p className='calendar-schedule-wrapper-paragraph'>
+              {reminder.description}
+            </p>
             <Toggle reminder={reminder.noti} text='Notificación' />
-            <div>
+
+            <div className='calendar-schedule-wrapper-options'>
               <div onClick={() => toggleForm(reminder)}>
                 <AiOutlineEdit />
               </div>
@@ -38,10 +49,14 @@ export const Schedule = ({
             </div>
           </div>
         ))}
+      {reminders.length === 0 && (
+        <h2 className='calendar-schedule-none'>No tienes eventos</h2>
+      )}
       {activeForm && (
         <Form
           toggleForm={toggleForm}
           form={form}
+          title='Editar Evento'
           handleReminder={handleReminder}
           handleForm={handleForm}
           edit

@@ -9,12 +9,15 @@ export const Form = ({
   handleForm,
   handleReminder,
   edit,
+  title,
 }) => {
   return (
-    <article>
-      <div>
+    <article className='calendar-form'>
+      <div className='calendar-form-close'>
         <IoCloseSharp onClick={toggleForm} />
+        <h3>{title}</h3>
         <IoCheckmarkSharp
+          className='calendar-form-yes'
           onClick={() => (edit ? handleReminder('edit') : handleReminder())}
         />
       </div>
@@ -40,15 +43,12 @@ export const Form = ({
         }-${form.date.getDate()}`}
         handleForm={handleForm}
       />
-
-      <div>
-        <Toggle
-          text='Notificación'
-          name='noti'
-          value={form.noti}
-          handleToggle={handleForm}
-        />
-      </div>
+      <Toggle
+        text='Notificación'
+        name='noti'
+        value={form.noti}
+        handleToggle={handleForm}
+      />
     </article>
   );
 };
@@ -59,4 +59,5 @@ Form.propTypes = {
   handleForm: PropTypes.func,
   handleReminder: PropTypes.func,
   edit: PropTypes.bool,
+  title: PropTypes.string,
 };

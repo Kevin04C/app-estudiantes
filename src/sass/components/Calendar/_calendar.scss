@@ -1,0 +1,146 @@
+.calendar {
+  background-color: $stroke;
+  width: 90%;
+  height: 80vh;
+  max-width: 520px;
+  max-height: 435px;
+  border-radius: 10px;
+  position: relative;
+  padding: 1.3%;
+  display: grid;
+  grid-template-rows: 10% 90%;
+  box-shadow: 0px 0px 3px 1px $background;
+
+  &-view {
+    text-align: center;
+  }
+
+  &-activeForm {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+
+    svg {
+      transition: all 0.5s ease-in-out;
+      fill: $button;
+      font-size: 2.2em;
+      cursor: pointer;
+    }
+    svg:hover {
+      fill: $heading;
+    }
+  }
+}
+
+.react-calendar {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 10% 90%;
+
+  &__navigation {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    grid-template-columns: auto auto auto;
+
+    &__label {
+      font-weight: bold;
+      color: $heading;
+      background-color: transparent;
+      text-transform: capitalize;
+      font-size: 1.3em;
+      cursor: pointer;
+    }
+
+    &__arrow {
+      background-color: transparent;
+
+      svg {
+        fill: $button;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__month-view__weekdays {
+    text-transform: capitalize;
+    text-decoration: solid;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    color: $paragraph;
+
+    abbr {
+      text-decoration: none;
+    }
+  }
+
+  &__month-view__days {
+    height: 100%;
+    row-gap: 3.8vh;
+    border-radius: 10px;
+    padding: 1%;
+  }
+
+  &__month-view__days__day {
+    background-color: transparent;
+    color: $paragraph;
+
+    &:active,
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  &__month-view__days__day--neighboringMonth {
+    color: $background;
+  }
+
+  .current-day {
+    abbr {
+      background-color: $background;
+      color: $button;
+      font-weight: bolder;
+      padding: 12%;
+    }
+  }
+
+  .current-title {
+    width: 7px;
+    height: 7px;
+    border: 2px solid $button;
+    background-color: $button;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  //view month
+  &__year-view__months {
+    height: 100%;
+    row-gap: 5.8vh;
+    padding: 5% 0%;
+  }
+  &__year-view__months__month {
+    background-color: transparent;
+    text-transform: capitalize;
+    color: $paragraph;
+  }
+
+  //view decade
+  &__decade-view__years {
+    height: 100%;
+    row-gap: 6vh;
+    padding: 5% 0%;
+  }
+
+  &__decade-view__years__year {
+    background-color: transparent;
+    text-transform: capitalize;
+    color: $paragraph;
+  }
+}

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 export const Toggle = ({ reminder, text }) => {
   return (
-    <div>
+    <div className='calendar-schedule-toggle'>
       <p>{text}</p>
 
-      <div>{reminder ? <FaToggleOn /> : <FaToggleOff />}</div>
+      <div className={reminder ? 'calendar-schedule-toggle-active' : ''}>
+        {reminder ? <FaToggleOn /> : <FaToggleOff />}
+      </div>
     </div>
   );
 };

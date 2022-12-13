@@ -1,0 +1,56 @@
+.calendar-schedule {
+  &-none {
+    padding: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $paragraph;
+  }
+
+  &-wrapper {
+    background-color: $background;
+    padding: 1.1vh;
+    border-left: 3px solid $button;
+    position: relative;
+    padding: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom-right-radius: 10px;
+
+    &-title {
+      color: $heading;
+    }
+
+    &-options {
+      position: absolute;
+      right: 10px;
+      top: 7px;
+      display: flex;
+      column-gap: 1vh;
+
+      svg {
+        font-size: 1.4em;
+        cursor: pointer;
+        fill: $paragraph;
+      }
+    }
+  }
+
+  &-toggle {
+    display: flex;
+    align-items: center;
+    color: $paragraph;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    &-active {
+      svg {
+        fill: $button;
+      }
+    }
+  }
+}

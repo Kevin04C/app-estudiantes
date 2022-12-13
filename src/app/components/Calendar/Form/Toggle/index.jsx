@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 export const Toggle = ({ text, value, name, handleToggle }) => {
   return (
-    <div>
+    <div className='calendar-form-toggle'>
       <p>{text}</p>
 
-      <div onClick={() => handleToggle(name)}>
+      <div
+        className={value ? 'calendar-form-toggle-active' : ''}
+        onClick={() => handleToggle(name)}
+      >
         {value ? <FaToggleOn /> : <FaToggleOff />}
       </div>
     </div>

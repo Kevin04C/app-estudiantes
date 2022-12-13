@@ -39,13 +39,13 @@ const Calendar = ({
     });
   };
   return (
-    <article>
-      <div>
-        <Button text='Calendario' changeView={changeView} />
-        <Button text='Agenda' changeView={changeView} />
+    <article className='calendar'>
+      <div className='calendar-view'>
+        <Button text='Calendario' view={view} changeView={changeView} />
+        <Button text='Agenda' view={view} changeView={changeView} />
       </div>
       {view !== 'Agenda' && (
-        <div>
+        <div className='calendar-calendar'>
           <CalendarDefault
             onChange={setCurrent}
             nextLabel={<GoChevronRight />}
@@ -53,6 +53,7 @@ const Calendar = ({
             prev2Label={null}
             next2Label={null}
             minDetail={'decade'}
+            locale='es'
             tileClassName={handletitleClassName}
             tileContent={handleTitleContent}
             value={current}
@@ -61,12 +62,13 @@ const Calendar = ({
             <Form
               handleForm={handleForm}
               form={form}
+              title='Nuevo Evento'
               handleReminder={handleReminder}
               toggleForm={toggleForm}
             />
           )}
           {!activeForm && (
-            <div onClick={() => toggleForm()}>
+            <div className='calendar-activeForm' onClick={() => toggleForm()}>
               <AiFillPlusCircle />
             </div>
           )}

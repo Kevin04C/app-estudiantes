@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 
 export const Input = ({ type, placeholder, handleForm, name, value }) => {
   return (
-    <div>
+    <div className='calendar-form-wrapper'>
       <input
+        autoFocus
+        className='calendar-form-wrapper-input'
         type={type}
         placeholder={placeholder}
         onChange={(event) => handleForm(name, event.target.value)}

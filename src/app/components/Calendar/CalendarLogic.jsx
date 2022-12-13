@@ -83,19 +83,22 @@ export const CalendarLogic = () => {
   };
 
   const checkDate = (reminder) => {
-    if (reminder.date.getTime() === date.getTime() && reminder.noti) {
+    const saveDate = reminder.date.getTime();
+    const currentDate = date.getTime();
+
+    if (saveDate === currentDate && reminder.noti) {
       toast(
         `Hoy es ${reminder.title === '' ? '(Sin título)' : reminder.title}`,
         {
           icon: '⏰',
           position: 'top-right',
-          duration: 5500,
+          duration: 5700,
         },
       );
       toast('¡RECUERDA!', {
         icon: '👀',
         position: 'top-right',
-        duration: 4000,
+        duration: 4500,
       });
     }
   };

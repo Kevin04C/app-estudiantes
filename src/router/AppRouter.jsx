@@ -5,7 +5,7 @@ import { CheckingAuthView } from '../auth/view/CheckingAuthView';
 import { useCheckAuth } from '../hooks/useCheckAuth';
 
 export const AppRouter = () => {
-  const { status, loadingApp} = useCheckAuth();
+  const { status, loadingApp } = useCheckAuth();
 
   if (loadingApp) {
     return <CheckingAuthView />;

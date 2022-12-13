@@ -5,17 +5,30 @@ import { IoMdClock } from 'react-icons/io';
 import { Modal } from '../Modal';
 import Calculator from '../Calculator';
 import Pomodoro from '../Pomodoro';
+import Calendar from '../Calendar/index';
 import { Notification } from '../Pomodoro/Notification';
 import { useModal } from '../../../hooks/useModal';
 import { useScrollDown } from '../../../hooks/useScrollDown';
 import { PomodoroLogic } from '../Pomodoro/PomodoroLogic';
+import { CalendarLogic } from '../Calendar/CalendarLogic';
 
 const Backpack = () => {
   const scrollDirection = useScrollDown();
   const [calculatorActive, toggleCalculatorActive] = useModal(false);
   const [pomodoroActive, togglePomodoroActive] = useModal(false);
+  const [calendarActive, toggleCalendarActive] = useModal(false);
   const { changeMode, format, toggle, changeTime, secondsLeft, countdown } =
     PomodoroLogic();
+  const {
+    reminders,
+    changeView,
+    view,
+    activeForm,
+    form,
+    toggleForm,
+    handleReminder,
+    handleForm,
+  } = CalendarLogic();
 
   const refBackpackIcon = useRef('');
   const refBackpackItems = useRef('');
@@ -44,9 +57,12 @@ const Backpack = () => {
             onClick={togglePomodoroActive}
           >
             <IoMdClock />
-            <span className='backpack__item-tooltip'>Cronómetro</span>
+            <span className='backpack__item-tooltip'>Pomodoro</span>
           </li>
-          <li className='backpack__item backpack__item--calendar'>
+          <li
+            className='backpack__item backpack__item--calendar'
+            onClick={toggleCalendarActive}
+          >
             <BiCalendar />
             <span className='backpack__item-tooltip'>Calendario</span>
           </li>
@@ -74,6 +90,20 @@ const Backpack = () => {
             secondsLeft={secondsLeft}
             countdown={countdown}
           ></Pomodoro>
+        </Modal>
+      )}
+      {calendarActive && (
+        <Modal toggleActiveModal={toggleCalendarActive}>
+          <Calendar
+            view={view}
+            changeView={changeView}
+            reminders={reminders}
+            form={form}
+            toggleForm={toggleForm}
+            activeForm={activeForm}
+            handleReminder={handleReminder}
+            handleForm={handleForm}
+          ></Calendar>
         </Modal>
       )}
       <Notification

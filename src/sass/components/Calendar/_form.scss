@@ -1,0 +1,33 @@
+.calendar-form {
+  background-color: $stroke;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  padding: 5%;
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $heading;
+    padding-bottom: 3%;
+
+    svg {
+      fill: $button;
+      stroke: $button;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        fill: $heading;
+        stroke: $heading;
+      }
+    }
+  }
+  &-yes {
+    stroke: $button;
+  }
+}

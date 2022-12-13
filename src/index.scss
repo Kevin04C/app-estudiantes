@@ -30,6 +30,13 @@
 @import './sass/components/pomodoro/config';
 @import './sass/components/pomodoro/toggle';
 
+//components calendar
+@import './sass/components/Calendar/calendar';
+@import './sass/components/Calendar/button';
+@import './sass/components/Calendar/form';
+@import './sass/components/Calendar/input';
+@import './sass/components/Calendar/schedule';
+
 //views
 @import './sass/views/articles-page';
 @import './sass/views/checkingAuthView';

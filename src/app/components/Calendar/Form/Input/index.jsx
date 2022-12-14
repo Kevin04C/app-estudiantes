@@ -7,7 +7,6 @@ export const Input = ({ type, placeholder, handleForm, name, value }) => {
   return (
     <div className='calendar-form-wrapper'>
       <input
-        autoFocus
         className='calendar-form-wrapper-input'
         type={type}
         placeholder={placeholder}

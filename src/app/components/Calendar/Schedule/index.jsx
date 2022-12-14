@@ -3,6 +3,8 @@ import { TfiTrash } from 'react-icons/tfi';
 import { Toggle } from '../Schedule/Toggle';
 import { Form } from '../Form';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { Confirm } from '../Confirm';
 
 export const Schedule = ({
   reminders,
@@ -17,6 +19,12 @@ export const Schedule = ({
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+  };
+  const [confirm, setConfrm] = useState(false);
+  const [index, setIndex] = useState(reminders.length);
+  const handleConfirm = (id) => {
+    setIndex(id);
+    setConfrm(true);
   };
   return (
     <div className='calendar-schedule'>
@@ -43,7 +51,7 @@ export const Schedule = ({
                 <AiOutlineEdit />
               </div>
 
-              <div onClick={() => handleReminder('delete', index)}>
+              <div onClick={() => handleConfirm(index)}>
                 <TfiTrash />
               </div>
             </div>
@@ -60,6 +68,14 @@ export const Schedule = ({
           handleReminder={handleReminder}
           handleForm={handleForm}
           edit
+        />
+      )}
+      {confirm && (
+        <Confirm
+          text='¿Eliminar este evento?'
+          index={index}
+          handleReminder={handleReminder}
+          close={() => setConfrm(false)}
         />
       )}
     </div>

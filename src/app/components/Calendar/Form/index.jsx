@@ -23,7 +23,7 @@ export const Form = ({
       </div>
       <Input
         type='text'
-        placeholder='Titulo'
+        placeholder='Título'
         name='title'
         handleForm={handleForm}
         value={form.title}

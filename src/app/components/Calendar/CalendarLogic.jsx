@@ -1,13 +1,20 @@
 import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 
+const init = () => {
+  const rediminders = JSON.parse(localStorage.getItem('reminders'));
+  if (rediminders) {
+    return rediminders.map((reminder) => ({
+      ...rediminders,
+      date: new Date(reminder.date),
+    }));
+  }
+  return [];
+};
+
 export const CalendarLogic = () => {
   // // if reminders exit on localStorage, it has to create a new Date base on reminder.date else create []
-  const [reminders, setReminders] = useState(
-    JSON.parse(localStorage.getItem('reminders')).map((reminder) => {
-      return { ...reminder, date: new Date(reminder.date) };
-    }) || [],
-  );
+  const [reminders, setReminders] = useState(init);
   const [view, setView] = useState('Calendario');
   const [activeForm, setActiveForm] = useState(false);
   const date = new Date();

@@ -32,7 +32,7 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
-          to='/todos'
+          to='/chores'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }

@@ -4,7 +4,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     status:
-      'not-checking' /* 'authenticated' 'not-authenticated', 'checking' */,
+      'not-authenticated' /* 'authenticated' 'not-authenticated', 'checking' */,
     user: {},
     errorMessage: '',
     successMessage: '',
@@ -37,12 +37,12 @@ export const authSlice = createSlice({
     clearErrorMessage: (state) => {
       state.errorMessage = '';
     },
-    setSuccessMessage: (state, {payload}) => {
+    setSuccessMessage: (state, { payload }) => {
       state.successMessage = payload;
     },
     clearSuccessMessage: (state) => {
       state.successMessage = '';
-    }
+    },
   },
 });
 

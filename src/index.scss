@@ -38,6 +38,11 @@
 @import './sass/components/Calendar/schedule';
 @import './sass/components/Calendar/confirm';
 
+//components chores
+@import './sass/components/chores/frontBody';
+@import './sass/components/chores/frontCabecera';
+@import './sass/components/chores/frontTareas';
+
 //views
 @import './sass/views/articles-page';
 @import './sass/views/checkingAuthView';

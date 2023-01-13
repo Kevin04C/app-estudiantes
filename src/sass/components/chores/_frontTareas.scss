@@ -1,0 +1,67 @@
+.container__tareas{
+    background-color: #949595ac;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__form{
+        background-color: #232946;
+        width: 50%;
+        border-radius: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+        height: 30rem;
+        
+        &__close{
+            color: white;
+            display: flex;
+            justify-content: end;
+            margin-right: 1.4rem;
+            padding-top: 0.5rem;
+            cursor: pointer;
+        }
+        &__titulo{
+            color: white;
+            text-align: center;
+            padding-top: 0.4rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        &__form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.7rem;
+            &__input{
+                border-radius: 0.3rem;
+                border:none;
+                border-bottom: 2px;
+                border-color: blue;
+                margin-bottom: 0.5rem;
+                padding: 0.5rem;
+            }
+            &__label{
+                color: white;
+            }
+            &__button{
+                color: black;
+                background-color: #fff;
+                border-radius: 0.4rem;
+                border: 2px solid rgb(29, 84, 131);
+                padding: 0.3rem;
+                &:hover{
+                    background-color: rgb(29, 84, 131);
+                    cursor: pointer;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+

@@ -3,6 +3,7 @@ import { HeaderTareas } from './HeaderTareas';
 
 
 export const Header = ({setview}) => {
+  const urlImg=`../../../../../public/img/welcome.png`;
   return (
     <>
         <div className="front-cabecera">
@@ -12,7 +13,7 @@ export const Header = ({setview}) => {
                 <p className="front-cabecera__welcome__1__contenido">Bienvenido a la seccion de tareas, aqui podras selecionar que tareas deseas realizar.</p>
                 <p className="front-cabecera__welcome__1__hora">11:00am</p>
               </div>
-              <img src="" alt="welcome" />
+              <img className='front-cabecera__welcome__img' src={urlImg} alt="welcome" />
           </div>
           <HeaderTareas setview={setview} />
         </div>

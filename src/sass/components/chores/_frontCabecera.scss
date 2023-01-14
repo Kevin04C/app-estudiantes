@@ -1,11 +1,11 @@
 .container{
-    background-color: #121629;
     height: 100vh;
-    width: 80%;
+    width: 100%;
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
+    
 }
 .front-cabecera{
     width: 100%;
@@ -14,16 +14,19 @@
     
     &__welcome{
         background-color: #232946;
+        
         display: flex;
-        width: 70%;
+        width: 60%;
         border-radius: 10px;
         padding: 2rem;
         margin-left: 2rem;
         margin-top: 1rem;
+        height: 12rem;
         
         &__1{
 
             &__titulo{
+                font-size: 1.5rem;
                 color: #FFFFFF;
     
                 &__small{
@@ -32,13 +35,18 @@
             }
             &__contenido{
                 color: #D0D6F9;
-                font-size: 0.8rem;
-                width: 60%;
+                font-size: 0.9rem;
+                width: 80%;
+                margin-top: 0.7rem;
             }
             &__hora{
                 color: #D0D6F9;
                 font-size: 1.2rem;
+                margin-top: 0.7rem;
             }
+        }
+        &__img{
+            width: 17rem;
         }
     }
     &__tareas{
@@ -49,13 +57,14 @@
         border-radius: 8px;
         padding: 1rem;
         margin-right: 2rem;
-        font-size: 0.5rem;
+        font-size: 1.3rem;
         margin-top: 1rem;
-
+        width: 20%;
         background-color: #232946;
         &__titulo{
             color: white;
-            margin-bottom: 0.6rem
+            margin-bottom: 0.6rem;
+            
         }
 
         &__button{
@@ -71,4 +80,6 @@
         }
     }
 }
+
+
 

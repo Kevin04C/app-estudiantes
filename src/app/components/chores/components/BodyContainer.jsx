@@ -1,13 +1,15 @@
 import React from 'react';
 
 export const BodyContainer = () => {
+
+  const urlTareas=`../../../../../public/img/ecommerce.png`;
   return (
     <>
         <div className="front-body__container">
               <p className="front-body__container__titulo">Listado de tareas</p>
               <div className="front-body__container__contenido">
                 <div className="front-body__container__contenido__img">
-                  <img className="front-body__container__contenido__img-img" src="" alt="imagen" />
+                  <img className="front-body__container__contenido__img-img" src={urlTareas} alt="imagen" />
                 </div>
                 <div className="front-body__container__contenido__text">
                   <small className="front-body__container__contenido__text__small">Programacion</small>
@@ -19,7 +21,7 @@ export const BodyContainer = () => {
               
               <div className="front-body__container__contenido">
                 <div className="front-body__container__contenido__img">
-                  <img className="front-body__container__contenido__img-img" src="" alt="imagen" />
+                  <img className="front-body__container__contenido__img-img" src={urlTareas} alt="imagen" />
                 </div>
                 <div className="front-body__container__contenido__text">
                   <small className="front-body__container__contenido__text__small">Programacion</small>
@@ -31,7 +33,7 @@ export const BodyContainer = () => {
 
               <div className="front-body__container__contenido">
                 <div className="front-body__container__contenido__img">
-                  <img className="front-body__container__contenido__img-img" src="" alt="imagen" />
+                  <img className="front-body__container__contenido__img-img" src={urlTareas} alt="imagen" />
                 </div>
                 <div className="front-body__container__contenido__text">
                   <small className="front-body__container__contenido__text__small">Programacion</small>

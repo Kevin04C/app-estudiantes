@@ -12,11 +12,25 @@
     
     &__form{
         background-color: #232946;
-        width: 50%;
+        width: 30%;
         border-radius: 1rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        height: 26rem;
 
-        height: 30rem;
+        @include responsive-max(xl) {
+            width: 34%;
+        } 
+
+        @include responsive-max(lg) {
+            width: 40%;
+        }
+            
+        @include responsive-max(md) {
+           width: 55%;
+        }
+        @include responsive-max(sm) {
+            width: 75%;
+        } 
         
         &__close{
             color: white;

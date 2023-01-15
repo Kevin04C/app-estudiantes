@@ -2,9 +2,25 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    
+    @include responsive-max(lg) {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
     &__container{
         width: 100%;
         margin-top: 1.2rem;
+        
+
+        @include responsive-max(lg) {
+            width: 100%;
+            margin-left: 4rem;
+        }
+        @include responsive-max(sm) {
+            margin-left: 1rem;
+        } 
 
         
         
@@ -21,19 +37,56 @@
             padding: 2rem;
             margin-left: 2rem;
             margin-bottom: 2rem;
-            width: 77%;
+            width: 75%;
             height: 10rem;
             justify-content:space-around;
             align-items: center;
+            @include responsive-max(xl) {
+                width: 85%;
+            } 
+            @include responsive-max(lg) {
+                width: 90%;
+            }
+            @include responsive-max(md) {
+                display: flex;
+                flex-direction: column;
+                height: 16rem;
+                margin-left: 1.4rem;
+            } 
             &__img{
                 &-img{
                     border-color: white;
                     width: 8rem;
                     height: 6rem;
                     color: white;
+
+                    @include responsive-max(xl) {
+                        width: 6rem;
+                        height: 4rem;
+                    } 
+
+                    @include responsive-max(md) {
+                        width: 10rem;
+                        height: 8rem;
+                    }
+                    @include responsive-max(sm) {
+                        width: 6rem;
+                        height:4rem ;
+                    } 
                 }
             }
             &__text{
+                @include responsive-max(xl) {
+                    font-size: 0.8rem;
+                    margin-left: 1rem;
+                } 
+
+                @include responsive-max(md) {
+                    text-align: center;
+                } 
+                @include responsive-max(sm) {
+                    font-size: 0.8rem;
+                } 
                 &__small{
                     color: #D0D6F9;
                 }
@@ -50,12 +103,21 @@
     }
     &__workFinished{
         
+        
         &__titulo{
             margin-top: 2rem;
             margin-right: 2rem;
             color: #ffff;
             font-size: 0.9rem;
             margin-bottom: 1.2rem;
+            @include responsive-max(md) {
+                text-align: center;
+                margin-left: 7rem;
+                text-transform: uppercase;
+            }
+            @include responsive-max(sm) {
+                margin-left: 2rem;
+            } 
         }
         &__componente{
             background-color: #232946;
@@ -69,6 +131,12 @@
             padding: 0.4rem;
             cursor: pointer;
             margin-bottom: 0.5rem;
+            @include responsive-max(md) {
+                margin-left: 8rem;
+            }
+            @include responsive-max(sm) {
+                margin-left: 2rem;
+            } 
 
             &__circulo{
                 width: 15px;

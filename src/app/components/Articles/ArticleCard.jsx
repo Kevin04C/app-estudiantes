@@ -11,7 +11,6 @@ import { toast } from 'react-hot-toast';
 const ArticleCard = ({ art }) => {
   const dispatch = useDispatch();
   const savedArts = useSelector((state) => state.articles);
-  console.log(savedArts);
 
   const artData = {
     title: art.title,

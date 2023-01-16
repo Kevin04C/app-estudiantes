@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export const CalendarLogic = () => {
   // // if reminders exit on localStorage, it has to create a new Date base on reminder.date else create []
   const [reminders, setReminders] = useState(
-    JSON.parse(localStorage.getItem('reminders'))?.map((reminder) => {
+    JSON.parse(localStorage.getItem('reminders')).map((reminder) => {
       return { ...reminder, date: new Date(reminder.date) };
     }) || [],
   );

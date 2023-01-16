@@ -1,12 +1,13 @@
 import React from 'react';
 import { BodyContainer } from './BodyContainer';
+import { FaAngleRight } from "react-icons/fa";
 
 
-export const Body = () => {
+export const Body = ({dataChores}) => {
   return (
     <>
         <div className="front-body">
-          <BodyContainer/>
+          <BodyContainer dataChores={dataChores}/>
           <div className="front-body__workFinished">
               <p className="front-body__workFinished__titulo">Tareas Terminadas</p>
 
@@ -17,7 +18,7 @@ export const Body = () => {
                     <p className="front-body__workFinished__componente__tarea__fecha">18 de noviembre</p>
                 </div>
                 <div className="front-body__workFinished__componente__icono">
-                  <i>i</i>
+                  <FaAngleRight/>
                   
                 </div>
               </div>
@@ -28,7 +29,7 @@ export const Body = () => {
                     <p className="front-body__workFinished__componente__tarea__fecha">18 de noviembre</p>
                 </div>
                 <div className="front-body__workFinished__componente__icono">
-                  <i>i</i>
+                  <FaAngleRight/>
                   
                 </div>
               </div>
@@ -40,7 +41,7 @@ export const Body = () => {
                     <p className="front-body__workFinished__componente__tarea__fecha">18 de noviembre</p>
                 </div>
                 <div className="front-body__workFinished__componente__icono">
-                  <i>i</i>
+                  <FaAngleRight/>
                   
                 </div>
               </div>

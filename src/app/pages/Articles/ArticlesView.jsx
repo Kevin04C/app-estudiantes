@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { urlArticle } from '../../../store/search/thunks';
+import ArticleCard from '../../components/Articles/ArticleCard';
 
 const ArticlesView = ({ articles, language }) => {
   return (
@@ -17,24 +17,8 @@ const ArticlesView = ({ articles, language }) => {
         </select>
       </div>
       <section className='articles__list-results'>
-        {articles.map((art) => (
-          <article key={art.pageid} className='articles__item'>
-            <a
-              href={urlArticle(art.pageid)}
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <h2>{art.title}</h2>
-            </a>
-            <p>
-              <span
-                className='articles__item-snippet'
-                dangerouslySetInnerHTML={{
-                  __html: art.snippet,
-                }}
-              ></span>
-            </p>
-          </article>
+        {articles?.map((art) => (
+          <ArticleCard art={art} key={art.pageid} />
         ))}
       </section>
     </>

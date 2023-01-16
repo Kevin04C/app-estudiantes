@@ -6,7 +6,7 @@ const apiWikipedia = (search, lang = 'es') =>
 //Generate link to article page
 export const urlArticle = (id) => `https://es.wikipedia.org/?curid=${id}`;
 
-export const getSearch = (search = localStorage.getItem('keyword'), lang) => {
+export const getSearch = (search, lang) => {
   return async (dispatch) => {
     dispatch(searchStart(search, lang));
     try {

@@ -1,10 +1,12 @@
 import React from 'react';
-import no_searchs from '../../../../public/assets/waiting_to_search.svg';
 
 export const NoArticlesFound = () => {
   return (
-    <>
-      <img src={no_searchs} />
-    </>
+    <section className='waiting-search'>
+      <figure className='waiting-search__img'>
+        <img src='/assets/waiting_to_search.svg' alt='image' />
+      </figure>
+      <h3 className='waiting-search__msg'>Esperando por tu búsqueda!</h3>
+    </section>
   );
 };

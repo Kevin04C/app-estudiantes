@@ -1,8 +1,12 @@
+body{
+    background-color: $stroke;
+}
 .container{
     width: 100%;
     margin: auto;
     margin-top: 1rem;
-    height: 100vh;
+    height:100vh;
+    
     @include responsive-max(lg) {
         height: max-content;
     }

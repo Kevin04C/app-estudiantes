@@ -5,22 +5,34 @@ import { FaTimes } from "react-icons/fa";
 
 export const ChoresFormulario = ({setview,setdataChores,dataChores}) => {
         const {stateForm,handleInputChange,handleSubmit} =useForm({
+            ide:'',
             curso:'',
             tarea:'',
             contenido:'',
+            fechaInicio:'',
+            fechaFin:'',
+            fechaCreacion:'',
         });
 
-    const {curso,tarea,contenido}=stateForm;
+    const {ide,curso,tarea,contenido,fechaInicio,fechaFin ,fechaCreacion}=stateForm;
 
 
     const handleSumitChores=(e)=>{
         e.preventDefault();
-        setdataChores([...dataChores,{
-            curso:curso,
-            tarea:tarea,
-            contenido:contenido,
-        }])
+        const tareas=[...dataChores,{
+          ide: crypto.randomUUID(),
+          curso:curso,
+          tarea:tarea,
+          contenido:contenido,
+          fechaInicio:fechaInicio,
+          fechaFin:fechaFin,
+          fechaCreacion:Date.now(),
+          
+      }]
+        setdataChores(tareas)
         setview(false);
+
+        /* localStorage.setItem('tareas',JSON.stringify(tareas)) */
     }
 
   return (
@@ -55,9 +67,22 @@ export const ChoresFormulario = ({setview,setdataChores,dataChores}) => {
               onChange={handleInputChange}
               />
               <label className="container__tareas__form__form__label" htmlFor="">Fecha de inicio:</label>
-              <input className="container__tareas__form__form__input" type="date"/>
+              <input 
+              className="container__tareas__form__form__input" 
+              type="date"
+              name='fechaInicio'
+              value={fechaInicio}
+              onChange={handleInputChange}
+
+              />
               <label className="container__tareas__form__form__label" htmlFor="">Fecha de fin:</label>
-              <input className="container__tareas__form__form__input" type="date"/>
+              <input 
+              className="container__tareas__form__form__input" 
+              type="date"
+              name='fechaFin'
+              value={fechaFin}
+              onChange={handleInputChange}
+              />
               <button className="container__tareas__form__form__button">Registrar tarea</button>
             </form>
           </div>

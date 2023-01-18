@@ -21,7 +21,7 @@ const ProfilePopUp = ({ refProfile }) => {
   return (
     <div ref={refProfile} className='profile-pop'>
       <div className='profile-pop__header'>
-        <img className='profile-pop__img' src={imagen} alt='' />
+        <img className='profile-pop__img' src={imagen} alt={name} />
         <div className='profile-pop__user-info'>
           <h2 className='profile-pop__name'>{name}</h2>
           <h2 className='profile-pop__user'>@{username}</h2>

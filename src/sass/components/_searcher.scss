@@ -4,16 +4,23 @@
   height: 40px;
   border-radius: 10px;
   background: $stroke;
+  flex-grow: 1;
+
+  @include responsive(md) {
+    flex-grow: 0;
+    width: 50%;
+    margin: 0 auto;
+  }
+
   &__input {
     width: 100%;
-    color: $heading;
+    color: $paragraph;
     background: inherit;
     outline: none;
     border: none;
     &::placeholder {
       color: inherit;
     }
-  }
   &__button {
     margin-right: 10px;
     width: 40px;

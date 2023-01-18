@@ -1,11 +1,14 @@
+import { toast } from 'react-hot-toast';
 import AppEstudiantesApi from '../../api/AppEstudiantesApi';
 import {
   clearErrorMessage,
   clearSuccessMessage,
   onChecking,
   onCloseChecking,
+  onLoadingPhoto,
   onLogin,
   onLogout,
+  setPhoto,
   setSuccessMessage,
 } from './authSlice';
 
@@ -42,6 +45,22 @@ export const startLogin = (form) => {
       const ObjErr = error.response?.data;
       dispatch(onLogout(ObjErr?.errorMsg));
       setTimeout(() => dispatch(clearErrorMessage()), 5000);
+    }
+  };
+};
+
+export const startUploadPhoto = (fileImagen) => {
+  return async (dispatch) => {
+    try {
+      dispatch(onLoadingPhoto());
+      const formData = new FormData();
+      formData.append('imagen', fileImagen);
+      const { data } = await AppEstudiantesApi.patch('/user/uploadPhoto', formData);
+      dispatch(setPhoto(data?.data.imagen));
+      toast.success('Foto actualizada');
+    } catch (error) {
+      toast.error('Error al actualizar la foto');
+      dispatch(onLoadingPhoto(false));
     }
   };
 };

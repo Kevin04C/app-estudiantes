@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import ArticlesPage from '../pages/Articles/ArticlesPage';
+import ArticlesPage from '../pages/ArticlesPage';
 import { CalculadoraPage } from '../pages/CalculadoraPage';
 import { CoursePage } from '../pages/Courses/CoursePage';
 import { AppLayout } from '../layout/AppLayout';
 import { TodoPages } from '../pages/TodoPage';
 import { HomePage } from '../pages/HomePage';
-import ArticlesSaved from '../pages/Articles/ArticlesSaved';
+import ArticlesSaved from '../pages/ArticlesSaved';
 
 export const AppRoutes = () => {
   return (

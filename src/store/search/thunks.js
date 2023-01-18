@@ -10,11 +10,12 @@ export const getSearch = (search, lang) => {
   return async (dispatch) => {
     dispatch(searchStart(search, lang));
     try {
+      if (!search) return;
       const res = await fetch(apiWikipedia(search, lang));
       const data = await res.json();
       dispatch(searchSuccess(await data.query.search));
     } catch (error) {
-      dispatch(searchFail(await error));
+      dispatch(searchFail(error));
     }
   };
 };

@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    status:
-      'not-authenticated' /* 'authenticated' 'not-authenticated', 'checking' */,
+    status: 'not-authenticated' /* 'authenticated' 'not-authenticated', 'checking' */,
     user: {},
     errorMessage: '',
     successMessage: '',
     loadingApp: false,
+    uploadingPhoto: false,
   },
   reducers: {
     onChecking: (state) => {
@@ -34,6 +34,13 @@ export const authSlice = createSlice({
       state.loadingApp = false;
       state.errorMessage = payload || '';
     },
+    onLoadingPhoto: (state, { uploading = true }) => {
+      state.uploadingPhoto = uploading;
+    },
+    setPhoto: (state, { payload }) => {
+      state.user.imagen = payload;
+      state.uploadingPhoto = false;
+    },
     clearErrorMessage: (state) => {
       state.errorMessage = '';
     },
@@ -48,12 +55,14 @@ export const authSlice = createSlice({
 
 export const {
   clearErrorMessage,
+  clearSuccessMessage,
   onChecking,
   onCloseChecking,
   onCloseLoadingApp,
   onLoadingApp,
+  onLoadingPhoto,
   onLogin,
   onLogout,
+  setPhoto,
   setSuccessMessage,
-  clearSuccessMessage,
 } = authSlice.actions;

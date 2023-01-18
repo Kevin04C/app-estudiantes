@@ -6,6 +6,7 @@ import { AppLayout } from '../layout/AppLayout';
 import { TodoPages } from '../pages/TodoPage';
 import { HomePage } from '../pages/HomePage';
 import ArticlesSaved from '../pages/ArticlesSaved';
+import { ProfilePage } from '../pages/ProfilePage';
 
 export const AppRoutes = () => {
   return (
@@ -18,9 +19,10 @@ export const AppRoutes = () => {
         <Route path='courses' element={<CoursePage />} />
         <Route path='search' element={<ArticlesPage />} />
         <Route path='calculator' element={<CalculadoraPage />} />
+        <Route path='profile' element={<ProfilePage />} />
       </Route>
 
-      <Route path='/*' element={<Navigate to='/' />} />
+      <Route path='*' element={<Navigate to='/' />} />
     </Routes>
   );
 };

@@ -1,0 +1,53 @@
+.calendar-form-wrapper {
+  position: relative;
+  margin-bottom: 2.6vh;
+  padding: 2% 0%;
+
+  &-input {
+    width: 84%;
+    margin-left: 12%;
+    min-height: 30px;
+    background-color: transparent;
+    outline: none;
+    color: $heading;
+    border-bottom: 2px solid $paragraph;
+
+    &::placeholder {
+      color: $paragraph;
+    }
+  }
+
+  &-input[type='date'] {
+    width: auto;
+  }
+
+  &-input[type='date']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(1);
+  }
+
+  svg {
+    position: absolute;
+    fill: $paragraph;
+    left: 0vh;
+  }
+}
+
+.calendar-form-toggle {
+  display: flex;
+  column-gap: 2.5vh;
+  align-items: center;
+  color: $paragraph;
+
+  &-active {
+    svg {
+      fill: $paragraph;
+      font-size: 2em;
+    }
+    svg {
+      fill: $button;
+      cursor: pointer;
+      font-size: 2em;
+    }
+  }
+}

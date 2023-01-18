@@ -1,7 +1,11 @@
 .main {
   width: 100%;
   padding: $padding-main $padding-main $padding-main $padding-main-left;
+  height: 100%;
   @include responsive-max(lg) {
     padding: $padding-main;
+  }
+  @include responsive-max(md) {
+    padding: calc($padding-main - 1rem);
   }
 }

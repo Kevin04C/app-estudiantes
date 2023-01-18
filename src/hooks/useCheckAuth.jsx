@@ -1,32 +1,43 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AppEstudiantesApi from '../api/AppEstudiantesApi';
-import { onLogin, onLogout } from '../store/auth/authSlice';
+import {
+  onCloseLoadingApp,
+  onLoadingApp,
+  onLogin,
+  onLogout,
+} from '../store/auth/authSlice';
 
 export const useCheckAuth = () => {
-  const { status } = useSelector((state) => state.auth);
+  const { status, loadingApp } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const checkAuth = async () => {
     const token = localStorage.getItem('token');
-    console.log(token);
 
-    if (!token) return onLogout();
+    if (!token) {
+      dispatch(onLogout());
+      dispatch(onCloseLoadingApp());
+      return;
+    }
 
     try {
       const { data } = await AppEstudiantesApi.post('/renew');
-      const { id, name, username, token } = data.data;
+      const { id, name, username, token, imagen } = data.data;
       localStorage.setItem('token', token);
-      dispatch(onLogin({ id, name, username }));
+      dispatch(onLogin({ id, name, username, imagen }));
     } catch (error) {
-      localStorage.removeItem('token');
       dispatch(onLogout());
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    dispatch(onLoadingApp());
     checkAuth();
   }, []);
 
-  return status;
+  return {
+    status,
+    loadingApp,
+  };
 };

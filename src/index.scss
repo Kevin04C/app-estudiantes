@@ -1,20 +1,52 @@
-@use './sass/base/_normalize.css';
-@use './sass/base/typography';
+@import './sass/base/_normalize.css';
+@import './sass/base/typography';
 @import './sass/utilities/variables';
 @import './sass/utilities/mixins';
-@import './sass/views/_home-page.scss';
 
 //Components
+@import './sass/components/searcher.scss';
+@import './sass/views/_home-page.scss';
 @import './sass/components/profile';
 @import './sass/components/notification';
 @import './sass/layout/_header.scss';
 @import './sass/layout/_aside.scss';
 @import './sass/views/main.scss';
 @import './sass//layout/authLayout';
+@import './sass/components/backpack';
+@import './sass/components/modal';
+@import './sass/components/course';
+@import './sass/components/modals';
+
+//components calculator
+@import './sass/components/calculator/button';
+@import './sass/components/calculator/calculator';
+@import './sass/components/calculator/display';
 @import './sass/components/spinner';
 
+//components pomodoro
+@import './sass/components/pomodoro/pomodoro';
+@import './sass/components/pomodoro/button';
+@import './sass/components/pomodoro/display';
+@import './sass/components/pomodoro/config';
+@import './sass/components/pomodoro/toggle';
+
+//components calendar
+@import './sass/components/Calendar/calendar';
+@import './sass/components/Calendar/button';
+@import './sass/components/Calendar/form';
+@import './sass/components/Calendar/input';
+@import './sass/components/Calendar/schedule';
+@import './sass/components/Calendar/confirm';
+
 //views
+@import './sass/views/articles-page';
 @import './sass/views/checkingAuthView';
+@import './sass/views/course-page';
+@import './sass/views/profile-page';
 
 //helpers
 @import './sass//utilities/helpers';
+
+// Buttons
+// Button Success
+@import './sass/components/buttons';

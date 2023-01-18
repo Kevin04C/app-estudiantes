@@ -1,0 +1,30 @@
+.searcher {
+  display: flex;
+  padding-left: 1rem;
+  height: 40px;
+  border-radius: 10px;
+  background: $stroke;
+  &__input {
+    width: 100%;
+    color: $heading;
+    background: inherit;
+    outline: none;
+    border: none;
+    &::placeholder {
+      color: inherit;
+    }
+  }
+  &__button {
+    margin-right: 10px;
+    width: 40px;
+    padding: 0;
+    background: inherit;
+    outline: none;
+    border: none;
+    svg {
+      color: $white;
+      width: 70%;
+      height: 70%;
+    }
+  }
+}

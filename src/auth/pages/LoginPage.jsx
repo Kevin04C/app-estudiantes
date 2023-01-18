@@ -5,6 +5,7 @@ import { MdOutlineEmail, MdOutlineSecurity } from 'react-icons/md';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogin } from '../../store/auth/thunks';
+import { Spinner } from '../../app/components/Spinner';
 
 const initialForm = {
   email: '',
@@ -113,6 +114,7 @@ export const LoginPage = () => {
                   {errorMessage}
                 </span>
               )}
+
               <button
                 type='submit'
                 className={`form__btn-submit ${
@@ -120,9 +122,17 @@ export const LoginPage = () => {
                 }`}
                 disabled={disbled}
               >
-                Ingresar
+                {status === 'checking' ? <Spinner /> : 'Ingresar'}
               </button>
             </form>
+            <div className='recover-password'>
+              {/* <p className='recover-password__text'>
+                  ¿No recuerdas tu contraseña?
+                </p> */}
+              <Link className='recover-password__link'>
+                ¿Has olvidado tu contraseña?
+              </Link>
+            </div>
             <div className='not-account'>
               <span className='not-account__title'>¿Aún no tienes cuenta?</span>
 

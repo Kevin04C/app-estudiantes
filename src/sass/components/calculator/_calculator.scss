@@ -1,0 +1,21 @@
+.calculator {
+  width: 90%;
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 25% 70%;
+  align-content: space-between;
+  margin: 0 auto;
+  max-width: 400px;
+  max-height: 460px;
+
+  &__button {
+    background-color: $background;
+    padding: 26px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 3%;
+    grid-column-gap: 3%;
+    border-radius: 10px;
+  }
+}

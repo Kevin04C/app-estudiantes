@@ -1,0 +1,25 @@
+.pomodoro__config-toggle {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 60% 40%;
+  padding: 1vh 2vh 1vh 0vh;
+  border-top: 1px solid $main;
+  border-bottom: 1px solid $main;
+  color: $paragraph;
+
+  &-icon {
+    justify-self: flex-end;
+    font-size: 1.2em;
+    cursor: pointer;
+
+    svg {
+      fill: $paragraph;
+    }
+  }
+
+  &-icon-active {
+    svg {
+      fill: $button;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.backpack {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+  svg {
+    font-size: 2rem;
+    fill: #d0d6f9;
+  }
+  &__content {
+    position: relative;
+  }
+  &__icon {
+    cursor: pointer;
+    background-color: #d0d6f9;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    svg {
+      fill: $stroke;
+    }
+    &.backpack__icon--on {
+      position: relative;
+      svg {
+        transition: transform 0.3s ease-in;
+        transform: scale(1.1) rotate(-360deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        background-color: #d0d6f9;
+        z-index: -1;
+        border-radius: 50%;
+        filter: blur(8px);
+      }
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+  &__items {
+    transform: scale(0.1) translateY(-10rem) rotate(360deg);
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    user-select: none;
+    pointer-events: none;
+
+    &.backpack__items--on {
+      opacity: 1;
+      pointer-events: all;
+      user-select: all;
+      transform: none;
+      transform: scale(1) translateY(0rem) rotate(10deg);
+    }
+  }
+  &__item {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0.2rem;
+    z-index: -1;
+    border-radius: 50vh;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $stroke;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    &-tooltip {
+      position: absolute;
+      user-select: none;
+      color: $stroke;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.6rem;
+      border-radius: 0.3rem;
+      padding: 0.2rem;
+      font-weight: bold;
+      transform: translateX(-5.5rem);
+      background-color: #d0d9f9;
+      transition: all 0.3s ease-in;
+    }
+    &:hover &-tooltip {
+      transform: translateX(-3.1rem);
+      opacity: 1;
+    }
+
+    svg {
+      font-size: 1.2rem;
+    }
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+    }
+    &.backpack__item--clock {
+      transform: translate(-1.5rem, -5.3rem);
+      .backpack__item-tooltip {
+        transform: translateX(-5rem);
+      }
+      &:hover .backpack__item-tooltip {
+        transform: translateX(-3rem);
+      }
+    }
+    &.backpack__item--calendar {
+      transform: translate(-3.2rem, -3.5rem);
+    }
+    &.backpack__item--calculator {
+      transform: translate(-3.2rem, -1.2rem);
+    }
+  }
+  @include responsive-max(lg) {
+    bottom: 4.5rem;
+    transition: bottom 0.3s;
+    &.backpack--down {
+      bottom: 1rem;
+    }
+  }
+  @include responsive-max(md) {
+    bottom: 4rem;
+    &__icon {
+      width: 2.7rem;
+      height: 2.7rem;
+    }
+    svg {
+      font-size: 1.8rem;
+    }
+    &__item {
+      svg {
+        font-size: 1.1rem;
+      }
+      &:hover &-tooltip {
+        font-size: 0.6rem;
+      }
+
+      &.backpack__item--clock {
+        transform: translate(-1rem, -4.9rem);
+      }
+      &.backpack__item--calendar {
+        transform: translate(-2.9rem, -3.3rem);
+      }
+      &.backpack__item--calculator {
+        transform: translate(-3rem, -1rem);
+      }
+    }
+  }
+}

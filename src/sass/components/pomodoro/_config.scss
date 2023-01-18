@@ -1,0 +1,52 @@
+.pomodoro__config {
+  background-color: $background;
+  padding: 3vh;
+  border-radius: 10px;
+
+  &-back {
+    position: absolute;
+    left: 1vh;
+    top: 2vh;
+    cursor: pointer;
+
+    svg {
+      fill: $paragraph;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &-back:hover {
+    svg {
+      fill: $heading;
+    }
+  }
+
+  &-title {
+    color: $heading;
+    text-align: center;
+    padding: 3vh;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  //input
+  &-input {
+    display: grid;
+    grid-template-columns: 100%;
+    padding-top: 1vh;
+
+    &-min {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      color: $paragraph;
+
+      p:nth-child(2) {
+        justify-self: flex-end;
+      }
+    }
+  }
+
+  &-input:nth-child(5) {
+    padding-bottom: 1.3vh;
+  }
+}

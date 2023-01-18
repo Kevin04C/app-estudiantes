@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    position: absolute;
+    top: 7vh;
+    right: 2vh;
+
+    svg {
+      fill: $paragraph;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-size: 3.2em;
+    }
+  }
+  &__item:hover {
+    svg {
+      fill: $button;
+    }
+  }
+}

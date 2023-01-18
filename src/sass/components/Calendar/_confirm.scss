@@ -1,0 +1,55 @@
+.calendar-schedule-confirm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10%;
+
+  &-alert {
+    padding: 4%;
+    background-color: $background;
+    border-radius: 6px;
+    color: $paragraph;
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6%;
+    column-gap: 4%;
+    width: 100%;
+  }
+
+  &-button {
+    background-color: transparent;
+    border: 1px solid $paragraph;
+    padding: 3%;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  &-close {
+    color: $paragraph;
+
+    &:hover {
+      color: $heading;
+    }
+  }
+
+  &-confirm {
+    border: 1px solid $button;
+    color: $background;
+    background: $button;
+
+    &:hover {
+      background-color: $background;
+      color: $button;
+    }
+  }
+}

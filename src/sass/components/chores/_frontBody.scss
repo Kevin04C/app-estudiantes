@@ -41,6 +41,10 @@
             height: 10rem;
             justify-content:space-around;
             align-items: center;
+            cursor: pointer;
+            &:hover{
+                background-color: red;
+            }
             @include responsive-max(xl) {
                 width: 85%;
             } 
@@ -159,6 +163,149 @@
             }
             &__icono{
 
+            }
+        }
+    }
+}
+
+//CSS PARA EL DETALLE DE LAS TAREAS.
+.body__detalles{
+    width: 100%;
+    background-color: rgba(0, 0,0,0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__contenedor{
+        background-color: $background;
+        width: 35%;
+        height: max-content;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 4px rgba(0, 0,0,0.5);
+        font-size: 0.8rem;
+        @include responsive-max(1600px) {
+            width: 40%;
+        } 
+        
+        @include responsive-max(1400px) {
+            width: 50%;
+        }
+        @include responsive-max(xl) {
+            width: 60%;
+        } 
+        @include responsive-max(lg) {
+            font-size: 0.6rem;
+        } 
+        &__icono{
+            text-align: end;
+            margin-right: 1.3rem;
+            margin-top: 1rem;
+            cursor: pointer;
+
+
+        }
+        &__titulo{
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            
+        }
+        &__img{
+
+            width: 25rem;
+            height: 20rem;
+            margin: auto;
+            @include responsive-max(lg) {
+                width: 20rem;
+                height: 15rem;
+            } 
+        }
+        &__principal{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+            @include responsive-max(lg) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            &__chores{
+                color: black;
+                background-color: rgba(241, 236, 236, 0.216);
+                width: 60%;
+                border-radius: 0.3rem;
+                padding: 0.2rem;
+                padding-top: 0.4rem;
+                padding-bottom: 0.4rem;
+                @include responsive-max(lg) {
+                    width: 80%;
+                    font-size: 0.9rem;
+                }
+                &__label{
+                    margin-left: 0.5rem;
+                    color: white;
+
+                    
+                }
+                &__input{
+                    background-color: rgb(209, 204, 202);
+                    margin-right: 1rem;
+                    padding: 0.3rem;
+                    border-radius: 0.3rem;
+                    margin-left: 1rem;
+                }
+
+            }
+            &__buttons{
+                display: flex;
+                flex-direction: column;
+                @include responsive-max(lg) {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
+                }
+                & button{
+                    
+                    border-radius: 0.6rem;
+                    padding: 0.6rem;
+                    color: #ffff;
+                    cursor: pointer;
+                    @include responsive-max(lg) {
+                        width: 9rem;
+                        font-size: 0.8rem;
+                        height: 3rem;
+                        margin-top: 1rem;
+                    }
+
+                }
+                &__editar{
+                    margin-bottom: 0.5rem;
+                    background-color: rgb(108, 164, 224);
+                    &:hover{
+                        background-color: rgb(53, 133, 220);
+                    }
+                }   
+                &__eliminar{
+                    background-color: rgb(216, 103, 103);
+                    margin-bottom: 0.5rem;
+                    &:hover{
+                        background-color: rgb(210, 26, 26);
+
+                    }
+                }
+                &__completada{
+                    background-color: rgb(96, 151, 96);
+                    &:hover{
+                        background-color: rgb(9, 159, 9);
+                    }
+                }
             }
         }
     }

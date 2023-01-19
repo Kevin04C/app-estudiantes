@@ -1,4 +1,4 @@
-const Input = ({ onChange, value, className }) => {
+const Input = ({ onChange, value, className, autoComplete = 'on' }) => {
   return (
     <input
       type='text'
@@ -7,6 +7,7 @@ const Input = ({ onChange, value, className }) => {
       placeholder='Buscar...'
       onChange={onChange}
       value={value}
+      autoComplete={autoComplete}
     />
   );
 };

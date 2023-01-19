@@ -7,6 +7,7 @@ import {
   saveArticle,
 } from '../../../store/articles/articleSlice';
 import { toast } from 'react-hot-toast';
+import PropTypes from 'prop-types';
 
 const ArticleCard = ({ art }) => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const ArticleCard = ({ art }) => {
     toast('Removido de artículos!', {
       icon: '👏',
       style: {
-        background: '#1d1d1d',
+        background: '#232946',
         color: '#fff',
       },
     });
@@ -40,7 +41,7 @@ const ArticleCard = ({ art }) => {
     dispatch(saveArticle(artData));
     toast.success('Agregado!', {
       style: {
-        background: '#1d1d1d',
+        background: '#232946',
         color: '#fff',
       },
     });
@@ -75,6 +76,10 @@ const ArticleCard = ({ art }) => {
       </p>
     </article>
   );
+};
+
+ArticleCard.propTypes = {
+  art: PropTypes.object.isRequired,
 };
 
 export default ArticleCard;

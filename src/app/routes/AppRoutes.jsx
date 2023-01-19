@@ -1,11 +1,12 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import ArticlesPage from '../pages/Articles/ArticlesPage';
+import ArticlesPage from '../pages/ArticlesPage';
 import { CalculadoraPage } from '../pages/CalculadoraPage';
 import { CoursePage } from '../pages/Courses/CoursePage';
 import { AppLayout } from '../layout/AppLayout';
 import { HomePage } from '../pages/HomePage';
 import { Chores } from '../components/chores/Chores';
-import ArticlesSaved from '../pages/Articles/ArticlesSaved';
+import ArticlesSaved from '../pages/ArticlesSaved';
+import { ProfilePage } from '../pages/ProfilePage';
 
 export const AppRoutes = () => {
   return (
@@ -18,9 +19,10 @@ export const AppRoutes = () => {
         <Route path='chores' element={<Chores />} />
         <Route path='search' element={<ArticlesPage />} />
         <Route path='calculator' element={<CalculadoraPage />} />
+        <Route path='profile' element={<ProfilePage />} />
       </Route>
 
-      <Route path='/*' element={<Navigate to='/' />} />
+      <Route path='*' element={<Navigate to='/' />} />
     </Routes>
   );
 };

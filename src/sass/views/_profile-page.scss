@@ -1,0 +1,119 @@
+.settings-wrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 16px 28px;
+  &__h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+}
+
+.photo-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  @include responsive(md) {
+    flex-direction: row;
+    gap: 36px;
+  }
+  &__wrapper {
+    text-align: center;
+  }
+  &__buttons {
+    display: flex;
+    gap: 16px;
+  }
+  &__confirm {
+    background-color: $button;
+    color: $button-text;
+    font-weight: bold;
+    &:hover {
+      background-color: darken($color: $button, $amount: 10);
+    }
+  }
+  &__cancel {
+    background-color: red;
+    font-weight: bold;
+    color: #fff;
+    &:hover {
+      background-color: darken($color: red, $amount: 10);
+    }
+  }
+
+  &__success {
+    display: block;
+    font-size: 0.8rem;
+    color: #00ff00;
+  }
+
+  &__error {
+    display: block;
+    font-size: 0.8rem;
+    color: red;
+  }
+
+  &__btn-change {
+    background-color: $button;
+    padding: 8px 16px;
+    color: $button-text;
+    font-weight: 600;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    &:hover {
+      background-color: darken($color: $button, $amount: 10);
+    }
+  }
+  &__picture {
+    width: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    margin-bottom: 8px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__prev {
+    color: red;
+    font-size: 0.8rem;
+  }
+}
+
+.data {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: $paragraph;
+    opacity: 0.8;
+  }
+  &__input {
+    display: block;
+    padding: 10px 16px;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(204, 204, 204, 0.4);
+    border-radius: 5px;
+    color: $paragraph;
+    outline: none;
+    &:read-only {
+      background-color: rgba(204, 204, 204, 0.2);
+    }
+  }
+}
+
+.button-profile {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}

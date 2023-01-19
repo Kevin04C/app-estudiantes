@@ -10,6 +10,7 @@ const SearcherView = ({ handleChange, handleSubmit, search }) => {
           className='searcher__input'
           value={search}
           onChange={handleChange}
+          autoComplete='off'
         />
         <button type='submit' className='searcher__button'>
           <AiOutlineSearch></AiOutlineSearch>

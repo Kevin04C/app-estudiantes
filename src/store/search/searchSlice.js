@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const keyword =
+  localStorage.getItem('keyword') !== null
+    ? localStorage.getItem('keyword')
+    : '';
+
 const initialState = {
   articles: [],
   loading: false,
   error: null,
-  keyword: localStorage.getItem('keyword'),
+  keyword,
 };
 
 const searchSlice = createSlice({

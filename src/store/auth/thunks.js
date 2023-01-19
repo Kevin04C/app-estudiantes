@@ -1,5 +1,13 @@
 import AppEstudiantesApi from '../../api/AppEstudiantesApi';
-import { clearErrorMessage, clearSuccessMessage, onChecking, onCloseChecking, onLogin, onLogout, setSuccessMessage } from './authSlice';
+import {
+  clearErrorMessage,
+  clearSuccessMessage,
+  onChecking,
+  onCloseChecking,
+  onLogin,
+  onLogout,
+  setSuccessMessage,
+} from './authSlice';
 
 export const startRegister = (form) => {
   return async (dispatch) => {
@@ -31,7 +39,8 @@ export const startLogin = (form) => {
       localStorage.setItem('token', token);
       dispatch(onLogin({ id, name, username, imagen }));
     } catch (error) {
-      dispatch(onLogout('Correo o contraseña incorrectos'));
+      const ObjErr = error.response?.data;
+      dispatch(onLogout(ObjErr?.errorMsg));
       setTimeout(() => dispatch(clearErrorMessage()), 5000);
     }
   };

@@ -21,11 +21,12 @@
     &::placeholder {
       color: inherit;
     }
+  }
   &__button {
     margin-right: 10px;
     width: 40px;
-    padding: 0;
-    background: inherit;
+    background-color: transparent;
+    color: #fff;
     outline: none;
     border: none;
     svg {

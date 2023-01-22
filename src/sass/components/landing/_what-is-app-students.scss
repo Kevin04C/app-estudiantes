@@ -1,0 +1,27 @@
+.what-is-app-student {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include responsive(md) {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
+  &__texts {
+    flex-shrink: 1;
+    @include responsive(md) {
+      width: 50%;
+    }
+  }
+  &__illustration {
+    flex-shrink: 1;
+    @include responsive(md) {
+      width: 50%;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}

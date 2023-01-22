@@ -1,25 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // icons
-import {
-  BsBook,
-  BsListUl,
-  BsSearch,
-  BsHouse,
-  BsFileEarmarkText,
-} from 'react-icons/bs';
+import { BsBook, BsListUl, BsSearch, BsHouse, BsFileEarmarkText } from 'react-icons/bs';
 import { useScrollDown } from '../../../hooks/useScrollDown';
 const Aside = () => {
   const scrollDirection = useScrollDown();
   return (
-    <aside
-      className={`aside ${
-        scrollDirection === 'down' ? 'aside--down' : 'aside--up'
-      }`}
-    >
+    <aside className={`aside ${scrollDirection === 'down' ? 'aside--down' : 'aside--up'}`}>
       <div className='aside__links'>
         <NavLink
-          to='/'
+          to='/app'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
@@ -29,7 +19,7 @@ const Aside = () => {
         </NavLink>
 
         <NavLink
-          to='/courses'
+          to='/app/courses'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
@@ -38,7 +28,7 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
-          to='/chores'
+          to='/app/chores'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
@@ -47,7 +37,7 @@ const Aside = () => {
           Tareas
         </NavLink>
         <NavLink
-          to='/search?q='
+          to='/app/search?q='
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }
@@ -56,7 +46,7 @@ const Aside = () => {
           Buscar
         </NavLink>
         <NavLink
-          to='/articles'
+          to='/app/articles'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }

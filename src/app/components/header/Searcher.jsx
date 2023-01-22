@@ -8,7 +8,7 @@ const Searcher = () => {
   const [search, setSearch] = useState('');
 
   const handleChange = (e) => {
-    setSearch(e.target.value.trim());
+    setSearch(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -16,18 +16,14 @@ const Searcher = () => {
     if (!search) {
       toast.error('Ingresa una búsqueda');
     } else {
-      navigate(`/search?q=${search}`);
+      navigate(`/app/search?q=${search}`);
     }
     setSearch('');
   };
 
   return (
     <>
-      <SearcherView
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        search={search}
-      />
+      <SearcherView handleChange={handleChange} handleSubmit={handleSubmit} search={search} />
     </>
   );
 };

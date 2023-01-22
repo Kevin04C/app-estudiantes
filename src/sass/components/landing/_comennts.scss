@@ -1,0 +1,15 @@
+.comments {
+  padding: 100px 0;
+  &__head {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 65px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(389px, 1fr));
+    gap: 16px;
+  }
+}

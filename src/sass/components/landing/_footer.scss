@@ -1,0 +1,27 @@
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: $paragraph;
+    span {
+      color: $button;
+    }
+  }
+  &__social-networks {
+    display: flex;
+    gap: 60px;
+    li {
+      font-size: 20px;
+      color: $white;
+    }
+  }
+}

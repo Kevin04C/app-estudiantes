@@ -23,7 +23,7 @@ const ProfilePopUp = ({ handleClick, refProfile }) => {
         </div>
       </div>
       <div className='profile-pop__body'>
-        <Link to='/profile' className='profile-pop__link' onClick={handleClick}>
+        <Link to='/app/profile' className='profile-pop__link' onClick={handleClick}>
           <BsFillFilePersonFill />
           Tu Perfil
         </Link>

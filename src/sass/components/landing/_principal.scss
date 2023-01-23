@@ -1,0 +1,35 @@
+.principal {
+  @include responsive(md) {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__texts {
+    flex-basis: 50%;
+    margin-bottom: 50px;
+  }
+  &__title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: $heading;
+    margin-bottom: 15px;
+    @include responsive(md) {
+      font-size: 50px;
+    }
+  }
+  &__paragraph {
+    color: $paragraph;
+    line-height: 1.8;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+  }
+  &__illustration {
+    flex-shrink: 1;
+    flex-basis: 50%;
+  }
+}
+
+.wrapper {
+  min-height: calc(100vh - 240px);
+  align-items: center;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import NewCourse from '../../components/Course/NewCourse';
+import NewCourse from '../components/Course/NewCourse';
 // import CoursesCard from '../../components/Course/CoursesCard';
 
 export const CoursePage = () => {

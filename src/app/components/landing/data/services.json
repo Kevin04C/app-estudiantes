@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Pomodoro",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Calculadora",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Calendario",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Administrador de tareas",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Administrador de cursos",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "button-text": "LO QUIERO PROBAR"
+  }
+]

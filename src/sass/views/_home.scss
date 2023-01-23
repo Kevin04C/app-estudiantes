@@ -1,6 +1,7 @@
 .home {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
   .card {
     grid-column: 1/5;
   }

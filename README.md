@@ -1,34 +1,53 @@
 # App Student
 
-## Descripción
+![AppStudents](public/assets/images/appstudents.png)
 
-Este proyecto tiene dos partes: interfaz (cliente) y API (servidor).
+Mantén tus tareas organizadas y completas con nuestra aplicación revolucionaria! Con nuestra aplicación, puedes crear listas de tareas personalizadas, establecer recordatorios, priorizar tareas y mucho más.
 
-Si eres estudiante reconocerás la necesidad de llevar control de los cursos y/o materias que estás tomando, así como de las tareas importantes a realizar. 
+## ¿Cómo instalar el proyecto?
 
-Nuestro proyecto intenta proveer algunas herramientas que puedan facilitarte el proceso de aprendizaje. 
+Como primer paso tenemos que descargar este proyecto ya sea en formato `.zip` o `clonarlo` haciendo un `git clone`, también podés hacer un `fork`, pero para este caso haremos un `git clone` de la siguiente manera:
 
-### Estado del proyecto: En desarrollo
+```
+  git clone https://github.com/Kevin04C/app-estudiantes.git
+```
 
-## Cómo empezar
+Una vez hecho eso debemos movernos a ese directorio con el comando:
 
-1. Hacer un clone del repo
-2. Ejecutamos *npm install* para descargar las dependencias
-3. Creamos un fichero .env con una variable de entorno con el puerto que utilizaremos (que no se subirá a github porque esta en el .gitignore)
-4. Para arrancar la app ejecutamos *npm run dev*: Esto ejecuta las reglas de eslint configuradas (paquete standard) y arranca la app (previamente debe estar corriendo el servidor)
+```
+  cd app-estudiantes
+```
 
-Necesitaremos un fichero .env con los campos VITE_API_APP_ESTUDIANTES
+Una vez realizado los 2 pasos anterior lo tenemos es instalar todas las dependencias que necesita el proyecto para esto es importante tener `node` si no lo tienes puedes ir a su [página oficial](https://nodejs.org/) a descargarlo.
 
-## Resumen del proyecto
+Una vez que ya lo hayamos descargado ejecutamos el siguiente comando:
 
-Para comenzar necesitas ingresar con tu cuenta, sino la tienes haz click en ‘Crear cuenta’ y te redirigirá al formulario de registro.
+```
+  npm install
+```
 
-Al ingresar te encontrarás en un dashboard con acceso rápido a todas las herramientas (cursos, tareas, buscador, etc).
+Ahora tenemos que configurar el `.env` de nuestra proyecto, el `.env` básicamente son variables que por defecto _no se suben a GitHub_ pero son necesarias para que el proyecto funcione, esto lo crearemos en la raiz del proyecto.
 
-En la sección de cursos podrás registrar los cursos y/o materias que estés realizando o te gustaría tomar. Podrás clasificarlos de acuerdo al estado que lleves de los mismos (Pendiente, En progreso o Terminado).
+Si tienes un Sitema Operativo basado en unix puedes ejecutar el siguiente comando:
 
-La sección de tareas es muy similar a la de cursos (registras la tarea y la clasificas de acuerdo a su estado).
+```
+  touch .env
+```
 
-En la parte inferior derecha del sitio, encontrarás un botón que al hacer click mostrará accesos a algunas utilidades cómo calculadora, un temporizador pomodoro para llevar cuenta de tu tiempo de estudio y un calendario que te ayude a organizarte mejor con tus tareas.
+Dentro del archivo .env tendremos que color lo siguiente:
 
-En la parte superior verás un buscador, que al confirmar una búsqueda te mostrará una lista de resultados de Wikipedia que coincidan. Al hacer click en el título de algún resultado se abrirá una nueva pestaña en dicha página del artículo.
+```
+VITE_API_APP_ESTUDIANTES=YOUR_API
+```
+
+El formato del .env es similar al formato de los objetos que conocemos en JavaScript `clave` - `valor` crearemos un variable `VITE_API_APP_ESTUDIANTES` en donde asiganeremos la `URL` de nuestra API.
+
+Si no sabes de donde sacar esta URL puedes leer el README del backend de este proyecto para obtener la URL y poder correr la aplicación [Backend del proyecto](https://github.com/repicam/app-estudiantes-backend.git).
+
+Una vez confurado el backend del proyecto y haber obtenidor la URL del backend podemos correr el proyecto con el siguiente comando:
+
+```
+  npm run dev
+```
+
+Y ¡LISTO! ya podés probar al aplicación.

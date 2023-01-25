@@ -13,11 +13,14 @@
     padding: 1rem 0;
     text-align: left;
     &__title {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: 500;
       span {
         color: $highlight;
       }
+    }
+    p {
+      font-weight: 400;
     }
   }
   &-img__container {

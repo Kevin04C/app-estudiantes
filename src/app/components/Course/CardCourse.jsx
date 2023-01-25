@@ -1,6 +1,6 @@
 import { BiTrash } from 'react-icons/bi';
 
-const CardCourse = ({ course }) => {
+const CardCourse = ({ course, onClick }) => {
   return (
     <article className='card courses__item'>
       <div className='card-over'>
@@ -9,7 +9,7 @@ const CardCourse = ({ course }) => {
         <p>{course.descripcion}</p>
       </div>
       <div className='courses__item-controls'>
-        <button className='delete-btn'>
+        <button className='delete-btn' onClick={onClick}>
           <BiTrash />
         </button>
       </div>

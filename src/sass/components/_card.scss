@@ -1,7 +1,8 @@
 .card {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 1rem;
   color: $white;
   background: $background;
   border-radius: 10px;
@@ -21,7 +22,7 @@
   }
   &-img__container {
     padding: 1rem 0;
-    width: 30%;
+    width: 25%;
   }
 }
 

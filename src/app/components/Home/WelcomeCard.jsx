@@ -13,7 +13,7 @@ const WelcomeCard = () => {
         <p>Espero que cumplas tus objetivos para este día!</p>
       </div>
       <figure className='card-img__container'>
-        <img src='/public/assets/undraw_welcome_cats_thqn.svg' />
+        <img src='/assets/undraw_welcome_cats_thqn.svg' />
       </figure>
     </article>
   );

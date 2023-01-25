@@ -16,21 +16,23 @@ const courseSlice = createSlice({
     },
     fetchCourseSuccess(state, action) {
       state.loading = false;
-      state.courses = action.payload;
+      const { cursos } = action.payload.data;
+      state.courses = cursos;
     },
     fetchFail(state, action) {
       state.loading = false;
       state.error = action.payload;
     },
-    addCourseStart(state) {
-      state.loading = true;
-    },
     addCourseSuccess(state, action) {
       state.courses.push(action.payload);
+    },
+    removeCourseSuccess(state, action) {
+      const selectedCourse = state.courses.find((course) => course._id === action.payload);
+      state.courses.splice(state.courses.indexOf(selectedCourse), 1);
     },
   },
 });
 
-export const { fetchStart, fetchFail, fetchCourseSuccess, addCourseStart, addCourseSuccess } =
+export const { fetchStart, fetchFail, fetchCourseSuccess, addCourseSuccess, removeCourseSuccess } =
   courseSlice.actions;
 export default courseSlice;

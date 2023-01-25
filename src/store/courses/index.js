@@ -3,8 +3,8 @@ import {
   fetchStart,
   fetchCourseSuccess,
   fetchFail,
-  addCourseStart,
   addCourseSuccess,
+  removeCourseSuccess,
 } from './courseSlice';
 
 export const getCourses = () => {
@@ -21,13 +21,24 @@ export const getCourses = () => {
 
 export const addCourses = () => {
   return async (dispatch) => {
-    dispatch(addCourseStart());
+    dispatch(fetchStart());
     try {
       const { data } = await AppEstudiantesApi.post('/curso', { titulo, descripcion, estado });
       const { titulo, descripcion, estado } = data.data;
       dispatch(addCourseSuccess());
     } catch (error) {
       dispatch(fetchFail(await error));
+    }
+  };
+};
+
+export const removeCourse = (id) => {
+  return async (dispatch) => {
+    try {
+      AppEstudiantesApi.delete('/curso/' + id);
+      dispatch(removeCourseSuccess(id));
+    } catch (error) {
+      dispatch(fetchFail(error));
     }
   };
 };

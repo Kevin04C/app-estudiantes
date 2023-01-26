@@ -41,6 +41,7 @@ export const startLogin = (form) => {
       const { id, name, username, token, imagen } = data.data;
       localStorage.setItem('token', token);
       dispatch(onLogin({ id, name, username, imagen }));
+      //
     } catch (error) {
       const ObjErr = error.response?.data;
       dispatch(onLogout(ObjErr?.errorMsg));

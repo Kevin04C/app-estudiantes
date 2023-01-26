@@ -8,8 +8,12 @@ export const Chores=()=> {
   const [view, setview] = useState(false);
   const [viewDetalles, setviewDetalles] = useState(false);
 
-  //dataChores sirve para almacenar los objetos que se crean a partir de las tareas
-  const [dataChores, setdataChores] = useState([]);
+  const [data, setdata] = useState();
+
+  console.log(data);
+  
+
+
 
   return (
     <>
@@ -17,15 +21,15 @@ export const Chores=()=> {
 
         <Header setview={setview} />
 
-        <Body dataChores={dataChores} setviewDetalles={setviewDetalles}/>
+        <Body  setviewDetalles={setviewDetalles} setdata={setdata} />
 
         {/* SECCION DE LA VISTA DEL FORMULARIO PARA ASIGNAR TAREAS */}
         {
-          view && (<ChoresFormulario setview={setview} setdataChores={setdataChores} dataChores={dataChores}/>)
+          view && (<ChoresFormulario setview={setview} />)
         }
         {/* SECCION DE LA VISTA DEL DETALLE DE LAS TAREAS */}
         {
-          viewDetalles && (<BodyChoresDetalles setviewDetalles={setviewDetalles}/>)
+          viewDetalles && (<BodyChoresDetalles   setview={setview} setviewDetalles={setviewDetalles} data={data}/>)
         }
       </div>
     </>

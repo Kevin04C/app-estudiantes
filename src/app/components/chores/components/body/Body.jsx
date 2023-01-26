@@ -1,13 +1,13 @@
 import { FaAngleRight } from "react-icons/fa";
 import { BodyContainer } from "./BodyContainer";
 
-export const Body = ({dataChores, setviewDetalles}) => {
+export const Body = ({setviewDetalles ,setdata}) => {
 
   return (
     <>
         <div className="front-body">
 
-          <BodyContainer dataChores={dataChores} setviewDetalles={setviewDetalles}/>
+          <BodyContainer setdata={setdata} setviewDetalles={setviewDetalles}/>
 
           <div className="front-body__workFinished">
 

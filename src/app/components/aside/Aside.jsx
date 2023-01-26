@@ -9,8 +9,11 @@ import {
   BsFileEarmarkText,
 } from 'react-icons/bs';
 import { useScrollDown } from '../../../hooks/useScrollDown';
+import { useDispatch } from 'react-redux';
+import { readChoress } from '../../../store/chores/thunks';
 const Aside = () => {
   const scrollDirection = useScrollDown();
+  const dispatch=useDispatch();
   return (
     <aside
       className={`aside ${
@@ -38,6 +41,7 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
+          onClick={()=>dispatch(readChoress())}
           to='/chores'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'

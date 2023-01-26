@@ -18,11 +18,11 @@ export const useForm = (initialForm, validate, submit) => {
   };
 
   useEffect(() => {
-    const empty = Object.values(stateForm).every(
+    /* const empty = Object.values(stateForm).every(
       (field) => field.trim() === '',
     );
 
-    setEmptyFields(empty);
+    setEmptyFields(empty); */
   }, [stateForm]);
 
   const handleBlur = (e) => {

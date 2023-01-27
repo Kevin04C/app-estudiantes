@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  color: $white;
+  background: $background;
+  border-radius: 10px;
+  &-over {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: left;
+    &__title {
+      font-size: 2rem;
+      font-weight: 500;
+      span {
+        color: $highlight;
+      }
+    }
+    p {
+      font-weight: 400;
+    }
+  }
+  &-img__container {
+    padding: 1rem 0;
+    width: 25%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column-reverse;
+    &-over {
+      text-align: center;
+    }
+    &-img__container {
+      width: 75%;
+    }
+  }
+}

@@ -1,6 +1,22 @@
+html {
+  // Custom scrollbar for Firefox
+  overflow-y: scroll;
+  scrollbar-color: $main $background;
+  scrollbar-width: thin;
+}
 body {
   background: initial;
-  overflow: hidden;
+  // Custom scrollbar for Chrome and Safari
+  &::-webkit-scrollbar {
+    width: 12px;
+    background: $background;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: $main;
+    border-right: 2px solid $background;
+    border-left: 2px solid $background;
+  }
 }
 .container {
   width: 90%;

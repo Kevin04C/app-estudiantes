@@ -9,7 +9,7 @@ const Aside = () => {
     <aside className={`aside ${scrollDirection === 'down' ? 'aside--down' : 'aside--up'}`}>
       <div className='aside__links'>
         <NavLink
-          to='/app'
+          to='/app/'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'
           }

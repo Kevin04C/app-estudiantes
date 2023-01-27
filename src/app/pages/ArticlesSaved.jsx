@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ArticleCard from '../../components/Articles/ArticleCard';
-import { NoArticlesFound } from '../../components/Articles/NoArticlesFound';
+import ArticleCard from '../components/Articles/ArticleCard';
+import { NoArticlesFound } from '../components/Articles/NoArticlesFound';
 
 const ArticlesSaved = () => {
   const savedArts = useSelector((state) => state.articles);

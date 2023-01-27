@@ -1,0 +1,71 @@
+html {
+  // Custom scrollbar for Firefox
+  overflow-y: scroll;
+  scrollbar-color: $main $background;
+  scrollbar-width: thin;
+}
+body {
+  background: initial;
+  // Custom scrollbar for Chrome and Safari
+  &::-webkit-scrollbar {
+    width: 12px;
+    background: $background;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: $main;
+    border-right: 2px solid $background;
+    border-left: 2px solid $background;
+  }
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.principal {
+  background: $background;
+}
+
+.seccion1 {
+  min-height: 100vh;
+}
+
+.heading {
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  @include responsive(md) {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  &.primary {
+    color: $heading;
+  }
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  @include responsive(md) {
+    line-height: 1.8;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+  &.primary {
+    color: $paragraph;
+  }
+  &.secondary {
+    color: $button-text;
+  }
+}
+
+.bg-primary {
+  background-color: $background;
+}
+.bg-secondary {
+  background-color: $paragraph;
+}

@@ -1,0 +1,147 @@
+body {
+  background-color: $stroke;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
+  min-height: 100vh;
+}
+.front-cabecera {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @include responsive-max(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__welcome {
+    background-color: #232946;
+
+    display: flex;
+    width: 60%;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    height: 12rem;
+
+    @include responsive-max(lg) {
+      width: 90%;
+    }
+    @include responsive-max(md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 21rem;
+    }
+    @include responsive-max(sm) {
+      margin-right: 2rem;
+    }
+
+    &__1 {
+      &__titulo {
+        font-size: 1.5rem;
+        color: #ffffff;
+        @include responsive-max(xl) {
+          font-size: 1rem;
+        }
+        @include responsive-max(md) {
+          text-align: center;
+          margin-top: 1.2rem;
+        }
+
+        &__small {
+          color: #ffb6b6;
+        }
+      }
+      &__contenido {
+        color: #d0d6f9;
+        font-size: 0.9rem;
+        width: 80%;
+        margin-top: 0.7rem;
+        @include responsive-max(xl) {
+          width: 88%;
+        }
+        @include responsive-max(xl) {
+          font-size: 0.8rem;
+        }
+        @include responsive-max(md) {
+          width: 100%;
+          font-size: 1rem;
+        }
+      }
+      &__hora {
+        color: #d0d6f9;
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        @include responsive-max(xl) {
+          font-size: 1rem;
+        }
+        @include responsive-max(md) {
+          text-align: end;
+        }
+      }
+    }
+    &__img {
+      width: 17rem;
+      @include responsive-max(xl) {
+        width: 14rem;
+      }
+    }
+  }
+  &__tareas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    width: 20%;
+    background-color: #232946;
+
+    @include responsive-max(xl) {
+      font-size: 1.1rem;
+    }
+
+    @include responsive-max(lg) {
+      width: 25rem;
+      height: 10rem;
+      font-size: 1.7rem;
+    }
+    @include responsive-max(md) {
+      width: 20rem;
+      height: 9rem;
+      font-size: 1.5rem;
+    }
+    @include responsive-max(sm) {
+      width: 13rem;
+      height: 7rem;
+      font-size: 1.2rem;
+    }
+    &__titulo {
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+
+    &__button {
+      background-color: #b1e99d;
+      cursor: pointer;
+
+      border-radius: 5px;
+      padding: 6px;
+      &:hover {
+        background-color: #577e49;
+        color: white;
+      }
+    }
+  }
+}

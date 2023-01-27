@@ -1,15 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  BsBoxArrowLeft,
-  BsFillFilePersonFill,
-  BsLightningFill,
-  BsPatchQuestionFill,
-} from 'react-icons/bs';
+import { BsBoxArrowLeft, BsFillFilePersonFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { onLogout } from '../../../store/auth/authSlice';
 
-const ProfilePopUp = ({ refProfile }) => {
+const ProfilePopUp = ({ handleClick, refProfile }) => {
   const dispatch = useDispatch();
   const { name, username, imagen } = useSelector((state) => state.auth.user);
 
@@ -28,17 +23,9 @@ const ProfilePopUp = ({ refProfile }) => {
         </div>
       </div>
       <div className='profile-pop__body'>
-        <Link to='/profile' className='profile-pop__link'>
+        <Link to='/app/profile' className='profile-pop__link' onClick={handleClick}>
           <BsFillFilePersonFill />
           Tu Perfil
-        </Link>
-        <Link className='profile-pop__link'>
-          <BsLightningFill />
-          Otras cosas
-        </Link>
-        <Link className='profile-pop__link'>
-          <BsPatchQuestionFill />
-          Algo más
         </Link>
       </div>
       <div className='profile-pop__footer' onClick={handleLogout}>

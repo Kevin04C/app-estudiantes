@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import ArticleCard from '../../components/Articles/ArticleCard';
+import ArticleCard from './ArticleCard';
 
 const ArticlesView = ({ articles, language }) => {
   return (

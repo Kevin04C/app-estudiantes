@@ -17,7 +17,7 @@ export const startRegister = (form) => {
     dispatch(onChecking());
 
     try {
-      const { data } = await AppEstudiantesApi.post('/registro', form);
+      const { data } = await AppEstudiantesApi.post('/register', form);
       const { message } = data.data;
       dispatch(onCloseChecking());
       dispatch(setSuccessMessage(message));

@@ -139,6 +139,9 @@ export const CoursePage = () => {
               onEdit={() => {
                 toggleAddCourseActive();
                 setId(course._id);
+                setCondition(course.estado);
+                setDescription(course.descripcion);
+                setTitle(course.titulo);
                 setEdit(true);
               }}
             />

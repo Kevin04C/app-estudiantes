@@ -1,27 +1,27 @@
 [
   {
     "title": "Pomodoro",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "text": "Mejora tu productividad con el pomodoro, con nuestra herramienta fácil de usar, podrás maximizar tu tiempo y lograr tus metas en menos tiempo. ",
     "button-text": "LO QUIERO PROBAR"
   },
   {
     "title": "Calculadora",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "text": "Realiza operaciones matemáticas con nuestra calculadora includida en nuestra aplicación en cualquier momento.",
     "button-text": "LO QUIERO PROBAR"
   },
   {
     "title": "Calendario",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "text": "Organiza tu tiempo con nuestro calendario, podrás crear eventos y recordatorios para que no te olvides de nada.",
     "button-text": "LO QUIERO PROBAR"
   },
   {
     "title": "Administrador de tareas",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "text": "Administra tus tareas tareas diarias con nuestra herramienta, podrás crear tareas, editarlas y eliminarlas.",
     "button-text": "LO QUIERO PROBAR"
   },
   {
     "title": "Administrador de cursos",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore neque magni, eaque distinctio nihil pariatur.",
+    "text": "Administrada los cursos que estes llevando para que no te pierdas de nada y tengas un mejor desempeño.",
     "button-text": "LO QUIERO PROBAR"
   }
 ]

@@ -14,7 +14,7 @@ export const CoursePage = () => {
   const [description, setDescription] = useState('');
   const [condition, setCondition] = useState('');
   const [id, setId] = useState('');
-  const [show, setShow] = useState(courses);
+  const [show, setShow] = useState('all');
   const [edit, setEdit] = useState(false);
   const [addCourseActive, toggleAddCourseActive] = useModal(false);
 
@@ -70,6 +70,7 @@ export const CoursePage = () => {
   };
 
   //<---- Filters ---->
+  let showCourses;
 
   const pending = courses?.filter((course) => course.estado === 'PH');
 
@@ -77,25 +78,35 @@ export const CoursePage = () => {
 
   const complete = courses?.filter((course) => course.estado === 'FZ');
 
+  if (show === 'inProgress') {
+    showCourses = inProgress;
+  } else if (show === 'pending') {
+    showCourses = pending;
+  } else if (show === 'complete') {
+    showCourses = complete;
+  } else {
+    showCourses = courses;
+  }
+
   const showAll = () => {
-    setShow(courses);
+    setShow('all');
   };
 
   const showPending = () => {
-    setShow(pending);
+    setShow('pending');
   };
 
   const showInProgress = () => {
-    setShow(inProgress);
+    setShow('inProgress');
   };
 
   const showComplete = () => {
-    setShow(complete);
+    setShow('complete');
   };
 
   useEffect(() => {
     dispatch(getCourses());
-  }, [dispatch, setShow]);
+  }, [dispatch, show]);
 
   return (
     <section className='courses'>
@@ -119,8 +130,8 @@ export const CoursePage = () => {
       </div>
       {/*<------ List of courses ------>*/}
       <section className='courses-container'>
-        {courses &&
-          courses?.map((course) => (
+        {showCourses &&
+          showCourses?.map((course) => (
             <CardCourse
               key={course._id}
               course={course}

@@ -138,7 +138,7 @@ export const CoursePage = () => {
       </div>
       {/*<------ List of courses ------>*/}
 
-      <CourseList courses={showCourses} onEdit={openEdit} onDelete={handleDelete} />
+      <CourseList courses={showCourses} onEdit={openEdit} onDelete={handleDelete} editable={true} />
       {/*<------ Form Modal ------>*/}
       <FormCourse
         addCourseActive={addCourseActive}

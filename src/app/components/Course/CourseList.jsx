@@ -1,7 +1,7 @@
 import React from 'react';
 import CardCourse from './CardCourse';
 
-const CourseList = ({ courses, onEdit, onDelete }) => {
+const CourseList = ({ courses, onEdit, onDelete, editable }) => {
   return (
     <section className='courses-container'>
       {courses &&
@@ -11,6 +11,7 @@ const CourseList = ({ courses, onEdit, onDelete }) => {
             course={course}
             onDelete={() => onDelete(course._id)}
             onEdit={() => onEdit(course._id)}
+            editable={editable}
           />
         ))}
     </section>

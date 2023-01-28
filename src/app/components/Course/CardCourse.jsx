@@ -1,6 +1,6 @@
 import { BiTrash, BiEdit } from 'react-icons/bi';
 
-const CardCourse = ({ course, onDelete, onEdit }) => {
+const CardCourse = ({ course, onDelete, onEdit, editable }) => {
   const showCondition = () => {
     if (course?.estado === 'PH') return 'Pendiente';
     if (course?.estado === 'EP') return 'Cursando';
@@ -37,9 +37,11 @@ const CardCourse = ({ course, onDelete, onEdit }) => {
         <button className='delete btn' onClick={onDelete}>
           <BiTrash />
         </button>
-        <button className='edit btn' onClick={onEdit}>
-          <BiEdit />
-        </button>
+        {editable && (
+          <button className='edit btn' onClick={onEdit}>
+            <BiEdit />
+          </button>
+        )}
       </div>
     </article>
   );

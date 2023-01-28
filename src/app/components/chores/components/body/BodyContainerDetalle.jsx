@@ -1,11 +1,9 @@
-import { getSearchViewForId } from '../../helper/getSearchViewForId';
-import { BodyFechas } from './BodyFechas';
 
 export const BodyContainerDetalle = ({_id,setviewDetalles,titulo,descripcion,setdata}) => {
 
 const urlTareas=`../../../../../public/img/ecommerce.png`;
-//NOS PERMITE CAMBIAR EL ESTADO DE VIEWDETALLES PARA PODER VER EL COMPONENTE DEL DETALLE DE LAS TAREAS
 
+//NOS PERMITE CAMBIAR EL ESTADO DE VIEWDETALLES PARA PODER VER EL COMPONENTE DEL DETALLE DE LAS TAREAS
 const onViewDetalles=()=>{
     
     setviewDetalles(true);

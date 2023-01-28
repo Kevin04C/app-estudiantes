@@ -32,9 +32,6 @@ export const BodyChoresDetalles = ({setviewDetalles,data,setview,setFormulario})
   setviewDetalles(false);
  }
 
- 
-  
-
   return (
     <>
         <div className="body__detalles">

@@ -1,5 +1,5 @@
-import { FaAngleRight } from "react-icons/fa";
 import { BodyContainer } from "./BodyContainer";
+import { BodyChoresComplete } from "./BodyChoresComplete";
 
 export const Body = ({setviewDetalles ,setdata}) => {
 
@@ -14,48 +14,10 @@ export const Body = ({setviewDetalles ,setdata}) => {
               <p className="front-body__workFinished__titulo">Tareas Terminadas</p>
 
               {/* COMPONENTES DE LAS TAREAS FINALIZADAS */}
-              <div className="front-body__workFinished__componente">
-
-                <div className="front-body__workFinished__componente__circulo"></div>
-
-                <div className="front-body__workFinished__componente__tarea">
-                    <p className="front-body__workFinished__componente__tarea__asignatura">ALGEBRA</p>
-                    <p className="front-body__workFinished__componente__tarea__fecha">18 de noviembre</p>
-                </div>
-
-                <div className="front-body__workFinished__componente__icono">
-                  <FaAngleRight/>
-                </div>
-
-              </div>
-
-              <div className="front-body__workFinished__componente">
-                <div className="front-body__workFinished__componente__circulo"></div>
-
-                <div className="front-body__workFinished__componente__tarea">
-                    <p className="front-body__workFinished__componente__tarea__asignatura">MATEMATICA</p>
-                    <p className="front-body__workFinished__componente__tarea__fecha">18 de noviembre</p>
-                </div>
-
-                <div className="front-body__workFinished__componente__icono">
-                  <FaAngleRight/>
-                </div>
-              </div>
-
-              <div className="front-body__workFinished__componente">
-                <div className="front-body__workFinished__componente__circulo"></div>
-
-                <div className="front-body__workFinished__componente__tarea">
-                    <p className="front-body__workFinished__componente__tarea__asignatura">RELIGION</p>
-                    <p className="front-body__workFinished__componente__tarea__fecha">18 de noviembre</p>
-                </div>
-
-                <div className="front-body__workFinished__componente__icono">
-                  <FaAngleRight/>
-                </div>
-              </div>
+              <BodyChoresComplete/>
 
           </div>
+          
         </div>
     </>
   );

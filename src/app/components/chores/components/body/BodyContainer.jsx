@@ -1,12 +1,9 @@
 import { useSelector } from "react-redux";
 import { BodyContainerDetalle } from "./BodyContainerDetalle";
 
-
-
 export const BodyContainer = ({setviewDetalles,setdata}) => {
   
   const {choresForm}=useSelector((state)=>state.chores);
-  /* console.log(choresForm); */
 
   return (
     <>

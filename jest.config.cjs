@@ -2,6 +2,7 @@
 const config = {
   verbose: true,
   testEnvironment: 'jsdom',
+  setupFiles: ['./jest.setup.js'],
 };
 
 module.exports = config;

@@ -4,8 +4,11 @@ import { useForm } from '../../../../../hooks/useForm';
 import { editChores, startChores } from "../../../../../store/chores/thunks";
 import { getSearchViewForId } from "../../helper/getSearchViewForId";
 
+
 const validate = (stateForm) => {
+
   const { titulo, descripcion } = stateForm;
+
   const errors = {};
 
   if (!titulo.trim()) {
@@ -19,21 +22,30 @@ const validate = (stateForm) => {
   return errors;
 };
 
+
+
 export const ChoresFormulario = ({setview,Formulario,data}) => {
+
   const {choresForm}=useSelector((state)=>state.chores);
-  const a=getSearchViewForId(data,choresForm);
-      const handleSumitChores=(dataa)=>{
-        if (Formulario==='crear') {
+  const a = getSearchViewForId(data,choresForm);
+
+  //funcion submit que se evalua dependiendo de la condicion 'Crear' o 'Editar'
+  const handleSumitChores=(dataa)=>{
+
+        if (Formulario === 'crear') {
           dispatch(startChores(dataa));
           setview(false);
         }else{
           dispatch(editChores(data,dataa));
           setview(false);
         }
-    };
-    
-    const initial=()=>{
-      if (Formulario==='crear') {
+
+  };
+  
+  //funcion que me permite evaluar si es para crear o editar, me retornara un objeto dependiendo de la condicion
+  const initial=()=>{
+
+      if (Formulario === 'crear') {
         return{
           titulo:'',
           descripcion:'',
@@ -46,28 +58,33 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
           completado:a?.completado,
         }
       }
-    }
 
-    const {stateForm,handleInputChange,handleSubmit} =useForm(initial,validate,handleSumitChores);
+  }
 
-    const {titulo,descripcion,completado}=stateForm;
+  const {stateForm,handleInputChange,handleSubmit} = useForm(initial,validate,handleSumitChores);
+
+  const {titulo,descripcion} = stateForm;
     
-    const dispatch=useDispatch();
+  const dispatch=useDispatch();
 
-    //Llamada de formulario para crear o editar
-    const tipoFormulario=()=>{
-      if (Formulario==='crear') {
+  //Llamada de formulario para crear o editar
+  const tipoFormulario=()=>{
+
+      if (Formulario === 'crear') {
         return 'REGISTRAR';
       }else{
         return 'EDITAR';
       }
-    }
+
+  }
     
 
   return (
     <>
         <div  className="container__tareas " id="container__tareas">
+
           <div className="container__tareas__form" id="form">
+
             <a onClick={()=>setview(false)} className="container__tareas__form__close"><FaTimes /></a>
             <h1 className="container__tareas__form__titulo">{tipoFormulario()} TAREAS</h1>
 
@@ -90,11 +107,13 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
               value={descripcion}
               onChange={handleInputChange}
               />
+
               <button className="container__tareas__form__form__button">{tipoFormulario()} TAREAS</button>
 
             </form>
 
           </div>
+
         </div>
     </>
   )

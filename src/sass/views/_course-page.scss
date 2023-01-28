@@ -5,6 +5,23 @@
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 4rem;
+  &-title {
+    font-size: 2rem;
+    color: $white;
+  }
+  &-filter {
+    display: flex;
+    margin-top: 1.5rem;
+    gap: 1rem;
+    &__btn {
+      background: $stroke;
+      color: $paragraph;
+    }
+    &__btn.active {
+      font-weight: 600;
+      color: $highlight;
+    }
+  }
   &-container {
     display: grid;
     gap: 2rem;
@@ -57,11 +74,6 @@
         }
       }
     }
-  }
-  h1 {
-    color: $white;
-    font-size: 1.5rem;
-    font-weight: 500;
   }
   &-header {
     display: flex;

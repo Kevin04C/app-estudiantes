@@ -4,7 +4,8 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { addCourses, editCourse, getCourses, removeCourse } from '../../store/courses';
-import CardCourse from '../components/Course/CardCourse';
+import CourseList from '../components/Course/CourseList';
+import CourseFilter from '../components/Course/CourseFilter';
 
 export const CoursePage = () => {
   const { courses } = useSelector((state) => state.courses);
@@ -69,6 +70,15 @@ export const CoursePage = () => {
     toggleAddCourseActive();
   };
 
+  const openEdit = (course) => {
+    toggleAddCourseActive();
+    setId(course._id);
+    setCondition(course.estado);
+    setDescription(course.descripcion);
+    setTitle(course.titulo);
+    setEdit(true);
+  };
+
   //<---- Filters ---->
   let showCourses;
 
@@ -110,17 +120,15 @@ export const CoursePage = () => {
 
   return (
     <section className='courses'>
-      <h1>Cursos</h1>
+      <h1 className='courses-title'>Cursos</h1>
       {/*<------- Filter ------->*/}
-      <div className='courses-filter'>
-        <button onClick={showAll}>Todos</button>
-        <span>|</span>
-        <button onClick={showPending}>Pendientes</button>
-        <span>|</span>
-        <button onClick={showInProgress}>Cursando</button>
-        <span>|</span>
-        <button onClick={showComplete}>Completado</button>
-      </div>
+      <CourseFilter
+        show={show}
+        setAll={showAll}
+        setPending={showPending}
+        setInProgress={showInProgress}
+        setComplete={showComplete}
+      />
       {/*<------ Add Course ------>*/}
       <div className='courses-btn'>
         <button className='courses-btn__add' onClick={handleAdd}>
@@ -129,24 +137,8 @@ export const CoursePage = () => {
         <span>Añadir Curso</span>
       </div>
       {/*<------ List of courses ------>*/}
-      <section className='courses-container'>
-        {showCourses &&
-          showCourses?.map((course) => (
-            <CardCourse
-              key={course._id}
-              course={course}
-              onDelete={() => handleDelete(course._id)}
-              onEdit={() => {
-                toggleAddCourseActive();
-                setId(course._id);
-                setCondition(course.estado);
-                setDescription(course.descripcion);
-                setTitle(course.titulo);
-                setEdit(true);
-              }}
-            />
-          ))}
-      </section>
+
+      <CourseList courses={showCourses} onEdit={openEdit} onDelete={handleDelete} />
       {/*<------ Form Modal ------>*/}
       <FormCourse
         addCourseActive={addCourseActive}

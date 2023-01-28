@@ -36,8 +36,11 @@ export const choresSlice = createSlice({
       state.state='finalizado';
       state.choresComplete=payload;
     },
+    viewCompleteChoress(state, {payload}){
+      state.choresComplete=payload;
+    }
 
   },
 });
 
-export const { initialChores,readChores,viewChores,editChoress,deleteChoress,completeChoress } = choresSlice.actions;
+export const { initialChores,readChores,viewChores,editChoress,deleteChoress,completeChoress,viewCompleteChoress } = choresSlice.actions;

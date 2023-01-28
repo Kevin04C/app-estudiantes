@@ -1,6 +1,6 @@
 
 import AppEstudiantesApi from "../../api/AppEstudiantesApi";
-import { deleteChoress, editChoress, readChores, viewChores } from "./choresSlice";
+import { deleteChoress, editChoress, readChores, viewChores, viewCompleteChoress } from "./choresSlice";
 
 export const startChores=(tareas)=>{
     return async(dispatch)=>{
@@ -61,10 +61,22 @@ export const completeChores=(id)=>{
         const {success}=data;
         if (!!success) {
             const { data } = await AppEstudiantesApi.get(`/toDo?completado=${success}`);
-            console.log(data);
+            //console.log(data);
+            const {todoCompletado}=data;
+            dispatch(completeChoress(todoCompletado));
             
         }else{
             console.log('errorcito');
         }
+    }
+}
+
+export const viewCompleteChores=()=>{
+    
+    return async(dispatch)=>{
+        const { data } = await AppEstudiantesApi.get(`/toDo?completado=true`);
+            //console.log(data);
+            const {todoCompletado}=data;
+        dispatch(viewCompleteChoress(todoCompletado));
     }
 }

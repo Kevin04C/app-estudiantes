@@ -9,14 +9,16 @@ import CourseFilter from '../components/Course/CourseFilter';
 
 export const CoursePage = () => {
   const { courses } = useSelector((state) => state.courses);
-  console.log(courses);
   const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [condition, setCondition] = useState('');
   const [id, setId] = useState('');
+
   const [show, setShow] = useState('all');
   const [edit, setEdit] = useState(false);
+
   const [addCourseActive, toggleAddCourseActive] = useModal(false);
 
   const handleTitle = (e) => {

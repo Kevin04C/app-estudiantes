@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderTareas } from './HeaderTareas';
 
-export const Header = ({setview}) => {
+export const Header = ({setview,setFormulario}) => {
 
   const urlImg=`../../../../../public/img/welcome.png`;
 
@@ -23,7 +23,7 @@ export const Header = ({setview}) => {
 
           </div>
 
-          <HeaderTareas setview={setview} />
+          <HeaderTareas setview={setview} setFormulario={setFormulario}/>
 
         </div>
     </>

@@ -1,7 +1,8 @@
 import { FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from '../../../../../hooks/useForm';
-import { startChores } from "../../../../../store/chores/thunks";
+import { editChores, startChores } from "../../../../../store/chores/thunks";
+import { getSearchViewForId } from "../../helper/getSearchViewForId";
 
 const validate = (stateForm) => {
   const { titulo, descripcion } = stateForm;
@@ -18,33 +19,57 @@ const validate = (stateForm) => {
   return errors;
 };
 
-export const ChoresFormulario = ({setview}) => {
+export const ChoresFormulario = ({setview,Formulario,data}) => {
+  const {choresForm}=useSelector((state)=>state.chores);
+  const a=getSearchViewForId(data,choresForm);
+      const handleSumitChores=(dataa)=>{
+        if (Formulario==='crear') {
+          dispatch(startChores(dataa));
+          setview(false);
+        }else{
+          dispatch(editChores(data,dataa));
+          setview(false);
+        }
+    };
+    
+    const initial=()=>{
+      if (Formulario==='crear') {
+        return{
+          titulo:'',
+          descripcion:'',
+          completado:false,
+        }
+      }else{
+        return{
+          titulo:a?.titulo,
+          descripcion: a?.descripcion,
+          completado:a?.completado,
+        }
+      }
+    }
 
-  
-  const handleSumitChores=(data)=>{
-    dispatch(startChores(data));
-    setview(false);
-
-};
-    const {stateForm,handleInputChange,handleSubmit} =useForm({
-            titulo:'',
-            descripcion:'',
-            completado:false,
-        },validate,handleSumitChores);
+    const {stateForm,handleInputChange,handleSubmit} =useForm(initial,validate,handleSumitChores);
 
     const {titulo,descripcion,completado}=stateForm;
-    const {choresForm}=useSelector((state)=>state.chores);
+    
     const dispatch=useDispatch();
 
+    //Llamada de formulario para crear o editar
+    const tipoFormulario=()=>{
+      if (Formulario==='crear') {
+        return 'REGISTRAR';
+      }else{
+        return 'EDITAR';
+      }
+    }
     
-  
 
   return (
     <>
         <div  className="container__tareas " id="container__tareas">
           <div className="container__tareas__form" id="form">
             <a onClick={()=>setview(false)} className="container__tareas__form__close"><FaTimes /></a>
-            <h1 className="container__tareas__form__titulo">REGISTRAR TAREAS</h1>
+            <h1 className="container__tareas__form__titulo">{tipoFormulario()} TAREAS</h1>
 
             <form className="container__tareas__form__form" onSubmit={handleSubmit}>
 
@@ -65,7 +90,7 @@ export const ChoresFormulario = ({setview}) => {
               value={descripcion}
               onChange={handleInputChange}
               />
-              <button className="container__tareas__form__form__button">Registrar tarea</button>
+              <button className="container__tareas__form__form__button">{tipoFormulario()} TAREAS</button>
 
             </form>
 

@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const HeaderTareas = ({setview}) => {
+export const HeaderTareas = ({setview,setFormulario}) => {
 
   const mostrarFormulario=()=>{
     setview(true);
+    setFormulario('crear')
   };
 
   return (

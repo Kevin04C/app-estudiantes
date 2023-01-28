@@ -1,10 +1,9 @@
 import { FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { completeChores } from "../../../../../store/chores/choresSlice";
-import { deleteChores } from "../../../../../store/chores/thunks";
+import { deleteChores, editChores,completeChores } from "../../../../../store/chores/thunks";
 import { getSearchViewForId } from "../../helper/getSearchViewForId";
 
-export const BodyChoresDetalles = ({setviewDetalles,data,setview}) => {
+export const BodyChoresDetalles = ({setviewDetalles,data,setview,setFormulario}) => {
 
   const urlTareas=`../../../../../public/img/ecommerce.png`;
   const {choresForm}=useSelector(state=>state.chores);
@@ -19,19 +18,18 @@ export const BodyChoresDetalles = ({setviewDetalles,data,setview}) => {
  }
 
  const handleEdit=()=>{
-
-  console.log('editando');
-  console.log(a.ide);
   setview(true);
   setviewDetalles(false);
+  dispatch(editChores(a._id));
+  setFormulario('editar')
 
  }
 
  const handleComplete=()=>{
-
+  console.log(a._id);
   console.log('completado');
-  console.log(a.ide);
-  dispatch(completeChores(a.ide));
+  dispatch(completeChores(a._id));
+  setviewDetalles(false);
  }
 
  

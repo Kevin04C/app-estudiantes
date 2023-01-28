@@ -19,8 +19,9 @@ export const choresSlice = createSlice({
       state.state='Pendiente';
       state.choresForm.push(action.payload);
     },
-    editChores(state,action) {
+    editChoress(state,action) {
       state.state='editado';
+      state.choresForm=action.payload;
     },
     viewChores(state,action) {
       state.state='editado';
@@ -31,15 +32,12 @@ export const choresSlice = createSlice({
       state.choresForm=payload;
 
     },
-    completeChores(state,{payload}) {
+    completeChoress(state,{payload}) {
       state.state='finalizado';
-      const completado= state.choresForm.find((d)=>d.ide === payload);
-      console.log(completado);
-      state.choresComplete=[...state.choresComplete,completado];
-
+      state.choresComplete=payload;
     },
 
   },
 });
 
-export const { initialChores,readChores,viewChores,editChores,deleteChoress,completeChores } = choresSlice.actions;
+export const { initialChores,readChores,viewChores,editChoress,deleteChoress,completeChoress } = choresSlice.actions;

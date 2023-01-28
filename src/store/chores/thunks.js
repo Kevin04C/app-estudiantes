@@ -1,5 +1,6 @@
+
 import AppEstudiantesApi from "../../api/AppEstudiantesApi";
-import { completeChores,deleteChoress, editChores, readChores, viewChores } from "./choresSlice";
+import { deleteChoress, editChoress, readChores, viewChores } from "./choresSlice";
 
 export const startChores=(tareas)=>{
     return async(dispatch)=>{
@@ -22,29 +23,48 @@ export const readChoress=()=>{
     
     }
 }
-export const getEdit=(id)=>{
+export const editChores=(id,dataa)=>{
 
     return async(dispatch)=>{
-        dispatch(editChores);
-
-
+        const {data} = await AppEstudiantesApi.patch(`/toDo/${id}`,dataa);
+        const {success}=data;
+        if (!!success) {
+            const { data } = await AppEstudiantesApi.get('/toDo');
+            const {todos}=data.data;
+            dispatch(editChoress(todos));
+        }else{
+            console.log('error al actulizar el chore');
+        }
     }
 }
 
 export const deleteChores=(id)=>{
     
     return async(dispatch)=>{
-        const { data } = await AppEstudiantesApi.delete('/toDo',id);
-        const {todos}=data.data;
-        dispatch(deleteChoress(todos));
-        
-        
+        const { data } = await AppEstudiantesApi.delete(`/toDo/${id}`);
+        if (!!data.success) {
+            const { data } = await AppEstudiantesApi.get('/toDo');
+            const {todos}=data.data;
+            dispatch(deleteChoress(todos));
+        }else{
+            console.log('error al eliminar el chore');
+        }      
     }
 }
 
-export const getComplete=()=>{
+export const completeChores=(id)=>{
     
     return async(dispatch)=>{
-        dispatch(completeChores);
+        const {data} = await AppEstudiantesApi.patch(`/toDo/${id}`,{
+            completado:true
+        });
+        const {success}=data;
+        if (!!success) {
+            const { data } = await AppEstudiantesApi.get(`/toDo?completado=${success}`);
+            console.log(data);
+            
+        }else{
+            console.log('errorcito');
+        }
     }
 }

@@ -10,7 +10,7 @@ import {
 } from 'react-icons/bs';
 import { useScrollDown } from '../../../hooks/useScrollDown';
 import { useDispatch } from 'react-redux';
-import { readChoress } from '../../../store/chores/thunks';
+import { readChoress, viewCompleteChores } from '../../../store/chores/thunks';
 const Aside = () => {
   const scrollDirection = useScrollDown();
   const dispatch=useDispatch();
@@ -41,7 +41,10 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
-          onClick={()=>dispatch(readChoress())}
+          onClick={()=>{
+            dispatch(readChoress());
+            dispatch(viewCompleteChores());
+          }}
           to='/chores'
           className={({ isActive }) =>
             isActive ? 'aside__link aside__link--active' : 'aside__link'

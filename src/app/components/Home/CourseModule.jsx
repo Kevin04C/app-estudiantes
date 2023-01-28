@@ -16,7 +16,6 @@ const CourseModule = () => {
     dispatch(getCourses());
   }, [dispatch]);
 
-  console.log(courses);
   return (
     <section className='courses'>
       <div className='courses-header'>
@@ -24,9 +23,16 @@ const CourseModule = () => {
         <Link to='/app/courses'>Ver más</Link>
       </div>
       <div className='courses-container'>
-        {courses?.slice(0, 2).map((course) => (
-          <CardCourse key={course._id} course={course} onClick={() => handleDelete(course._id)} />
-        ))}
+        {courses &&
+          courses
+            .slice(0, 2)
+            .map((course) => (
+              <CardCourse
+                key={course._id}
+                course={course}
+                onDelete={() => handleDelete(course._id)}
+              />
+            ))}
       </div>
     </section>
   );

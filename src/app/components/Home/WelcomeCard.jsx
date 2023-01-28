@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 
 const WelcomeCard = () => {
   const { user } = useSelector((state) => state.auth);
-  console.log(user);
 
   return (
     <article className='card'>

@@ -16,23 +16,35 @@ const courseSlice = createSlice({
     },
     fetchCourseSuccess(state, action) {
       state.loading = false;
-      const { cursos } = action.payload.data;
-      state.courses = cursos;
+      const { courses } = action.payload.data;
+      state.courses = courses.reverse();
     },
     fetchFail(state, action) {
       state.loading = false;
       state.error = action.payload;
     },
     addCourseSuccess(state, action) {
-      state.courses.push(action.payload);
+      state.loading = false;
+      state.courses.unshift(action.payload);
     },
     removeCourseSuccess(state, action) {
-      const selectedCourse = state.courses.find((course) => course._id === action.payload);
-      state.courses.splice(state.courses.indexOf(selectedCourse), 1);
+      state.loading = false;
+      state.courses = state.courses.filter((c) => c._id != action.payload);
+    },
+    editCourseSuccess(state, action) {
+      state.loading = false;
+      const itemIndex = state.courses.findIndex((item) => item._id === action.payload._id);
+      state.courses[itemIndex] = { ...state.courses[itemIndex], ...action.payload };
     },
   },
 });
 
-export const { fetchStart, fetchFail, fetchCourseSuccess, addCourseSuccess, removeCourseSuccess } =
-  courseSlice.actions;
+export const {
+  fetchStart,
+  fetchFail,
+  fetchCourseSuccess,
+  addCourseSuccess,
+  removeCourseSuccess,
+  editCourseSuccess,
+} = courseSlice.actions;
 export default courseSlice;

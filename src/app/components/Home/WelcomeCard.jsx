@@ -4,11 +4,6 @@ import { getGreeting } from '../../helpers/greeting';
 
 const WelcomeCard = () => {
   const { user } = useSelector((state) => state.auth);
-  const [greeting, setGreting] = useState('');
-
-  useLayoutEffect(() => {
-    setGreting(getGreeting());
-  }, []);
 
   return (
     <article className='card'>

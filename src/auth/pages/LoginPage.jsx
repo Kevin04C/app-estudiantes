@@ -118,10 +118,9 @@ export const LoginPage = () => {
               </button>
             </form>
             <div className='recover-password'>
-              {/* <p className='recover-password__text'>
-                  ¿No recuerdas tu contraseña?
-                </p> */}
-              <Link className='recover-password__link'>¿Has olvidado tu contraseña?</Link>
+              <Link className='recover-password__link' to='/auth/recover-account'>
+                ¿Has olvidado tu contraseña?
+              </Link>
             </div>
             <div className='not-account'>
               <span className='not-account__title'>¿Aún no tienes cuenta?</span>

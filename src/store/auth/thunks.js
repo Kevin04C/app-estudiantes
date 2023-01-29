@@ -3,6 +3,7 @@ import AppEstudiantesApi from '../../api/AppEstudiantesApi';
 import {
   clearErrorMessage,
   clearSuccessMessage,
+  onCancelLoadingPhoto,
   onChangingPassword,
   onChecking,
   onCloseChecking,
@@ -42,9 +43,9 @@ export const startLogin = (form) => {
     dispatch(onChecking());
     try {
       const { data } = await AppEstudiantesApi.post('/login', form);
-      const { id, name, username, token, imagen } = data.data;
+      const { id, name, username, token, image } = data.data;
       localStorage.setItem('token', token);
-      dispatch(onLogin({ id, name, username, imagen }));
+      dispatch(onLogin({ id, name, username, image }));
     } catch (error) {
       const ObjErr = error.response?.data;
       dispatch(onLogout(ObjErr?.errorMsg));
@@ -58,13 +59,13 @@ export const startUploadPhoto = (fileImagen) => {
     try {
       dispatch(onLoadingPhoto());
       const formData = new FormData();
-      formData.append('imagen', fileImagen);
+      formData.append('image', fileImagen);
       const { data } = await AppEstudiantesApi.patch('/user/uploadPhoto', formData);
-      dispatch(setPhoto(data?.data.imagen));
+      dispatch(setPhoto(data?.data.image));
       toast.success('Foto actualizada');
     } catch (error) {
       toast.error('Error al actualizar la foto');
-      dispatch(onLoadingPhoto(false));
+      dispatch(onCancelLoadingPhoto());
     }
   };
 };

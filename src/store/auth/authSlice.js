@@ -42,11 +42,14 @@ export const authSlice = createSlice({
       state.changingPassword = false;
       state.errorMessage = payload || '';
     },
-    onLoadingPhoto: (state, { uploading = true }) => {
-      state.uploadingPhoto = uploading;
+    onLoadingPhoto: (state) => {
+      state.uploadingPhoto = true;
+    },
+    onCancelLoadingPhoto: (state) => {
+      state.uploadingPhoto = false;
     },
     setPhoto: (state, { payload }) => {
-      state.user.imagen = payload;
+      state.user.image = payload;
       state.uploadingPhoto = false;
     },
     clearErrorMessage: (state) => {
@@ -78,6 +81,8 @@ export const authSlice = createSlice({
 export const {
   clearErrorMessage,
   clearSuccessMessage,
+  onCancelLoadingPhoto,
+  onChangingPassword,
   onChecking,
   onCloseChecking,
   onCloseLoadingApp,
@@ -85,10 +90,9 @@ export const {
   onLoadingPhoto,
   onLogin,
   onLogout,
+  onSearchingEmail,
   setPhoto,
   setSuccessMessage,
-  onSearchingEmail,
   setSuccessSearchEmail,
-  onChangingPassword,
   SuccessChangedPassword,
 } = authSlice.actions;

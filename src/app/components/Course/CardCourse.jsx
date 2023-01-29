@@ -2,23 +2,23 @@ import { BiTrash, BiEdit } from 'react-icons/bi';
 
 const CardCourse = ({ course, onDelete, onEdit, editable }) => {
   const showCondition = () => {
-    if (course?.state === 'PH') return 'Pendiente';
-    if (course?.state === 'EP') return 'Cursando';
+    if (course?.state === 'TD') return 'Pendiente';
+    if (course?.state === 'IP') return 'Cursando';
     if (course?.state === 'FZ') return 'Completo';
   };
 
   const cardStyle = {
     borderLeft: `${
-      (course?.state === 'PH' && '0.7rem solid #ffffff') ||
-      (course?.state === 'EP' && '0.7rem solid #b8c1ec') ||
+      (course?.state === 'TD' && '0.7rem solid #ffffff') ||
+      (course?.state === 'IP' && '0.7rem solid #b8c1ec') ||
       (course?.state === 'FZ' && '0.7rem solid #eebbc3')
     }`,
   };
 
   const cardConditionStyle = {
     color: `${
-      (course?.state === 'PH' && '#ffffff') ||
-      (course?.state === 'EP' && '#b8c1ec') ||
+      (course?.state === 'TD' && '#ffffff') ||
+      (course?.state === 'IP' && '#b8c1ec') ||
       (course?.state === 'FZ' && '#eebbc3')
     }`,
     fontWeight: '600',

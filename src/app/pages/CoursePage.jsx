@@ -40,9 +40,9 @@ export const CoursePage = () => {
   const handleSubmitEdit = (e) => {
     e.preventDefault();
     const changeCourse = {
-      titulo: title,
-      descripcion: description,
-      estado: condition,
+      title,
+      description,
+      state: condition,
       _id: id,
     };
     toggleAddCourseActive();
@@ -61,9 +61,9 @@ export const CoursePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newCourse = {
-      titulo: title,
-      descripcion: description,
-      estado: condition,
+      title,
+      description,
+      state: condition,
     };
     setTitle('');
     setDescription('');
@@ -73,22 +73,22 @@ export const CoursePage = () => {
   };
 
   const openEdit = (course) => {
-    toggleAddCourseActive();
     setId(course._id);
-    setCondition(course.estado);
-    setDescription(course.descripcion);
-    setTitle(course.titulo);
+    setCondition(course.state);
+    setDescription(course.description);
+    setTitle(course.title);
     setEdit(true);
+    toggleAddCourseActive();
   };
 
   //<---- Filters ---->
   let showCourses;
 
-  const pending = courses?.filter((course) => course.estado === 'PH');
+  const pending = courses?.filter((course) => course.state === 'TD');
 
-  const inProgress = courses?.filter((course) => course.estado === 'EP');
+  const inProgress = courses?.filter((course) => course.state === 'IP');
 
-  const complete = courses?.filter((course) => course.estado === 'FZ');
+  const complete = courses?.filter((course) => course.state === 'FZ');
 
   if (show === 'inProgress') {
     showCourses = inProgress;

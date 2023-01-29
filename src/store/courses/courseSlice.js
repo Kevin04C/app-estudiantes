@@ -16,8 +16,8 @@ const courseSlice = createSlice({
     },
     fetchCourseSuccess(state, action) {
       state.loading = false;
-      const { cursos } = action.payload.data;
-      state.courses = cursos.reverse();
+      const { courses } = action.payload.data;
+      state.courses = courses?.reverse();
     },
     fetchFail(state, action) {
       state.loading = false;

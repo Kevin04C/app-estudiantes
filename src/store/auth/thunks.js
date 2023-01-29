@@ -23,9 +23,8 @@ export const startRegister = (form) => {
 
     try {
       const { data } = await AppEstudiantesApi.post('/register', form);
-      const { message } = data.data;
       dispatch(onCloseChecking());
-      dispatch(setSuccessMessage(message));
+      dispatch(setSuccessMessage('Hemos enviando un correo para validar tu cuenta'));
       setTimeout(() => dispatch(clearSuccessMessage()), 10);
     } catch (error) {
       const { response } = error;

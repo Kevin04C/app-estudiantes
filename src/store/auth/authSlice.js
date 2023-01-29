@@ -9,10 +9,6 @@ export const authSlice = createSlice({
     successMessage: '',
     loadingApp: false,
     uploadingPhoto: false,
-    foundEmail: false,
-    searchingEmail: false,
-    changingPassword: false,
-    passwordChanged: false,
   },
   reducers: {
     onChecking: (state) => {
@@ -36,10 +32,6 @@ export const authSlice = createSlice({
       state.status = '';
       state.user = null;
       state.loadingApp = false;
-      state.foundEmail = false;
-      state.searchingEmail = false;
-      state.passwordChanged = false;
-      state.changingPassword = false;
       state.errorMessage = payload || '';
     },
     onLoadingPhoto: (state) => {
@@ -60,20 +52,6 @@ export const authSlice = createSlice({
     },
     clearSuccessMessage: (state) => {
       state.successMessage = '';
-    },
-    onSearchingEmail: (state) => {
-      state.searchingEmail = true;
-    },
-    setSuccessSearchEmail: (state) => {
-      state.foundEmail = true;
-      state.searchingEmail = false;
-    },
-    onChangingPassword: (state) => {
-      state.changingPassword = true;
-    },
-    SuccessChangedPassword: (state) => {
-      state.changingPassword = false;
-      state.passwordChanged = true;
     },
   },
 });

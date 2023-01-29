@@ -10,7 +10,7 @@ const CourseList = ({ courses, onEdit, onDelete, editable }) => {
             key={course._id}
             course={course}
             onDelete={() => onDelete(course._id)}
-            onEdit={() => onEdit(course._id)}
+            onEdit={() => onEdit(course)}
             editable={editable}
           />
         ))}

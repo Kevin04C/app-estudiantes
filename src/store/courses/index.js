@@ -25,7 +25,7 @@ export const addCourses = (course) => {
     dispatch(fetchStart());
     try {
       const { data } = await AppEstudiantesApi.post('/course', course);
-      dispatch(addCourseSuccess(await data.data.curso));
+      dispatch(addCourseSuccess(await data.data.course));
     } catch (error) {
       dispatch(fetchFail(error));
     }
@@ -49,7 +49,7 @@ export const editCourse = (newData) => {
     dispatch(fetchStart());
     try {
       const { data } = await AppEstudiantesApi.patch('/course/' + newData._id, newData);
-      dispatch(editCourseSuccess(await data.data.curso));
+      dispatch(editCourseSuccess(await data.data.course));
     } catch (error) {
       dispatch(fetchFail(error));
     }

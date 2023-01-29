@@ -7,7 +7,7 @@ import { ProfileInputsData } from '../components/profile/ProfileInputsData';
 import { UserPhoto } from '../components/profile/UserPhoto';
 
 export const ProfilePage = () => {
-  const { name, username, imagen } = useSelector((state) => state.auth.user);
+  const { name, username, image } = useSelector((state) => state.auth.user);
   const {
     //atributtes
     file,
@@ -33,14 +33,14 @@ export const ProfilePage = () => {
       };
       return;
     }
-    imageRef.current.src = imagen;
+    imageRef.current.src = image;
   }, [file]);
 
   return (
     <section>
       <div className='settings-wrapper'>
         <div className='photo-options'>
-          <UserPhoto showPrev={showPrev} imagen={imagen} name={name} imagenRef={imageRef} />
+          <UserPhoto showPrev={showPrev} imagen={image} name={name} imagenRef={imageRef} />
           <PhotoButtonsOptions
             ternariUploading={ternariUploading}
             showPrev={showPrev}

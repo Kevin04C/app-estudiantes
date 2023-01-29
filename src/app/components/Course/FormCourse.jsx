@@ -38,8 +38,8 @@ const FormCourse = ({
 
             <select name='estado' onChange={setCondition} value={condition}>
               <option defaultValue=''>Estado</option>
-              <option value='PH'>Pendiente</option>
-              <option value='EP'>Cursando</option>
+              <option value='TD'>Pendiente</option>
+              <option value='IP'>Cursando</option>
               <option value='FZ'>Completado</option>
             </select>
             <button type='submit' className='courses-form__submit'>

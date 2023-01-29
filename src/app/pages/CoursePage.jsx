@@ -60,6 +60,7 @@ export const CoursePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (condition === '') return;
     const newCourse = {
       title,
       description,
@@ -79,15 +80,14 @@ export const CoursePage = () => {
     setTitle(course.title);
     setEdit(true);
     toggleAddCourseActive();
-    console.log(course);
   };
 
   //<---- Filters ---->
   let showCourses;
 
-  const pending = courses?.filter((course) => course.state === 'PH');
+  const pending = courses?.filter((course) => course.state === 'TD');
 
-  const inProgress = courses?.filter((course) => course.state === 'EP');
+  const inProgress = courses?.filter((course) => course.state === 'IP');
 
   const complete = courses?.filter((course) => course.state === 'FZ');
 

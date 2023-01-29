@@ -60,6 +60,7 @@ export const CoursePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (condition === '') return;
     const newCourse = {
       title,
       description,

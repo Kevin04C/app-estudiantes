@@ -8,8 +8,9 @@
     margin-bottom: 65px;
   }
   &__list {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(389px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 16px;
   }
 }

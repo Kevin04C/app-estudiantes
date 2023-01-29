@@ -3,6 +3,9 @@
   grid-template-columns: repeat(5, 1fr);
   column-gap: 1rem;
   .card {
-    grid-column: 1/5;
+    grid-column: 1/6;
+    @include responsive(md) {
+      grid-column: 1/5;
+    }
   }
 }

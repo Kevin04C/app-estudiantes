@@ -2,9 +2,15 @@
 
 .auth {
   &__wrapper {
+    background-color: $main;
     min-height: 100vh;
     @include responsive(md) {
       display: flex;
+    }
+    &__unique-center {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
     }
   }
   &__form {

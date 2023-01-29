@@ -1,4 +1,6 @@
+import { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { getGreeting } from '../../helpers/greeting';
 
 const WelcomeCard = () => {
   const { user } = useSelector((state) => state.auth);
@@ -7,7 +9,7 @@ const WelcomeCard = () => {
     <article className='card'>
       <div className='card-over'>
         <h1 className='card-over__title'>
-          Buenos Días, <span>{user.name}</span>
+          {greeting}, <span>{user.name}</span>
         </h1>
         <p>Espero que cumplas tus objetivos para este día!</p>
       </div>

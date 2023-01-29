@@ -136,8 +136,14 @@
         border-bottom: 2px solid $main;
       }
     }
+    &__submit {
+      background: $button;
+      color: $button-text;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
     select {
-      width: 40%;
+      width: 60%;
       background: $background;
     }
   }

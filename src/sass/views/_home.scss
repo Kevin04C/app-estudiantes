@@ -68,7 +68,12 @@
   }
 }
 @media (max-width: 600px) {
-  .courses__item {
-    flex-direction: row;
+  .home {
+    .courses {
+      grid-column: 1/6;
+      .courses__item {
+        flex-direction: row;
+      }
+    }
   }
 }

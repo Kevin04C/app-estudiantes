@@ -16,7 +16,6 @@ const CourseModule = () => {
     dispatch(getCourses());
   }, [dispatch]);
 
-  console.log(courses);
   return (
     <section className='courses'>
       <div className='courses-header'>

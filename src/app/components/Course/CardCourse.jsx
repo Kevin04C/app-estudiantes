@@ -2,24 +2,24 @@ import { BiTrash, BiEdit } from 'react-icons/bi';
 
 const CardCourse = ({ course, onDelete, onEdit, editable }) => {
   const showCondition = () => {
-    if (course?.estado === 'PH') return 'Pendiente';
-    if (course?.estado === 'EP') return 'Cursando';
-    if (course?.estado === 'FZ') return 'Completo';
+    if (course?.state === 'PH') return 'Pendiente';
+    if (course?.state === 'EP') return 'Cursando';
+    if (course?.state === 'FZ') return 'Completo';
   };
 
   const cardStyle = {
     borderLeft: `${
-      (course?.estado === 'PH' && '0.7rem solid #ffffff') ||
-      (course?.estado === 'EP' && '0.7rem solid #b8c1ec') ||
-      (course?.estado === 'FZ' && '0.7rem solid #eebbc3')
+      (course?.state === 'PH' && '0.7rem solid #ffffff') ||
+      (course?.state === 'EP' && '0.7rem solid #b8c1ec') ||
+      (course?.state === 'FZ' && '0.7rem solid #eebbc3')
     }`,
   };
 
   const cardConditionStyle = {
     color: `${
-      (course?.estado === 'PH' && '#ffffff') ||
-      (course?.estado === 'EP' && '#b8c1ec') ||
-      (course?.estado === 'FZ' && '#eebbc3')
+      (course?.state === 'PH' && '#ffffff') ||
+      (course?.state === 'EP' && '#b8c1ec') ||
+      (course?.state === 'FZ' && '#eebbc3')
     }`,
     fontWeight: '600',
   };
@@ -30,8 +30,8 @@ const CardCourse = ({ course, onDelete, onEdit, editable }) => {
         <p>
           Estado: <span style={cardConditionStyle}>{showCondition()}</span>
         </p>
-        <h2 className='card-over__title'>{course.titulo}</h2>
-        <p>{course.descripcion}</p>
+        <h2 className='card-over__title'>{course.title}</h2>
+        <p>{course.description}</p>
       </div>
       <div className='courses__item-controls'>
         <button className='delete btn' onClick={onDelete}>

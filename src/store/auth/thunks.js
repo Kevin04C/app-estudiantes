@@ -3,17 +3,13 @@ import AppEstudiantesApi from '../../api/AppEstudiantesApi';
 import {
   clearErrorMessage,
   clearSuccessMessage,
-  onChangingPassword,
   onChecking,
   onCloseChecking,
   onLoadingPhoto,
   onLogin,
   onLogout,
-  onSearchingEmail,
   setPhoto,
   setSuccessMessage,
-  setSuccessSearchEmail,
-  SuccessChangedPassword,
 } from './authSlice';
 
 export const startRegister = (form) => {
@@ -65,53 +61,6 @@ export const startUploadPhoto = (fileImagen) => {
     } catch (error) {
       toast.error('Error al actualizar la foto');
       dispatch(onLoadingPhoto(false));
-    }
-  };
-};
-
-export const startSearchEmail = (email) => {
-  return async (dispatch) => {
-    dispatch(onSearchingEmail());
-    try {
-      const { data } = await AppEstudiantesApi.post('/user/forgot/password', email);
-      if (!data.success) throw new Error('Hubo un error');
-      dispatch(setSuccessSearchEmail());
-      localStorage.setItem('id', data.data.id);
-      localStorage.setItem('cryptotoken', data.data.cryptoToken);
-    } catch (error) {
-      const { data } = error.response;
-      dispatch(onLogout(`${data.errorMsg} y/o usuario no encontrado`));
-    }
-  };
-};
-
-export const startChangePassword = ({ password, userId, cryptotoken }) => {
-  return async (dispatch) => {
-    dispatch(onChangingPassword());
-    try {
-      const { data } = await AppEstudiantesApi.post(
-        '/user/reset',
-        { password },
-        {
-          headers: {
-            userId,
-            cryptotoken,
-          },
-        },
-      );
-      if (data.success) {
-        dispatch(setSuccessMessage(data.data.msg));
-        dispatch(SuccessChangedPassword());
-
-        localStorage.removeItem('id');
-        localStorage.removeItem('cryptotoken');
-
-        setTimeout(() => {
-          dispatch(clearSuccessMessage());
-        }, 3000);
-      }
-    } catch (error) {
-      dispatch(onLogout(`Error al cambiar la contraseña`));
     }
   };
 };

@@ -1,47 +1,17 @@
-import { BiTrash, BiEdit } from 'react-icons/bi';
+import { BiTrash } from 'react-icons/bi';
 
-const CardCourse = ({ course, onDelete, onEdit, editable }) => {
-  const showCondition = () => {
-    if (course?.estado === 'PH') return 'Pendiente';
-    if (course?.estado === 'EP') return 'Cursando';
-    if (course?.estado === 'FZ') return 'Completo';
-  };
-
-  const cardStyle = {
-    borderLeft: `${
-      (course?.estado === 'PH' && '0.7rem solid #ffffff') ||
-      (course?.estado === 'EP' && '0.7rem solid #b8c1ec') ||
-      (course?.estado === 'FZ' && '0.7rem solid #eebbc3')
-    }`,
-  };
-
-  const cardConditionStyle = {
-    color: `${
-      (course?.estado === 'PH' && '#ffffff') ||
-      (course?.estado === 'EP' && '#b8c1ec') ||
-      (course?.estado === 'FZ' && '#eebbc3')
-    }`,
-    fontWeight: '600',
-  };
-
+const CardCourse = ({ course, onClick }) => {
   return (
-    <article style={cardStyle} className='card courses__item'>
+    <article className='card courses__item'>
       <div className='card-over'>
-        <p>
-          Estado: <span style={cardConditionStyle}>{showCondition()}</span>
-        </p>
+        <p>Estado: {course.estado}</p>
         <h2 className='card-over__title'>{course.titulo}</h2>
         <p>{course.descripcion}</p>
       </div>
       <div className='courses__item-controls'>
-        <button className='delete btn' onClick={onDelete}>
+        <button className='delete-btn' onClick={onClick}>
           <BiTrash />
         </button>
-        {editable && (
-          <button className='edit btn' onClick={onEdit}>
-            <BiEdit />
-          </button>
-        )}
       </div>
     </article>
   );

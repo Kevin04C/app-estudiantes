@@ -5,51 +5,38 @@ import {
   fetchFail,
   addCourseSuccess,
   removeCourseSuccess,
-  editCourseSuccess,
 } from './courseSlice';
 
 export const getCourses = () => {
   return async (dispatch) => {
     dispatch(fetchStart());
     try {
-      const { data } = await AppEstudiantesApi.get('/course');
+      const { data } = await AppEstudiantesApi.get('/curso');
       dispatch(fetchCourseSuccess(await data));
     } catch (error) {
-      dispatch(fetchFail(error));
+      dispatch(fetchFail(await error));
     }
   };
 };
 
-export const addCourses = (course) => {
+export const addCourses = () => {
   return async (dispatch) => {
     dispatch(fetchStart());
     try {
-      const { data } = await AppEstudiantesApi.post('/course', course);
-      dispatch(addCourseSuccess(await data.data.curso));
+      const { data } = await AppEstudiantesApi.post('/curso', { titulo, descripcion, estado });
+      const { titulo, descripcion, estado } = data.data;
+      dispatch(addCourseSuccess());
     } catch (error) {
-      dispatch(fetchFail(error));
+      dispatch(fetchFail(await error));
     }
   };
 };
 
 export const removeCourse = (id) => {
   return async (dispatch) => {
-    dispatch(fetchStart());
     try {
-      await AppEstudiantesApi.delete('/course/' + id);
+      AppEstudiantesApi.delete('/curso/' + id);
       dispatch(removeCourseSuccess(id));
-    } catch (error) {
-      dispatch(fetchFail(error));
-    }
-  };
-};
-
-export const editCourse = (newData) => {
-  return async (dispatch) => {
-    dispatch(fetchStart());
-    try {
-      const { data } = await AppEstudiantesApi.patch('/course/' + newData._id, newData);
-      dispatch(editCourseSuccess(await data.data.curso));
     } catch (error) {
       dispatch(fetchFail(error));
     }

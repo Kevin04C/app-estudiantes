@@ -1,5 +1,6 @@
 html {
   // Custom scrollbar for Firefox
+  overflow-y: scroll;
   scrollbar-color: $main $background;
   scrollbar-width: thin;
 }

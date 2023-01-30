@@ -48,9 +48,9 @@ export const BodyChoresDetalles = ({setviewDetalles,data,setview,setFormulario})
 
               <div className="body__detalles__contenedor__principal__chores">
                 <label className="body__detalles__contenedor__principal__chores__label" >TITULO: </label>
-                <h1 className="body__detalles__contenedor__principal__chores__input">{a.titulo}</h1>
+                <h1 className="body__detalles__contenedor__principal__chores__input">{a.title}</h1>
                 <label className="body__detalles__contenedor__principal__chores__label" >DESCRIPCION:</label>
-                <h1 className="body__detalles__contenedor__principal__chores__input">{a.descripcion}</h1>
+                <h1 className="body__detalles__contenedor__principal__chores__input">{a.description}</h1>
               </div>
 
               <div className="body__detalles__contenedor__principal__buttons">

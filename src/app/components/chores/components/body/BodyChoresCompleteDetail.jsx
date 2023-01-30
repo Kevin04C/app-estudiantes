@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaAngleRight } from 'react-icons/fa'
 
-export const BodyChoresCompleteDetail = ({titulo,descripcion}) => {
+export const BodyChoresCompleteDetail = ({title,description}) => {
 
   return (
 
@@ -10,8 +10,8 @@ export const BodyChoresCompleteDetail = ({titulo,descripcion}) => {
             <div className="front-body__workFinished__componente__circulo"></div>
 
             <div className="front-body__workFinished__componente__tarea">
-                <p className="front-body__workFinished__componente__tarea__asignatura">{titulo}</p>
-                <p className="front-body__workFinished__componente__tarea__fecha">{descripcion}</p>
+                <p className="front-body__workFinished__componente__tarea__asignatura">{title}</p>
+                <p className="front-body__workFinished__componente__tarea__fecha">{description}</p>
             </div>
 
             <div className="front-body__workFinished__componente__icono">

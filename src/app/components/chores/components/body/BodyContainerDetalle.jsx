@@ -1,5 +1,5 @@
 
-export const BodyContainerDetalle = ({_id,setviewDetalles,titulo,descripcion,setdata}) => {
+export const BodyContainerDetalle = ({_id,setviewDetalles,title,description,setdata}) => {
 
 const urlTareas=`../../../../../public/img/ecommerce.png`;
 
@@ -11,7 +11,7 @@ const onViewDetalles=()=>{
 
 }
 
-const textoCortado=descripcion.substr(0,30);
+const textoCortado=description.substr(0,30);
 
   return (
     <>
@@ -22,7 +22,7 @@ const textoCortado=descripcion.substr(0,30);
             </div>
 
             <div className="front-body__container__contenido__text">
-                <small className="front-body__container__contenido__text__small">{titulo}</small>
+                <small className="front-body__container__contenido__text__small">{title}</small>
                 <p className="front-body__container__contenido__text__contenido">{textoCortado}</p>
             </div>   
 

@@ -5,12 +5,12 @@
   .card {
     grid-column: 1/6;
     @include responsive(md) {
-      grid-column: 1/5;
+      grid-column: 1/6;
     }
   }
   .courses {
     grid-row: 2/3;
-    grid-column: 1/5;
+    grid-column: 1/6;
     &-header {
       display: flex;
       justify-content: space-between;

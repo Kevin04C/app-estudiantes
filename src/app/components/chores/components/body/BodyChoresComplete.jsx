@@ -6,7 +6,7 @@ import { BodyChoresCompleteDetail } from './BodyChoresCompleteDetail';
 export const BodyChoresComplete = () => {
 
     const {choresComplete} = useSelector(state=>state.chores);
-    const normal=useMemo(()=>choresComplete.slice(0,5),[choresComplete]);
+    const normal=useMemo(()=>choresComplete.slice(-5).reverse(),[choresComplete]);
 
   return (
     <>

@@ -60,9 +60,9 @@
             &__img{
                 &-img{
                     border-color: white;
-                    width: 8rem;
                     height: 6rem;
                     color: white;
+                    width: 80%;
 
                     @include responsive-max(xl) {
                         width: 6rem;
@@ -80,6 +80,7 @@
                 }
             }
             &__text{
+                width: 50%;
                 @include responsive-max(xl) {
                     font-size: 0.8rem;
                     margin-left: 1rem;

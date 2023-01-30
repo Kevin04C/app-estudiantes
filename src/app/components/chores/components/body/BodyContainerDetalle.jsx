@@ -1,7 +1,7 @@
 
 export const BodyContainerDetalle = ({_id,setviewDetalles,title,description,setdata}) => {
 
-const urlTareas=`../../../../../public/img/ecommerce.png`;
+const urlTareas=`/img/ecommerce.png`;
 
 //NOS PERMITE CAMBIAR EL ESTADO DE VIEWDETALLES PARA PODER VER EL COMPONENTE DEL DETALLE DE LAS TAREAS
 const onViewDetalles=()=>{

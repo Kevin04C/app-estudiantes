@@ -7,16 +7,16 @@ import { getSearchViewForId } from "../../helper/getSearchViewForId";
 
 const validate = (stateForm) => {
 
-  const { titulo, descripcion } = stateForm;
+  const { title, description } = stateForm;
 
   const errors = {};
 
-  if (!titulo.trim()) {
-    errors.titulo = "El titulo es requerido";
+  if (!title.trim()) {
+    errors.title = "El titulo es requerido";
   }
 
-  if (!descripcion.trim()) {
-    errors.descripcion = "La descripcion es requerida";
+  if (!description.trim()) {
+    errors.description = "La descripcion es requerida";
   }
 
   return errors;
@@ -47,15 +47,15 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
 
       if (Formulario === 'crear') {
         return{
-          titulo:'',
-          descripcion:'',
-          completado:false,
+          title:'',
+          description:'',
+          completed:false,
         }
       }else{
         return{
-          titulo:a?.titulo,
-          descripcion: a?.descripcion,
-          completado:a?.completado,
+          title:a?.title,
+          description: a?.description,
+          completed:a?.completed,
         }
       }
 
@@ -63,7 +63,7 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
 
   const {stateForm,handleInputChange,handleSubmit} = useForm(initial,validate,handleSumitChores);
 
-  const {titulo,descripcion} = stateForm;
+  const {title,description} = stateForm;
     
   const dispatch=useDispatch();
 
@@ -94,8 +94,8 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
               className="container__tareas__form__form__input" 
               type="text" 
               placeholder="TITULO: " 
-              name='titulo'
-              value={titulo}
+              name='title'
+              value={title}
               onChange={handleInputChange}
               />
 
@@ -103,8 +103,8 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
               className="container__tareas__form__form__input" 
               type="text" 
               placeholder="DESCRIPCION: "
-              name='descripcion'
-              value={descripcion}
+              name='description'
+              value={description}
               onChange={handleInputChange}
               />
 

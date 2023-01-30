@@ -19,12 +19,12 @@ const validate = (stateForm) => {
   if (!email.trim()) {
     errors.email = 'El correo es requerido';
   } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/.test(email)) {
-    errors.email = 'El no tiene un formato válido';
+    errors.email = 'El correo no tiene un formato válido';
   }
 
   if (!password.trim()) {
     errors.password = 'La contraseña es requerida';
-  } else if (password < 6) {
+  } else if (password.length < 6) {
     errors.password = 'La contraseña debe ser mayor a 6 caracteres';
   }
 
@@ -58,11 +58,7 @@ export const LoginPage = () => {
         <div className='welcome '>
           <div className='welcome__wrapper'>
             <picture className='welcome__picture'>
-              <img
-                src='/assets/welcome.svg'
-                alt='welcome svg'
-                className='welcome__img'
-              />
+              <img src='/assets/welcome.svg' alt='welcome svg' className='welcome__img' />
             </picture>
             <h2 className='welcome__title'>¡BIENVENIDO DE NUEVO!</h2>
             <p className='welcome__paragraph'>Sé lo mejor de ti mismo</p>
@@ -110,26 +106,19 @@ export const LoginPage = () => {
                 )}
               </div>
               {!!errorMessage && (
-                <span className='form__error form__error--form-send'>
-                  {errorMessage}
-                </span>
+                <span className='form__error form__error--form-send'>{errorMessage}</span>
               )}
 
               <button
                 type='submit'
-                className={`form__btn-submit ${
-                  disbled ? 'grayscale not-pointer' : ''
-                }`}
+                className={`form__btn-submit ${disbled ? 'grayscale not-pointer' : ''}`}
                 disabled={disbled}
               >
                 {status === 'checking' ? <Spinner /> : 'Ingresar'}
               </button>
             </form>
             <div className='recover-password'>
-              {/* <p className='recover-password__text'>
-                  ¿No recuerdas tu contraseña?
-                </p> */}
-              <Link className='recover-password__link'>
+              <Link className='recover-password__link' to='/auth/recover-account'>
                 ¿Has olvidado tu contraseña?
               </Link>
             </div>

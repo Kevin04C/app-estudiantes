@@ -5,17 +5,17 @@
 
 //Components
 @import './sass/components/searcher.scss';
-@import './sass/views/_home-page.scss';
+@import './sass/layout/layout';
 @import './sass/components/profile';
 @import './sass/components/notification';
 @import './sass/layout/_header.scss';
 @import './sass/layout/_aside.scss';
 @import './sass/views/main.scss';
-@import './sass//layout/authLayout';
+@import './sass/layout/authLayout';
 @import './sass/components/backpack';
 @import './sass/components/modal';
-@import './sass/components/course';
 @import './sass/components/modals';
+@import './sass/components/card';
 
 //components calculator
 @import './sass/components/calculator/button';
@@ -43,14 +43,28 @@
 @import './sass/components/chores/frontCabecera';
 @import './sass/components/chores/frontTareas';
 
+//components landing
+@import './sass/components/landing/button';
+@import './sass/components/landing/navBar';
+@import './sass/components/landing/header';
+@import './sass/components/landing/principal';
+@import './sass/components/landing/what-is-app-students';
+@import './sass/components/landing/services';
+@import './sass/components/landing/service-card';
+@import './sass/components/landing/comennts';
+@import './sass/components/landing/comment-card';
+@import './sass/components/landing/footer';
+
 //views
 @import './sass/views/articles-page';
 @import './sass/views/checkingAuthView';
 @import './sass/views/course-page';
 @import './sass/views/profile-page';
+@import './sass/views/home';
+@import './sass/views/landing';
 
 //helpers
-@import './sass//utilities/helpers';
+@import './sass/utilities/helpers';
 
 // Buttons
 // Button Success

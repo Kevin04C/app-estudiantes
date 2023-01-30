@@ -4,11 +4,15 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     status: 'not-authenticated' /* 'authenticated' 'not-authenticated', 'checking' */,
-    user: {},
+    user: null,
     errorMessage: '',
     successMessage: '',
     loadingApp: false,
     uploadingPhoto: false,
+    foundEmail: false,
+    searchingEmail: false,
+    changingPassword: false,
+    passwordChanged: false,
   },
   reducers: {
     onChecking: (state) => {
@@ -30,15 +34,22 @@ export const authSlice = createSlice({
     },
     onLogout: (state, { payload }) => {
       state.status = '';
-      state.user = {};
+      state.user = null;
       state.loadingApp = false;
+      state.foundEmail = false;
+      state.searchingEmail = false;
+      state.passwordChanged = false;
+      state.changingPassword = false;
       state.errorMessage = payload || '';
     },
-    onLoadingPhoto: (state, { uploading = true }) => {
-      state.uploadingPhoto = uploading;
+    onLoadingPhoto: (state) => {
+      state.uploadingPhoto = true;
+    },
+    onCancelLoadingPhoto: (state) => {
+      state.uploadingPhoto = false;
     },
     setPhoto: (state, { payload }) => {
-      state.user.imagen = payload;
+      state.user.image = payload;
       state.uploadingPhoto = false;
     },
     clearErrorMessage: (state) => {
@@ -50,12 +61,28 @@ export const authSlice = createSlice({
     clearSuccessMessage: (state) => {
       state.successMessage = '';
     },
+    onSearchingEmail: (state) => {
+      state.searchingEmail = true;
+    },
+    setSuccessSearchEmail: (state) => {
+      state.foundEmail = true;
+      state.searchingEmail = false;
+    },
+    onChangingPassword: (state) => {
+      state.changingPassword = true;
+    },
+    SuccessChangedPassword: (state) => {
+      state.changingPassword = false;
+      state.passwordChanged = true;
+    },
   },
 });
 
 export const {
   clearErrorMessage,
   clearSuccessMessage,
+  onCancelLoadingPhoto,
+  onChangingPassword,
   onChecking,
   onCloseChecking,
   onCloseLoadingApp,
@@ -63,6 +90,9 @@ export const {
   onLoadingPhoto,
   onLogin,
   onLogout,
+  onSearchingEmail,
   setPhoto,
   setSuccessMessage,
+  setSuccessSearchEmail,
+  SuccessChangedPassword,
 } = authSlice.actions;

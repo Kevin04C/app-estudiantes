@@ -1,0 +1,36 @@
+.comment-card {
+  width: 100%;
+  background-color: #13375b;
+  padding: 32px 24px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  &__head {
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cov;
+    border-radius: 100%;
+  }
+
+  &__user__name {
+    font-size: 20px;
+    font-weight: 800;
+    color: $button;
+    margin-bottom: 5px;
+  }
+  &__user__student {
+    font-size: 14px;
+    color: $paragraph;
+  }
+  &__text {
+    color: $white;
+    opacity: 80%;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

@@ -3,12 +3,12 @@ import { useEffect, useMemo, useState } from 'react';
 export const useForm = (initialForm, validate, submit) => {
   const [stateForm, setStateForm] = useState(initialForm);
   const [formErrors, setFormErrors] = useState({ formSubmited: false });
-  const [touched, setTouched] = useState();
+  const [touched, setTouched] = useState({});
   const [emptyFields, setEmptyFields] = useState(true);
 
   const isValid = useMemo(() => {
     return Object.keys(formErrors).length === 0;
-  }, [formErrors]);
+  }, [formErrors, stateForm]);
 
   const handleInputChange = ({ target }) => {
     setStateForm({
@@ -18,11 +18,10 @@ export const useForm = (initialForm, validate, submit) => {
   };
 
   useEffect(() => {
-    /* const empty = Object.values(stateForm).every(
-      (field) => field.trim() === '',
-    );
+    const empty = Object.values(stateForm).every((field) => field.trim() === '');
+    setFormErrors(validate(stateForm));
 
-    setEmptyFields(empty); */
+    setEmptyFields(empty); 
   }, [stateForm]);
 
   const handleBlur = (e) => {
@@ -61,6 +60,7 @@ export const useForm = (initialForm, validate, submit) => {
   };
 
   return {
+    //propterties
     stateForm,
     ...stateForm,
     formErrors,
@@ -68,6 +68,7 @@ export const useForm = (initialForm, validate, submit) => {
     isValid,
     emptyFields,
 
+    //methods
     reset,
     handleInputChange,
     handleBlur,

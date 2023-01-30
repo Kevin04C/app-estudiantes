@@ -6,7 +6,7 @@ import { onLogout } from '../../../store/auth/authSlice';
 
 const ProfilePopUp = ({ handleClick, refProfile }) => {
   const dispatch = useDispatch();
-  const { name, username, imagen } = useSelector((state) => state.auth.user);
+  const { name, username, image } = useSelector((state) => state.auth.user);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -16,14 +16,14 @@ const ProfilePopUp = ({ handleClick, refProfile }) => {
   return (
     <div ref={refProfile} className='profile-pop'>
       <div className='profile-pop__header'>
-        <img className='profile-pop__img' src={imagen} alt={name} />
+        <img className='profile-pop__img' src={image} alt={name} />
         <div className='profile-pop__user-info'>
           <h2 className='profile-pop__name'>{name}</h2>
           <h2 className='profile-pop__user'>@{username}</h2>
         </div>
       </div>
       <div className='profile-pop__body'>
-        <Link to='/profile' className='profile-pop__link' onClick={handleClick}>
+        <Link to='/app/profile' className='profile-pop__link' onClick={handleClick}>
           <BsFillFilePersonFill />
           Tu Perfil
         </Link>

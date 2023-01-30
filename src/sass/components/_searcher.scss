@@ -8,8 +8,7 @@
 
   @include responsive(md) {
     flex-grow: 0;
-    width: 50%;
-    margin: 0 auto;
+    width: 40%;
   }
 
   &__input {

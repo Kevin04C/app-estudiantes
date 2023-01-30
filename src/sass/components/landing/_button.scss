@@ -1,0 +1,21 @@
+.landing-button {
+  padding: 12px 24px;
+  font-weight: bold;
+  transition: 0.2s ease;
+  width: fit-content;
+}
+
+.landing-button-primary {
+  background-color: $button;
+  color: $button-text;
+  &:hover {
+    background-color: darken($color: $button, $amount: 7);
+  }
+}
+.landing-button-secondary {
+  outline: 2px solid $paragraph;
+  color: $button;
+  &:hover {
+    background-color: darken($color: $button-text, $amount: 7);
+  }
+}

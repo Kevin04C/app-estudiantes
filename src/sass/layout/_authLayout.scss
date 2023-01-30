@@ -3,8 +3,14 @@
 .auth {
   &__wrapper {
     min-height: 100vh;
+    background-color: $paragraph;
     @include responsive(md) {
       display: flex;
+    }
+    &__unique-center {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 800px;
     }
   }
   &__form {

@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Pomodoro",
+    "text": "Mejora tu productividad con el pomodoro, con nuestra herramienta fácil de usar, podrás maximizar tu tiempo y lograr tus metas en menos tiempo. ",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Calculadora",
+    "text": "Realiza operaciones matemáticas con nuestra calculadora includida en nuestra aplicación en cualquier momento.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Calendario",
+    "text": "Organiza tu tiempo con nuestro calendario, podrás crear eventos y recordatorios para que no te olvides de nada.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Administrador de tareas",
+    "text": "Administra tus tareas tareas diarias con nuestra herramienta, podrás crear tareas, editarlas y eliminarlas.",
+    "button-text": "LO QUIERO PROBAR"
+  },
+  {
+    "title": "Administrador de cursos",
+    "text": "Administrada los cursos que estes llevando para que no te pierdas de nada y tengas un mejor desempeño.",
+    "button-text": "LO QUIERO PROBAR"
+  }
+]

@@ -5,7 +5,7 @@ export const UserPhoto = ({ showPrev, imagen, name, imagenRef }) => {
         <img src={imagen} alt={name} className='photo-options__img' ref={imagenRef} />
       </picture>
 
-      {showPrev && <span className='photo-options__prev'>*Previsualizacion*</span>}
+      {showPrev && <span className='photo-options__prev'>*Previsualización*</span>}
     </div>
   );
 };

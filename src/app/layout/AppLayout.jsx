@@ -5,7 +5,7 @@ import Header from '../components/header/Header';
 
 export const AppLayout = () => {
   return (
-    <div className='home-page'>
+    <div className='app-layout'>
       <Header />
       <Aside />
       <main className='main'>

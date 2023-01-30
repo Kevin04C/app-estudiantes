@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Body, BodyChoresDetalles } from "./components/body";
 import { ChoresFormulario, Header } from "./components/header";
@@ -7,25 +6,25 @@ export const Chores=()=> {
 
   const [view, setview] = useState(false);
   const [viewDetalles, setviewDetalles] = useState(false);
+  const [Formulario, setFormulario] = useState('');
+  const [data, setdata] = useState();
 
-  //dataChores sirve para almacenar los objetos que se crean a partir de las tareas
-  const [dataChores, setdataChores] = useState([]);
 
   return (
     <>
       <div className="container">
 
-        <Header setview={setview} />
+        <Header setview={setview} setFormulario={setFormulario} />
 
-        <Body dataChores={dataChores} setviewDetalles={setviewDetalles}/>
+        <Body  setviewDetalles={setviewDetalles} setdata={setdata} />
 
         {/* SECCION DE LA VISTA DEL FORMULARIO PARA ASIGNAR TAREAS */}
         {
-          view && (<ChoresFormulario setview={setview} setdataChores={setdataChores} dataChores={dataChores}/>)
+          view && (<ChoresFormulario setview={setview} Formulario={Formulario} data={data}/>)
         }
         {/* SECCION DE LA VISTA DEL DETALLE DE LAS TAREAS */}
         {
-          viewDetalles && (<BodyChoresDetalles setviewDetalles={setviewDetalles}/>)
+          viewDetalles && (<BodyChoresDetalles   setview={setview} setviewDetalles={setviewDetalles} data={data} setFormulario={setFormulario}/>)
         }
       </div>
     </>

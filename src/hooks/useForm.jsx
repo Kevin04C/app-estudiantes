@@ -21,7 +21,7 @@ export const useForm = (initialForm, validate, submit) => {
     const empty = Object.values(stateForm).every((field) => field.trim() === '');
     setFormErrors(validate(stateForm));
 
-    setEmptyFields(empty);
+    setEmptyFields(empty); 
   }, [stateForm]);
 
   const handleBlur = (e) => {

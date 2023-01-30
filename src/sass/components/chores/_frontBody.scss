@@ -180,6 +180,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
     &__contenedor{
         background-color: $background;
         width: 35%;
@@ -189,6 +190,7 @@
         flex-direction: column;
         box-shadow: 0 2px 4px rgba(0, 0,0,0.5);
         font-size: 0.8rem;
+        
         @include responsive-max(1600px) {
             width: 40%;
         } 

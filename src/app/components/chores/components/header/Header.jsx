@@ -5,7 +5,7 @@ import {getGreeting} from '../../../../helpers/greeting';
 
 export const Header = ({setview,setFormulario}) => {
 
-  const urlImg=`../../../../../public/img/welcome.png`;
+  const urlImg=`/img/welcome.png`;
   const {name}=useSelector(state=>state.auth.user)
   const [greeting, setGreting] = useState('');
 

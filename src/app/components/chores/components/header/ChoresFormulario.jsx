@@ -48,8 +48,7 @@ export const ChoresFormulario = ({setview,Formulario,data}) => {
       if (Formulario === 'crear') {
         return{
           title:'',
-          description:'',
-          completed:false,
+          description:''
         }
       }else{
         return{

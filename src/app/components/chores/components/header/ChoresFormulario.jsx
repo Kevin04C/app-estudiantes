@@ -1,100 +1,119 @@
 import { FaTimes } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from '../../../../../hooks/useForm';
+import { editChores, startChores } from "../../../../../store/chores/thunks";
+import { getSearchViewForId } from "../../helper/getSearchViewForId";
 
 
-export const ChoresFormulario = ({setview,setdataChores,dataChores}) => {
-        const {stateForm,handleInputChange,handleSubmit} =useForm({
-            ide:'',
-            curso:'',
-            tarea:'',
-            contenido:'',
-            fechaInicio:'',
-            fechaFin:'',
-            fechaCreacion:'',
-        });
+const validate = (stateForm) => {
 
-    const {ide,curso,tarea,contenido,fechaInicio,fechaFin ,fechaCreacion}=stateForm;
+  const { title, description } = stateForm;
+
+  const errors = {};
+
+  if (!title.trim()) {
+    errors.title = "El titulo es requerido";
+  }
+
+  if (!description.trim()) {
+    errors.description = "La descripcion es requerida";
+  }
+
+  return errors;
+};
 
 
-    const handleSumitChores=(e)=>{
-        e.preventDefault();
-        //CON ESTE HANDLE ENVIAREMOS LOS DATOS DEL FORMULARIO A DATACHORES EN EL COMPONENTE DE CHORES
-        const tareas=[...dataChores,{
-          ide: crypto.randomUUID(),
-          curso:curso,
-          tarea:tarea,
-          contenido:contenido,
-          fechaInicio:fechaInicio,
-          fechaFin:fechaFin,
-          fechaCreacion:Date.now(),
-          
-        }]
 
-        setdataChores(tareas);
-        setview(false);
+export const ChoresFormulario = ({setview,Formulario,data}) => {
 
-        localStorage.setItem('tareas',JSON.stringify(tareas));
-    };
+  const {choresForm}=useSelector((state)=>state.chores);
+  const a = getSearchViewForId(data,choresForm);
+
+  //funcion submit que se evalua dependiendo de la condicion 'Crear' o 'Editar'
+  const handleSumitChores=(dataa)=>{
+
+        if (Formulario === 'crear') {
+          dispatch(startChores(dataa));
+          setview(false);
+        }else{
+          dispatch(editChores(data,dataa));
+          setview(false);
+        }
+
+  };
+  
+  //funcion que me permite evaluar si es para crear o editar, me retornara un objeto dependiendo de la condicion
+  const initial=()=>{
+
+      if (Formulario === 'crear') {
+        return{
+          title:'',
+          description:'',
+          completed:false,
+        }
+      }else{
+        return{
+          title:a?.title,
+          description: a?.description,
+          completed:a?.completed,
+        }
+      }
+
+  }
+
+  const {stateForm,handleInputChange,handleSubmit} = useForm(initial,validate,handleSumitChores);
+
+  const {title,description} = stateForm;
+    
+  const dispatch=useDispatch();
+
+  //Llamada de formulario para crear o editar
+  const tipoFormulario=()=>{
+
+      if (Formulario === 'crear') {
+        return 'REGISTRAR';
+      }else{
+        return 'EDITAR';
+      }
+
+  }
+    
 
   return (
     <>
         <div  className="container__tareas " id="container__tareas">
+
           <div className="container__tareas__form" id="form">
+
             <a onClick={()=>setview(false)} className="container__tareas__form__close"><FaTimes /></a>
-            <h1 className="container__tareas__form__titulo">REGISTRAR TAREAS</h1>
+            <h1 className="container__tareas__form__titulo">{tipoFormulario()} TAREAS</h1>
 
-            <form className="container__tareas__form__form" onSubmit={handleSumitChores}>
-
-              <input 
-              className="container__tareas__form__form__input" 
-              type="text" 
-              placeholder="CURSO:" 
-              name='curso'
-              value={curso}
-              onChange={handleInputChange}
-              />
+            <form className="container__tareas__form__form" onSubmit={handleSubmit}>
 
               <input 
               className="container__tareas__form__form__input" 
               type="text" 
-              placeholder="TAREA"
-              name='tarea'
-              value={tarea}
+              placeholder="TITULO: " 
+              name='title'
+              value={title}
               onChange={handleInputChange}
               />
 
               <input 
               className="container__tareas__form__form__input" 
               type="text" 
-              placeholder="CONTENIDO:" 
-              name='contenido'
-              value={contenido}
+              placeholder="DESCRIPCION: "
+              name='description'
+              value={description}
               onChange={handleInputChange}
               />
 
-              <label className="container__tareas__form__form__label" htmlFor="">Fecha de inicio:</label>
-              <input 
-              className="container__tareas__form__form__input" 
-              type="date"
-              name='fechaInicio'
-              value={fechaInicio}
-              onChange={handleInputChange}
-              />
+              <button className="container__tareas__form__form__button">{tipoFormulario()} TAREAS</button>
 
-              <label className="container__tareas__form__form__label" htmlFor="">Fecha de fin:</label>
-              <input 
-              className="container__tareas__form__form__input" 
-              type="date"
-              name='fechaFin'
-              value={fechaFin}
-              onChange={handleInputChange}
-              />
-
-              <button className="container__tareas__form__form__button">Registrar tarea</button>
-              
             </form>
 
           </div>
+
         </div>
     </>
   )

@@ -6,11 +6,7 @@ const ArticlesView = ({ articles, language }) => {
     <>
       <div className='articles__header'>
         <h2>No encontraste lo que buscabas? Intenta ser más específico</h2>
-        <select
-          className='articles__header-lang'
-          defaultValue='Idioma'
-          onChange={language}
-        >
+        <select className='articles__header-lang' defaultValue='Idioma' onChange={language}>
           <option value=''>Idioma</option>
           <option value='es'>Español</option>
           <option value='en'>Inglés</option>

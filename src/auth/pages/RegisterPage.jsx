@@ -82,11 +82,9 @@ export const RegisterPage = () => {
 
   useEffect(() => {
     if (successMessage.length > 0) {
-      toast.success(successMessage, {position: 'top-left',duration: 10000});
+      toast.success(successMessage, { position: 'top-left', duration: 10000 });
     }
   }, [successMessage]);
-  
-
 
   const disbled = useMemo(() => status === 'checking', [status]);
 
@@ -97,16 +95,11 @@ export const RegisterPage = () => {
           <div className='welcome__wrapper'>
             <h2 className='welcome__title'>HOLA, ESTUDIANTE</h2>
             <p className='welcome__paragraph'>
-              AppStudent es una herramienta que te brinda todas las necesidades
-              básicas para ti en un solo lugar, todo lo que buscas lo buscas lo
-              encuentras aquí.
+              AppStudent es una herramienta que te brinda todas las necesidades básicas para ti en
+              un solo lugar, todo lo que buscas lo buscas lo encuentras aquí.
             </p>
             <picture className='welcome__picture'>
-              <img
-                src='/assets/register.svg'
-                alt='welcome svg'
-                className='welcome__img'
-              />
+              <img src='/assets/register.svg' alt='welcome svg' className='welcome__img' />
             </picture>
           </div>
         </div>
@@ -201,21 +194,15 @@ export const RegisterPage = () => {
                   />
                 </label>
                 {formErrors.confirmPassword && touched.confirmPassword && (
-                  <span className='form__error'>
-                    {formErrors.confirmPassword}
-                  </span>
+                  <span className='form__error'>{formErrors.confirmPassword}</span>
                 )}
               </div>
               {!!errorMessage && (
-                <span className='form__error form__error--form-send'>
-                  {errorMessage}
-                </span>
+                <span className='form__error form__error--form-send'>{errorMessage}</span>
               )}
               <button
                 type='submit'
-                className={`form__btn-submit ${
-                  disbled ? 'grayscale not-pointer' : ''
-                }`}
+                className={`form__btn-submit ${disbled ? 'grayscale not-pointer' : ''}`}
                 disabled={disbled}
               >
                 {status === 'checking' ? <Spinner /> : 'Ingresar'}

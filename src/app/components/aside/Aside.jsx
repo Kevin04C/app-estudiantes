@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // icons
-import { BsBook, BsListUl, BsSearch, BsHouse, BsFileEarmarkText } from 'react-icons/bs';
+import { BsBook, BsListUl, BsSearch, BsHouse } from 'react-icons/bs';
 import { useScrollDown } from '../../../hooks/useScrollDown';
 import { useDispatch } from 'react-redux';
 import { readChoress, viewCompleteChores } from '../../../store/chores/thunks';
 const Aside = () => {
   const scrollDirection = useScrollDown();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   return (
     <aside className={`aside ${scrollDirection === 'down' ? 'aside--down' : 'aside--up'}`}>
       <div className='aside__links'>
@@ -31,7 +31,7 @@ const Aside = () => {
           Cursos
         </NavLink>
         <NavLink
-          onClick={()=>{
+          onClick={() => {
             dispatch(readChoress());
             dispatch(viewCompleteChores());
           }}
@@ -51,15 +51,6 @@ const Aside = () => {
         >
           <BsSearch />
           Buscar
-        </NavLink>
-        <NavLink
-          to='/app/articles'
-          className={({ isActive }) =>
-            isActive ? 'aside__link aside__link--active' : 'aside__link'
-          }
-        >
-          <BsFileEarmarkText />
-          Artículos
         </NavLink>
       </div>
     </aside>

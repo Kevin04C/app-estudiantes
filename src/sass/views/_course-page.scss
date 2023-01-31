@@ -1,3 +1,17 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  &__btn {
+    background: $stroke;
+    color: $paragraph;
+  }
+  &__btn.active {
+    font-weight: 600;
+    color: $highlight;
+  }
+}
 .courses {
   grid-row: 2/3;
   grid-column: 1/5;
@@ -8,20 +22,6 @@
   &-title {
     font-size: 2rem;
     color: $white;
-  }
-  &-filter {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-    gap: 1rem;
-    &__btn {
-      background: $stroke;
-      color: $paragraph;
-    }
-    &__btn.active {
-      font-weight: 600;
-      color: $highlight;
-    }
   }
   &-container {
     display: grid;

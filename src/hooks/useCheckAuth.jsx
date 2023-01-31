@@ -18,7 +18,6 @@ export const useCheckAuth = () => {
 
     try {
       const { data } = await AppEstudiantesApi.post('/renew');
-      console.log(data.data.image);
       const { id, name, username, token, image } = data.data;
       localStorage.setItem('token', token);
       dispatch(onLogin({ id, name, username, image }));

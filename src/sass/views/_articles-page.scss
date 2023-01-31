@@ -2,6 +2,11 @@
   min-height: 100vh;
   background: $stroke;
 
+  .filter {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
   h2 {
     margin-bottom: 2rem;
     font-size: 1.5rem;

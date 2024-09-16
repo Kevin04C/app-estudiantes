@@ -16,3 +16,14 @@ $width-aside: 6rem;
 
 $padding-main: 2rem;
 $padding-main-left: calc($width-aside + $padding-main);
+
+.bg-background-app {
+  background-color: $background;
+}
+.color-primary-app {
+  color: $highlight !important;
+}
+
+.bg-primary-app {
+  background-color: $highlight;
+}

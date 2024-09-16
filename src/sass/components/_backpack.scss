@@ -4,7 +4,7 @@
   right: 1rem;
   z-index: 1;
   svg {
-    font-size: 2rem;
+    font-size: 3rem;
     fill: #d0d6f9;
   }
   &__content {
@@ -65,7 +65,7 @@
     display: block;
     position: absolute;
     cursor: pointer;
-    right: 0.2rem;
+    right: 0.4rem;
     z-index: -1;
     border-radius: 50vh;
     padding: 0.3rem;
@@ -73,8 +73,7 @@
     align-items: center;
     justify-content: center;
     background-color: $stroke;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
       rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     &-tooltip {
       position: absolute;

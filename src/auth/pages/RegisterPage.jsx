@@ -6,9 +6,10 @@ import { ImProfile } from 'react-icons/im';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { startRegister } from '../../store/auth/thunks';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Spinner } from '../../app/components/Spinner';
 import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const formData = {
   name: '',
@@ -86,9 +87,25 @@ export const RegisterPage = () => {
     }
   }, [successMessage]);
   
-
-
   const disbled = useMemo(() => status === 'checking', [status]);
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
+
+  const handleShowPassword = () => {
+    if(document.getElementById('password')) {
+        document.getElementById('password').type = showPassword ? 'password' : 'text';
+    };
+    setShowPassword(!showPassword);
+  };
+
+  const handleShowPassword2 = () => {
+    if(document.getElementById('confirmPassword')) {
+        document.getElementById('confirmPassword').type = showPassword2 ? 'password' : 'text';
+    };
+    setShowPassword2(!showPassword2);
+  };
+
 
   return (
     <AuthLayout>
@@ -173,6 +190,7 @@ export const RegisterPage = () => {
                 <label className='form__content'>
                   <MdOutlineSecurity className='form__icon' />
                   <input
+                    id='password'
                     type='password'
                     className='form__input'
                     placeholder='Contraseña'
@@ -182,6 +200,7 @@ export const RegisterPage = () => {
                     onBlur={handleBlur}
                     autoComplete='off'
                   />
+                  { showPassword ? <FaEye id='eye_icon_password' className='form__icon cursor-pointer' onClick={handleShowPassword}/> : <FaEyeSlash id='eye_icon_password' className='form__icon cursor-pointer' onClick={handleShowPassword}/> }
                 </label>
                 {formErrors.password && touched.password && (
                   <span className='form__error'>{formErrors.password}</span>
@@ -191,6 +210,7 @@ export const RegisterPage = () => {
                 <label className='form__content'>
                   <MdOutlineSecurity className='form__icon' />
                   <input
+                    id='confirmPassword'
                     type='password'
                     className='form__input'
                     placeholder='Confirmar contraseña'
@@ -199,6 +219,7 @@ export const RegisterPage = () => {
                     onChange={handleInputChange}
                     onBlur={handleBlur}
                   />
+                  { showPassword2 ? <FaEye id='eye_icon_confirm_password' className='form__icon cursor-pointer' onClick={handleShowPassword2} /> : <FaEyeSlash id='eye_icon_confirm_password' className='form__icon cursor-pointer' onClick={handleShowPassword2} /> }
                 </label>
                 {formErrors.confirmPassword && touched.confirmPassword && (
                   <span className='form__error'>
